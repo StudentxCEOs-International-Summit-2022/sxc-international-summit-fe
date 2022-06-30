@@ -9,8 +9,9 @@ import {
 
 const Jumbotron = () => {
   return (
-    <Box 
-    position="relative"
+    <Box
+      position="relative"
+      px={{ base: "5%", md: "10%" }}
     >
       <Flex
         flexDirection="column"
@@ -76,7 +77,7 @@ const Jumbotron = () => {
           variant="solid"
           mt="24px"
           mb={{ base: "250px", sm: "125px", md: "250px" }}
-          p="12px 30px"
+          p="24px 30px"
           borderRadius="5px"
           fontSize={{ base: "16px", md: "20px", lg: "24px" }}
           boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"

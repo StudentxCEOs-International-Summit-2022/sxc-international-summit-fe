@@ -9,8 +9,7 @@ import OurEvents from '../components/OurEvents'
 
 export default function Home() {
   return (
-    <Layout hasNavbar hasFooter>
-      <Jumbotron />
+    <Layout hasNavbar hasFooter currentPage="landing">
       <OurEvents />
       <Partners />
     </Layout>

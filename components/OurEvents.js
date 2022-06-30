@@ -74,7 +74,7 @@ const OurEvents = () => {
     ];
 
     return (
-        <Box position="relative">
+        <Box position="relative" mt={{base:"24", md:"62", lg:"100px"}}>
             <Center h='77px' >
                 <Text className="primaryFont" fontWeight={800} fontSize={['32px', '48px', '48px', '64px']}>
                     Our Events

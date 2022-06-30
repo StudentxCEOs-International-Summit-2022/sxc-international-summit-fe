@@ -2,7 +2,7 @@ import { Box, Image, Text, Divider } from "@chakra-ui/react";
 
 const Partner = () => {
   return (
-    <>
+    <Box mt={{ base: "77px", md: "145px", lg: "213px" }}>
       <Box
         position="relative"
         className="layout"
@@ -26,11 +26,11 @@ const Partner = () => {
           Our Partner and Sponsors
         </Text>
         <Divider orientation="horizontal" />
-        <Box>
-          <Image src="/Logo Medpar WEB Per 4 September.png" alt="" />{" "}
+        <Box w="full">
+          <Image mx="auto" src="/Logo Medpar WEB Per 4 September.png" alt="" />{" "}
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 
