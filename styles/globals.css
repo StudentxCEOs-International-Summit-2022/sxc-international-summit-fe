@@ -21,3 +21,11 @@
   border: 4px solid;
   border-image: linear-gradient(to bottom right, rgba(255, 105, 65, 1) 0%, rgba(248, 200, 0, 0.15) 100%) 1 stretch;
 }
+
+.backgroundElement{
+  z-index: 0;
+}
+
+.foregroundElement{
+  z-index: 1;
+}

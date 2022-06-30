@@ -74,7 +74,7 @@ const OurEvents = () => {
     ];
 
     return (
-        <Box position="relative" mt={{base:"24", md:"62", lg:"100px"}}>
+        <Box position="relative" mt={{base:"24px", md:"62px", lg:"100px"}}>
             <Center h='77px' >
                 <Text className="primaryFont" fontWeight={800} fontSize={['32px', '48px', '48px', '64px']}>
                     Our Events
@@ -170,7 +170,7 @@ const OurEvents = () => {
                     </Grid>
 
                     {/* 5 button events */}
-                    <Grid position="relative" w='100%' justify='space-between' templateColumns='repeat(5, 1fr)' justifyItems='center' alignItems='baseline' mt='20px'>
+                    <Grid position="relative" w='100%' justify='space-between' templateColumns='repeat(5, 1fr)' justifyItems='center' alignItems='baseline' mt={{base:'20px', md:"44px", lg:"68px"}}>
                         {ourEvents.map((el, idx) => (
                             <GridItem
                                 key={idx}

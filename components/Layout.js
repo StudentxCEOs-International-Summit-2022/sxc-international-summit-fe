@@ -18,7 +18,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                 <Image opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.svg" alt="wavy bg" />
             </>}
 
-            <Box zIndex={1} h="fit-content" px={{ base: "5%", md: "10%" }}>
+            <Box h="fit-content" px={{ base: "5%", md: "10%" }}>
                 {children}
             </Box>
             {hasFooter && <Box color="white" w="full" className="primaryFont" fontWeight={600}>Footer</Box>}
