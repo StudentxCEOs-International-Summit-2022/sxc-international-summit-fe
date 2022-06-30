@@ -8,7 +8,7 @@ const Layout = ({ hasNavbar, children, hasFooter }) => {
                     Navbar
                 </Box>
             }
-            <Box h="fit-content" mx={{ base: "5%", md: "10%" }} w={{ base: "90%", md: "80%" }}>
+            <Box background="linear-gradient(180deg, #010431 57.09%, #5C1FAA 100%)" h="fit-content" px={{ base: "5%", md: "10%" }}>
                 {children}
             </Box>
             {hasFooter && <Box color="white" w="full" className="primaryFont" fontWeight={600}>Footer</Box>}
