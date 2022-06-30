@@ -6,7 +6,7 @@ const Merch = () => {
             <Text mt={{ base: "60%", md: "auto" }} ml={{ base: "auto", md: "60%" }} w={{ base: "75%", md: "30%" }} fontSize={{ base: "48px", md:"56px", lg: "64px" }} lineHeight={1.2} fontWeight={800} className="gradientText">
                 Check Out Our Merch
             </Text>
-            <Button mt={{ base: "12px", md: "36px" }} borderRadius="5px" bgColor="rgba(93, 17, 171, 1)" w={{ base: "full", md: "auto" }} ml={{ base: "auto", md: "60%" }} p="23px">
+            <Button color="white" mt={{ base: "12px", md: "36px" }} borderRadius="5px" bgColor="rgba(93, 17, 171, 1)" w={{ base: "full", md: "auto" }} ml={{ base: "auto", md: "60%" }} p="23px">
                 <Flex align="center" justify="center">
                     <Icon h={{ base: "24px", md: "36px" }} w={{ base: "24px", md: "36px" }} as={FaShoppingCart} />
                     <Text ml={{ base: "5px", md: "10px" }} fontWeight={700} fontSize={{ base: "16px", md: "20px" }} lineHeight={1.5}>Shop now</Text>
