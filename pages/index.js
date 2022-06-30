@@ -4,14 +4,13 @@ import Jumbotron from '../components/jumbotron'
 import Layout from '../components/Layout'
 import Partners from '../components/partners'
 import styles from '../styles/Home.module.css'
+import OurEvents from '../components/OurEvents'
 
 
 export default function Home() {
   return (
-    <Layout hasNavbar hasFooter>
-      <Jumbotron />
-      our event <br></br>
-      check out our merch
+    <Layout hasNavbar hasFooter currentPage="landing">
+      <OurEvents />
       <Partners />
     </Layout>
   )
