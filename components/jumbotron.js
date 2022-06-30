@@ -10,7 +10,8 @@ import {
 const Jumbotron = () => {
   return (
     <Box 
-    position="relative" backgroundRepeat="no-repeat" backgroundImage="url(/title.png)">
+    position="relative"
+    >
       <Flex
         flexDirection="column"
         justifyContent="center"
