@@ -76,7 +76,7 @@ const OurEvents = () => {
     return (
         <Box position="relative" mt={{base:"24px", md:"62px", lg:"100px"}}>
             <Center h='77px' >
-                <Text className="primaryFont" fontWeight={800} fontSize={['32px', '48px', '48px', '64px']}>
+                <Text color="white" className="primaryFont" fontWeight={800} fontSize={['32px', '48px', '48px', '64px']}>
                     Our Events
                 </Text>
             </Center>
