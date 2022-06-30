@@ -9,7 +9,8 @@ import {
 
 const Jumbotron = () => {
   return (
-    <Box backgroundImage="url(/title.png)">
+    <Box 
+    position="relative" backgroundRepeat="no-repeat" backgroundImage="url(/title.png)">
       <Flex
         flexDirection="column"
         justifyContent="center"
