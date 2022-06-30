@@ -74,9 +74,7 @@ const OurEvents = () => {
     ];
 
     return (
-        <Box
-            backgroundImage="url(/images/our_events/bg-ourevents.png)" 
-            >
+        <Box position="relative">
             <Center h='77px' >
                 <Text className="primaryFont" fontWeight={800} fontSize={['32px', '48px', '48px', '64px']}>
                     Our Events
@@ -139,6 +137,7 @@ const OurEvents = () => {
                         <GridItem>
                             <Center>
                                 <Image
+                                    zIndex={1}
                                     className="gradientBorder"
                                     src={ourEvents[activeId].pict}
                                     objectFit='scale-down'
@@ -160,7 +159,7 @@ const OurEvents = () => {
                                     borderRadius='4px'
                                     p='12px 30px'
                                     fontSize='16px'
-                                    maxW='50%'
+                                    w="fit-content"
                                     align="center"
                                     _hover={{ "backgroundColor": "purple.800" }}>
                                     <span>See more</span>
@@ -177,9 +176,9 @@ const OurEvents = () => {
                                 key={idx}
                                 onClick={() => setActiveId(idx)}>
                                 <Flex w='fit-content' align='center' flexDirection='column'>
-                                    <Circle 
-                                        p="15px" 
-                                        className={idx===activeId? styles.activebutton : styles.inactivebutton}>
+                                    <Circle
+                                        p="15px"
+                                        className={idx === activeId ? styles.activebutton : styles.inactivebutton}>
                                         <Image
                                             borderRadius={'100%'}
                                             h={() => {
@@ -200,14 +199,14 @@ const OurEvents = () => {
                                             src={el.btn_icon}
                                             objectFit='scale-down'
                                             alt=""
-                                            className={idx===activeId? styles.activebuttonimg : styles.inactivebuttonimg}/>
+                                            className={idx === activeId ? styles.activebuttonimg : styles.inactivebuttonimg} />
                                     </Circle>
                                     <Text mt={isTablet ? "50px" : "70px"} className="primaryFont" textAlign="center" fontSize={['12px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
                                     <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']} color='#ffffff'>{el.date}</Text>
                                 </Flex>
                             </GridItem>
                         ))}
-                        <Image w="full" top={isTablet ? "100px" :"120px"} position="absolute" src="/images/our_events/timeline.svg" alt="" />
+                        <Image w="full" top={isTablet ? "100px" : "120px"} position="absolute" src="/images/our_events/timeline.svg" alt="" />
                     </Grid>
                 </Box>
             }
