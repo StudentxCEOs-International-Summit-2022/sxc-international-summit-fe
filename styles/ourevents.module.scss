@@ -1,0 +1,16 @@
+.activebutton {
+    background: rgba(15, 161, 219, 1);
+    filter: drop-shadow(0 0 0.5rem white);
+}
+
+.activebuttonimg {
+    opacity: 1;
+}
+
+.inactivebutton {
+    background: rgba(15, 161, 219, 0.7);
+}
+
+.inactivebuttonimg {
+    opacity: 0.7;
+}

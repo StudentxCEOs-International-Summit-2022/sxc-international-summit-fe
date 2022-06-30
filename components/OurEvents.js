@@ -1,7 +1,8 @@
-import { Flex, Spacer, Box, Text, Square, Center, Image, Button, Grid, GridItem, Container, Circle, HStack, VStack } from "@chakra-ui/react";
+import { Flex, Spacer, Box, Text, Square, Center, Image, Button, Grid, GridItem, Container, Circle, HStack, VStack, Wrap } from "@chakra-ui/react";
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useState, useEffect } from "react"
 import { useWindowSize } from "../hooks/useWindowSize";
+import styles from "../styles/ourevents.module.scss"
 
 const OurEvents = () => {
     const [activeId, setActiveId] = useState(0);
@@ -73,7 +74,9 @@ const OurEvents = () => {
     ];
 
     return (
-        <Box>
+        <Box
+            backgroundImage="url(/images/our_events/bg-ourevents.png)" 
+            >
             <Center h='77px' >
                 <Text className="primaryFont" fontWeight={800} fontSize={['32px', '48px', '48px', '64px']}>
                     Our Events
@@ -86,14 +89,15 @@ const OurEvents = () => {
                         <Flex
                             key={el.id}
                             flexDirection='column'
-                            p='24px 18px'
+                            p='24px 10px'
                             bgColor='#001048'
                             borderRadius='16px'
                             justify='center'>
                             <Image
                                 src={ourEvents[idx].pict}
                                 objectFit='scale-down'
-                                mb='16px'
+                                mx='8px'
+                                mb='12px'
                                 alt=""
                                 className="gradientBorder" />
                             <Flex
@@ -101,8 +105,8 @@ const OurEvents = () => {
                                 direction={{ base: "column" }}
                                 justify='space-between'
                                 mt="12px">
-                                <Text fontSize={['24px', '32px', '40px', '48px']} className="gradientText" mb='6px' fontWeight={700} lineHeight={1.5}> {ourEvents[idx].heading} </Text>
-                                <Text fontSize={['12px', '16px', '20px', '24px']} color='#ffffff' mb='16px' fontWeight={500} lineHeight={1.5}> {ourEvents[idx].caption} </Text>
+                                <Text fontSize={['24px', '32px', '40px', '48px']} className="gradientText" mx='6px' mb='6px' fontWeight={700} lineHeight={1.5}> {ourEvents[idx].heading} </Text>
+                                <Text fontSize={['12px', '16px', '20px', '24px']} color='#ffffff' mx='6px' mb='16px' fontWeight={500} lineHeight={1.5}> {ourEvents[idx].caption} </Text>
                                 <Flex
                                     as='button'
                                     bgColor='#5d11ab'
@@ -122,7 +126,7 @@ const OurEvents = () => {
                     ))}
                 </VStack> :
                 <Box mt="78px">
-                    {/* view untuk desktop (dan tablet?) */}
+                    {/* view untuk desktop dan tablet */}
 
                     {/* Gambar, titel, caption, button see more */}
                     <Grid
@@ -133,10 +137,13 @@ const OurEvents = () => {
                         gap='20px'
                         alignItems='center'>
                         <GridItem>
-                            <Image
-                                src={ourEvents[activeId].pict}
-                                objectFit='scale-down'
-                                alt="" />
+                            <Center>
+                                <Image
+                                    className="gradientBorder"
+                                    src={ourEvents[activeId].pict}
+                                    objectFit='scale-down'
+                                    alt="" />
+                            </Center>
                         </GridItem>
                         <GridItem>
                             <Flex
@@ -170,10 +177,11 @@ const OurEvents = () => {
                                 key={idx}
                                 onClick={() => setActiveId(idx)}>
                                 <Flex w='fit-content' align='center' flexDirection='column'>
-                                    <Circle p="15px" bgColor='#0fa1db'>
+                                    <Circle 
+                                        p="15px" 
+                                        className={idx===activeId? styles.activebutton : styles.inactivebutton}>
                                         <Image
                                             borderRadius={'100%'}
-                                            // ini bingung bagi kasus per breakpoint nya:
                                             h={() => {
                                                 if (idx === activeId) {
                                                     if (isTablet) {
@@ -191,11 +199,11 @@ const OurEvents = () => {
                                             }}
                                             src={el.btn_icon}
                                             objectFit='scale-down'
-                                            alt="" />
+                                            alt=""
+                                            className={idx===activeId? styles.activebuttonimg : styles.inactivebuttonimg}/>
                                     </Circle>
-
-                                    <Text mt={isTablet ? "50px" : "70px"} className="primaryFont" textAlign="center" fontSize={['12px', '16px', '20px', '24px']}>{el.heading}</Text>
-                                    <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']}>{el.date}</Text>
+                                    <Text mt={isTablet ? "50px" : "70px"} className="primaryFont" textAlign="center" fontSize={['12px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
+                                    <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']} color='#ffffff'>{el.date}</Text>
                                 </Flex>
                             </GridItem>
                         ))}
