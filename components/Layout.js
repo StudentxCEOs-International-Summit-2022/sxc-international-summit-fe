@@ -8,7 +8,7 @@ const Layout = ({ hasNavbar, children, hasFooter }) => {
                     Navbar
                 </Box>
             }
-            <Box h="fit-content" mx={{ base: "5%", md: "10%" }} w={{ base: "90%", md: "80%" }}>
+            <Box maxW="1440px" h="fit-content" mx={{ base: "5%", md: "10%", lg:"auto" }} w={{ base: "90%", md: "80%" }}>
                 {children}
             </Box>
             {hasFooter && <Box color="white" w="full" className="primaryFont" fontWeight={600}>Footer</Box>}
