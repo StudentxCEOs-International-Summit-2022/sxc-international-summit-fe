@@ -1,4 +1,5 @@
-import { Box, Link } from "@chakra-ui/react"
+import { Box, Link, Image } from "@chakra-ui/react"
+import Jumbotron from "./jumbotron"
 
 const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
     return (
