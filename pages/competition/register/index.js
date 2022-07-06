@@ -5,6 +5,7 @@ import Layout from "../../../components/Layout";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import Stepper from "../../../components/Stepper";
 
 const RegisterPage = () => {
     const [currentStep, setCurrentStep] = useState(1)
@@ -13,13 +14,21 @@ const RegisterPage = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
 
     const onSubmit = data => {
+        setCurrentStep(currentStep + 1)
         console.log(data);
     }
+
+    const steps =[
+        "Team Registration",
+        "Team Member Registration",
+        "Confirmation",
+        "Payment"
+    ]
 
     return (
         <>
             <Layout hasNavbar hasFooter>
-                <NextLink href="/">
+                <NextLink href="/competition">
                     <Link display="flex"
                         align="center"
                         p={2}>
@@ -29,6 +38,7 @@ const RegisterPage = () => {
                         </Text>
                     </Link>
                 </NextLink>
+                <Stepper steps={steps} currentStep={currentStep} />
                 {(() => {
                     if (currentStep === 1) {
                         return (
