@@ -12,13 +12,16 @@ const RegisterPage = () => {
     const [savedData, setSavedData] = useState(null)
     const router = useRouter
     const query = router.query
-    const { register, handleSubmit, watch, formState: { errors } } = useForm()
+    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({
+        defaultValues: savedData
+    })
 
     useEffect(() => {
         if (typeof window !== "undefined") {
             setSavedData(JSON.parse(localStorage.getItem("registrationData")) || null)
+            reset(JSON.parse(localStorage.getItem("registrationData")) || null)
         }
-    }, [])
+    }, [reset])
 
 
     const onSubmit = data => {
@@ -55,7 +58,6 @@ const RegisterPage = () => {
                             <Box
                                 mt="66px"
                                 position="relative"
-                                className="layout"
                                 bgColor="#020234"
                                 w="100%"
                                 borderRadius="20px"
@@ -229,12 +231,11 @@ const RegisterPage = () => {
                     } else if (currentStep === 2) {
                         return (
                             <Box>
-                                <FormControl className="primaryFont" key="registerForm" mx="auto">
+                                <FormControl className="primaryFont" key="registerForm" mx="auto" mb="50px">
                                     <Flex justify="center" gap="20px">
                                         <Box
                                             mt="66px"
                                             position="relative"
-                                            className="layout"
                                             bgColor="#020234"
                                             w="100%"
                                             borderRadius="20px"
@@ -324,7 +325,6 @@ const RegisterPage = () => {
                                         <Box
                                             mt="66px"
                                             position="relative"
-                                            className="layout"
                                             bgColor="#020234"
                                             w="100%"
                                             borderRadius="20px"
@@ -415,7 +415,6 @@ const RegisterPage = () => {
                                     <Box
                                         mt="24px"
                                         position="relative"
-                                        className="layout"
                                         bgColor="#020234"
                                         w="100%"
                                         mx="auto"
@@ -500,30 +499,361 @@ const RegisterPage = () => {
                                                 {...register("Third Member Address")}
                                                 id="thirdMemberAddress"
                                                 placeholder="Ex: Depok, Jawa Barat" />
+                                            <Flex mt="32px" justify="space-between">
+                                                <Button
+                                                    onClick={() => setCurrentStep(currentStep - 1)}
+                                                    mb="24px"
+                                                    mt="42px"
+                                                    borderRadius="4px"
+                                                    border="2.5px solid #5D11AB"
+                                                    p="10px 24px"
+                                                    color="white"
+                                                    fontWeight={700}
+                                                    fontSize="16px"
+                                                    lineHeight={1.5}
+                                                    className="primaryFont">
+                                                    Previous
+                                                </Button>
+                                                <Button
+                                                    onClick={handleSubmit(onSubmit)}
+                                                    mb="24px"
+                                                    mt="42px"
+                                                    borderRadius="4px"
+                                                    bgColor="#5D11AB"
+                                                    p="10px 24px"
+                                                    color="white"
+                                                    fontWeight={700}
+                                                    fontSize="16px"
+                                                    lineHeight={1.5}
+                                                    className="primaryFont"
+                                                    isDisabled={Object.keys(errors).length !== 0}>
+                                                    Next
+                                                </Button>
+                                            </Flex>
                                         </Box>
-                                        <Button
-                                            onClick={handleSubmit(onSubmit)}
-                                            mb="24px"
-                                            mt="42px"
-                                            borderRadius="4px"
+                                    </Box>
+                                </FormControl>
+                            </Box>
+                        )
+                    } else if (currentStep === 3) {
+                        const urlHandler = (url) => {
+                            if (url?.indexOf("https://") > -1) {
+                                return url;
+                            }
+                            return `https://${url}`;
+                        }
+                        return (
+                            <Box>
+                                <Box
+                                    mt="24px"
+                                    position="relative"
+                                    bgColor="#020234"
+                                    w="100%"
+                                    mx="auto"
+                                    borderRadius="20px"
+                                    border="2px solid #5D11AB"
+                                    boxShadow="inset 0px 4px 4px #5D11AB"
+                                    maxW="600px">
+                                    <Flex w="full" justify="center">
+                                        <Box my="36px"
+                                            className="primaryFont"
                                             bgColor="#5D11AB"
-                                            p="10px 24px"
-                                            color="white"
+                                            border="3px solid #A170FD"
+                                            borderRadius="30px"
+                                            p="12px 20px"
+                                            fontWeight={600}
+                                            fontSize="20px"
+                                            lineHeight={1.5}>
+                                            Confirm Your Team Identity
+                                        </Box>
+                                    </Flex>
+                                    <Divider orientation="horizontal" />
+                                    <Box mb="50px" mx="64px">
+                                        <Text
+                                            mt="32px"
                                             fontWeight={700}
                                             fontSize="16px"
                                             lineHeight={1.5}
-                                            className="primaryFont"
-                                            isDisabled={Object.keys(errors).length !== 0}>
-                                            Next
-                                        </Button>
+                                        >
+                                            {`Team Name`}<br />{savedData?.["Team Name"]}
+                                        </Text>
 
+                                        <Text
+                                            mt="32px"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                        >
+                                            {`Team Leader's Name`}<br />{savedData?.["Leader Name"]}
+                                        </Text>
+
+                                        <Text
+                                            mt="32px"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                        >
+                                            {`Team Leader's Email`}<br />{savedData?.["Leader Email"]}
+                                        </Text>
+
+                                        <Text
+                                            mt="32px"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                        >
+                                            {`Team Leader's Institution`}<br />{savedData?.["Leader Institution"]}
+                                        </Text>
+
+                                        <Text
+                                            mt="32px"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                        >
+                                            {`Team Leader's Major`}<br />{savedData?.["Leader Major"]}
+                                        </Text>
+
+                                        <Text
+                                            mt="32px"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                        >
+                                            {`Team Leader's Address`}<br />{savedData?.["Leader Address"]}
+                                        </Text>
+
+                                        <Text
+                                            mt="32px"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                        >
+                                            {`Team Identity Drive Link`}<br />
+                                            <Link rel="noopener" target="_blank" href={urlHandler(savedData?.["Team Drive"])}>
+                                                {savedData?.["Team Drive"]}
+                                            </Link>
+                                        </Text>
+                                    </Box>
+                                </Box>
+
+                                <Flex justify="center" gap="30px" mt="50px">
+                                    <Box
+                                        position="relative"
+                                        bgColor="#020234"
+                                        w="100%"
+                                        borderRadius="20px"
+                                        border="2px solid #5D11AB"
+                                        boxShadow="inset 0px 4px 4px #5D11AB"
+                                        maxW="380px">
+                                        <Flex w="full" justify="center">
+                                            <Box my="36px"
+                                                className="primaryFont"
+                                                bgColor="#5D11AB"
+                                                border="3px solid #A170FD"
+                                                borderRadius="30px"
+                                                p="12px 20px"
+                                                fontWeight={600}
+                                                fontSize="20px"
+                                                lineHeight={1.5}>
+                                                Team Member 1
+                                            </Box>
+                                        </Flex>
+                                        <Divider orientation="horizontal" />
+                                        <Box mb="50px" mx="64px">
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Name`}<br />{savedData?.["First Member Name"]}
+                                            </Text>
+
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Institution`}<br />{savedData?.["First Member Institution"]}
+                                            </Text>
+
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Major`}<br />{savedData?.["First Member Major"]}
+                                            </Text>
+
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Major`}<br />{savedData?.["First Member Major"]}
+                                            </Text>
+                                        </Box>
                                     </Box>
 
+                                    <Box
+                                        position="relative"
+                                        bgColor="#020234"
+                                        w="100%"
+                                        borderRadius="20px"
+                                        border="2px solid #5D11AB"
+                                        boxShadow="inset 0px 4px 4px #5D11AB"
+                                        maxW="380px">
+                                        <Flex w="full" justify="center">
+                                            <Box my="36px"
+                                                className="primaryFont"
+                                                bgColor="#5D11AB"
+                                                border="3px solid #A170FD"
+                                                borderRadius="30px"
+                                                p="12px 20px"
+                                                fontWeight={600}
+                                                fontSize="20px"
+                                                lineHeight={1.5}>
+                                                Team Member 2
+                                            </Box>
+                                        </Flex>
+                                        <Divider orientation="horizontal" />
+                                        <Box mb="50px" mx="64px">
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Name`}<br />{savedData?.["Second Member Name"]}
+                                            </Text>
 
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Institution`}<br />{savedData?.["Second Member Institution"]}
+                                            </Text>
 
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Major`}<br />{savedData?.["Second Member Major"]}
+                                            </Text>
 
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Major`}<br />{savedData?.["Second Member Major"]}
+                                            </Text>
+                                        </Box>
+                                    </Box>
 
-                                </FormControl>
+                                    <Box
+                                        position="relative"
+                                        bgColor="#020234"
+                                        w="100%"
+                                        borderRadius="20px"
+                                        border="2px solid #5D11AB"
+                                        boxShadow="inset 0px 4px 4px #5D11AB"
+                                        maxW="380px">
+                                        <Flex w="full" justify="center">
+                                            <Box my="36px"
+                                                className="primaryFont"
+                                                bgColor="#5D11AB"
+                                                border="3px solid #A170FD"
+                                                borderRadius="30px"
+                                                p="12px 20px"
+                                                fontWeight={600}
+                                                fontSize="20px"
+                                                lineHeight={1.5}>
+                                                Team Member 3
+                                            </Box>
+                                        </Flex>
+                                        <Divider orientation="horizontal" />
+                                        <Box mb="50px" mx="64px">
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Name`}<br />{savedData?.["Third Member Name"] || "-"}
+                                            </Text>
+
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Institution`}<br />{savedData?.["Third Member Institution"] || "-"}
+                                            </Text>
+
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Major`}<br />{savedData?.["Third Member Major"] || "-"}
+                                            </Text>
+
+                                            <Text
+                                                mt="32px"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Member's Major`}<br />{savedData?.["Third Member Major"] || "-"}
+                                            </Text>
+                                        </Box>
+                                    </Box>
+                                </Flex>
+                                <Flex mt="32px" maxW="440px" mx="auto" justify="space-between">
+                                    <Button
+                                        onClick={() => setCurrentStep(currentStep - 1)}
+                                        mb="24px"
+                                        mt="42px"
+                                        borderRadius="4px"
+                                        border="2.5px solid #5D11AB"
+                                        p="10px 24px"
+                                        color="white"
+                                        fontWeight={700}
+                                        fontSize="16px"
+                                        lineHeight={1.5}
+                                        className="primaryFont"
+                                        variant="outline"
+                                        bg="transparent">
+                                        Previous
+                                    </Button>
+                                    <Button
+                                        onClick={() => setCurrentStep(currentStep + 1)}
+                                        mb="24px"
+                                        mt="42px"
+                                        borderRadius="4px"
+                                        bgColor="#5D11AB"
+                                        p="10px 24px"
+                                        color="white"
+                                        fontWeight={700}
+                                        fontSize="16px"
+                                        lineHeight={1.5}
+                                        variant="solid"
+                                        className="primaryFont">
+                                        Next
+                                    </Button>
+                                </Flex>
                             </Box>
                         )
                     }
