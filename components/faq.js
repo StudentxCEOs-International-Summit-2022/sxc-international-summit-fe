@@ -37,7 +37,7 @@ const faq = () => {
         </Text>
         <Divider orientation="horizontal" />
         <Box w="full">
-          <Accordion defaultIndex={[0]} allowMultiple>
+          <Accordion mt="60px" mx="75px" allowMultiple>
             <AccordionItem
               textColor="white"
               border="2px solid #5910A6;"
@@ -60,8 +60,7 @@ const faq = () => {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                The competition is open to the public for all bachelor students
-                from the first-year-final year and including D3 & D4 students
+                {"The competition is open to the public for all bachelor students from the first-year-final year and including D3 & D4 students"}
               </AccordionPanel>
             </AccordionItem>
 
@@ -114,7 +113,7 @@ const faq = () => {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                Of course, it's okay to be ignored by just 1 university.
+                {"Of course, it's okay to be ignored by just 1 university."}
               </AccordionPanel>
             </AccordionItem>
 
@@ -141,9 +140,7 @@ const faq = () => {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                No, they will be paired in a group with other participants who
-                register individually as well, so you don't bother worrying if
-                for example, you want to register but only alone.
+                {"No, they will be paired in a group with other participants who register individually as well, so you don't bother worrying if for example, you want to register but only alone."}
               </AccordionPanel>
             </AccordionItem>
 

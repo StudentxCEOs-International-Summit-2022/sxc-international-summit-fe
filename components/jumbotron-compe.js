@@ -2,18 +2,16 @@ import {
   Box,
   Text,
   Flex,
-  useMediaQuery,
-  Container,
   Button,
   Link,
   Grid,
   GridItem,
+  Image,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-const Jumbotron = () => {
+const JumbotronCompe = () => {
   return (
-    <Box position="relative" px={{ base: "5%", md: "10%" }}>
+    <Box position="relative" mx="auto" maxW="1144px">
       <Flex
         flexDirection="column"
         justifyContent="center"
@@ -34,7 +32,7 @@ const Jumbotron = () => {
             SxC International Summit
           </Text>
         </Flex>
-        <Container maxWidth={{ base: "100%", md: "100%" }}>
+        <Box maxWidth={{ base: "100%", md: "100%" }}>
           <Text
             className="gradientText"
             fontSize={{ base: "32px", md: "48px", lg: "64px" }}
@@ -47,10 +45,9 @@ const Jumbotron = () => {
           >
             Business Case Competition
           </Text>
-        </Container>
+        </Box>
         <Text
           className="primaryFont"
-          w="124%"
           h="100%"
           fontSize={{ base: "12px", md: "18px", lg: "24px" }}
           fontWeight="500"
@@ -65,36 +62,42 @@ const Jumbotron = () => {
         </Text>
       </Flex>
       <Flex>
-        <Button
-          w={{ base: "100%", md: "auto" }}
-          bgColor="#5D11AB"
-          color="white"
-          variant="solid"
-          mt="24px"
-          mb={{ base: "250px", sm: "125px", md: "250px" }}
-          p="10px 24px"
-          borderRadius="4px"
-          fontSize={{ base: "16px", md: "20px", lg: "16px" }}
-          boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
-          _hover={{ bgColor: "#5D11AB" }}
-          lineHeight="150%"
-        >
-          Register Now
-        </Button>
+        <Link href="#register">
+          <Button
+            w={{ base: "100%", md: "auto" }}
+            bgColor="#5D11AB"
+            color="white"
+            variant="solid"
+            mt="24px"
+            mb={{ base: "250px", sm: "125px", md: "250px" }}
+            p="10px 24px"
+            borderRadius="4px"
+            fontSize={{ base: "16px", md: "20px", lg: "16px" }}
+            boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
+            _hover={{ bgColor: "#5D11AB" }}
+            lineHeight="150%"
+          >
+            Register Now
+          </Button>
+        </Link>
+
         <Link
           href="https://chakra-ui.com"
           isExternal
-          textColor="white"
+          color="white"
           fontSize="16px"
           mt="24px"
           mb={{ base: "250px", sm: "125px", md: "250px" }}
           p="10px 24px"
         >
-          Read Guidebook <ExternalLinkIcon mx="2px" />
+          <Flex>
+            <Text fontWeight={700}>Read Guidebook</Text>
+            <Image src="/bookIcon.svg" alt="" w="24px" h="24px" ml="2px" />
+          </Flex>
         </Link>
       </Flex>
     </Box>
   );
 };
 
-export default Jumbotron;
+export default JumbotronCompe;
