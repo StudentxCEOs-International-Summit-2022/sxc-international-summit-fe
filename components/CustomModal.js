@@ -1,4 +1,4 @@
-import { Modal, Box, ModalOverlay, ModalContent, ModalCloseButton, ModalBody, Text } from "@chakra-ui/react";
+import { Modal, Box, ModalOverlay, ModalContent, ModalCloseButton, ModalBody, Text, Button } from "@chakra-ui/react";
 
 const CustomModal = ({
     isOpen,
@@ -6,10 +6,13 @@ const CustomModal = ({
     onOpen,
     hasBackButton,
     backButtonText,
+    hasNextButton,
     nextButtonText,
     title,
     body,
-    additionalText }) => {
+    additionalText,
+    nextButtonClick
+ }) => {
     return (
         <Modal
             isOpen={isOpen}
@@ -19,7 +22,7 @@ const CustomModal = ({
             <ModalContent
                 borderRadius="20px" bgColor="#020234" w="100%">
                 <ModalBody
-                    p="20px 40px" w="100%" textAlign="center">
+                    p="40px 20px" w="100%" textAlign="center">
                     <Text color="#F8C800"
                         fontSize="32px"
                         lineHeight={1.2}
@@ -46,6 +49,20 @@ const CustomModal = ({
                         }
                         )}
                     </Box>}
+
+                    {hasNextButton && <Button
+                        mt="16px"
+                        borderRadius="4px"
+                        bgColor="#5D11AB"
+                        p="10px 24px"
+                        color="white"
+                        fontWeight={700}
+                        fontSize="16px"
+                        lineHeight={1.5}
+                        className="primaryFont"
+                        onClick={nextButtonClick}>
+                        {nextButtonText}
+                    </Button>}
 
                 </ModalBody>
             </ModalContent>

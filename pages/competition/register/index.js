@@ -11,12 +11,7 @@ import {
     Button,
     UnorderedList,
     ListItem,
-    useDisclosure,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalBody,
-    ModalCloseButton
+    useDisclosure
 } from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
@@ -31,7 +26,7 @@ const RegisterPage = () => {
     const { isOpen: isOpenRegistration, onOpen: onOpenRegistration, onClose: onCloseRegistration } = useDisclosure()
     const [currentStep, setCurrentStep] = useState(1)
     const [savedData, setSavedData] = useState(null)
-    const router = useRouter
+    const router = useRouter()
     const query = router.query
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({
         defaultValues: savedData
@@ -45,11 +40,17 @@ const RegisterPage = () => {
     }, [reset])
 
 
-    const onSubmit = data => {
+    const onChangePage = data => {
         setCurrentStep(currentStep + 1)
         console.log(data);
         setSavedData(data)
         localStorage.setItem("registrationData", JSON.stringify(data))
+    }
+
+    const onSubmit = data => {
+        console.log(data);
+        localStorage.setItem("registrationData", JSON.stringify(data))
+        router.push("/competition")
     }
 
     const steps = [
@@ -228,7 +229,7 @@ const RegisterPage = () => {
                                         </FormHelperText>
                                         <Flex justify="end">
                                             <Button
-                                                onClick={handleSubmit(onSubmit)}
+                                                onClick={handleSubmit(onChangePage)}
                                                 mb="24px"
                                                 mt="42px"
                                                 borderRadius="4px"
@@ -536,7 +537,7 @@ const RegisterPage = () => {
                                                     Previous
                                                 </Button>
                                                 <Button
-                                                    onClick={handleSubmit(onSubmit)}
+                                                    onClick={handleSubmit(onChangePage)}
                                                     mb="24px"
                                                     mt="42px"
                                                     borderRadius="4px"
@@ -1109,7 +1110,7 @@ const RegisterPage = () => {
                                         </Button>
                                         <Button
                                             onClick={() => {
-                                                handleSubmit(onSubmit); onOpenRegistration()
+                                                handleSubmit(onChangePage); onOpenRegistration()
                                             }}
                                             mb="40px"
                                             mt="80px"
@@ -1130,8 +1131,11 @@ const RegisterPage = () => {
                                             title="Registration Complete!"
                                             body={"Thank you for registering! We'll review your payment and we'll give you the event details soon! We're looking forward to your participation!"}
                                             additionalText={["If you need help, feel free to contact us at",
-                                            "Bima - +62 85731710570 (bimadwidr)", 
-                                            "Fauzan - +62 85735509685 (fauuzaann)"]} />
+                                                "Bima - +62 85731710570 (bimadwidr)",
+                                                "Fauzan - +62 85735509685 (fauuzaann)"]}
+                                            hasNextButton
+                                            nextButtonText="Back to Event Page"
+                                            nextButtonClick={handleSubmit(onSubmit)} />
                                     </Flex>
 
                                 </FormControl>
