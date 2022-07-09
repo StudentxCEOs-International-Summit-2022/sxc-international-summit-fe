@@ -5,7 +5,11 @@ import {
   useMediaQuery,
   Container,
   Button,
+  Link,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const Jumbotron = () => {
   return (
@@ -13,60 +17,54 @@ const Jumbotron = () => {
       <Flex
         flexDirection="column"
         justifyContent="center"
-        alignItems="center"
+        alignItems="left"
         w="100%"
         h="100%"
       >
-        <Flex mt={{ base: "150px", md: "200px" }}>
+        <Flex mt={{ base: "150px", md: "344px" }}>
           <Text
             className="primaryFont"
-            fontSize={{ base: "14px", md: "25px", lg: "36px" }}
-            fontWeight="700"
+            fontSize={{ base: "14px", md: "25px", lg: "32px" }}
+            fontWeight="800"
             color="white"
             lineHeight="120%"
             textAlign="center"
+            textShadow="0px 4px 16px rgba(0, 0, 0, 0.4);"
           >
-            StudentsxCEOs International Summit
-          </Text>
-          <Text
-            className="primaryFont"
-            pl={{ base: "1", md: "2" }}
-            fontSize={{ base: "14px", md: "25px", lg: "36px" }}
-            fontWeight="700"
-            color="#F8C800"
-            lineHeight="120%"
-            textAlign="center"
-          >
-            2022
+            SxC International Summit
           </Text>
         </Flex>
-        <Container maxWidth={{ base: "100%", md: "65%" }}>
+        <Container maxWidth={{ base: "100%", md: "100%" }}>
           <Text
-            className="primaryFont"
+            className="gradientText"
             fontSize={{ base: "32px", md: "48px", lg: "64px" }}
             fontWeight="700"
             color="white"
             lineHeight="120%"
-            textAlign="center"
+            textAlign="left"
             pt="24px"
             pb="24px"
           >
-            Exceed Your Limit For A New Agile Era
+            Business Case Competition
           </Text>
         </Container>
         <Text
           className="primaryFont"
+          w="124%"
+          h="100%"
           fontSize={{ base: "12px", md: "18px", lg: "24px" }}
           fontWeight="500"
           color="white"
           lineHeight="150%"
-          textAlign="center"
+          textAlign="left"
           mx={{ base: "14px", md: "0px" }}
         >
-          Prepare yourself for a brand new era with SxC International Summit, a
-          Grand Event organized by StudentsxCEOs Jakarta consisting of a
-          sequence of enriching and groundbreaking events.
+          Challenge and embrace your critical thinking, problem-solving,
+          teamwork, and collaboration skills by joining our exclusive case-based
+          competition.
         </Text>
+      </Flex>
+      <Flex>
         <Button
           w={{ base: "100%", md: "auto" }}
           bgColor="#5D11AB"
@@ -74,15 +72,26 @@ const Jumbotron = () => {
           variant="solid"
           mt="24px"
           mb={{ base: "250px", sm: "125px", md: "250px" }}
-          p="24px 30px"
-          borderRadius="5px"
-          fontSize={{ base: "16px", md: "20px", lg: "24px" }}
+          p="10px 24px"
+          borderRadius="4px"
+          fontSize={{ base: "16px", md: "20px", lg: "16px" }}
           boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
           _hover={{ bgColor: "#5D11AB" }}
           lineHeight="150%"
         >
-          Explore our events
+          Register Now
         </Button>
+        <Link
+          href="https://chakra-ui.com"
+          isExternal
+          textColor="white"
+          fontSize="16px"
+          mt="24px"
+          mb={{ base: "250px", sm: "125px", md: "250px" }}
+          p="10px 24px"
+        >
+          Read Guidebook <ExternalLinkIcon mx="2px" />
+        </Link>
       </Flex>
     </Box>
   );
