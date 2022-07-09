@@ -33,7 +33,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                     <Box position="absolute" bottom="0" w="100vw" h="60%" background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"></Box>
                     <Jumbotron />
                 </Box>
-                <Image opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.svg" alt="wavy bg" />
+                <Image opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.png" alt="wavy bg" />
             </>}
 
             <Box h="fit-content" px={{ base: "5%", md: "10%" }}>
