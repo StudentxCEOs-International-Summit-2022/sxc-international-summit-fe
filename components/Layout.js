@@ -3,7 +3,7 @@ import Jumbotron from "./jumbotron"
 
 const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
     return (
-        <Box overflow="hidden" background="linear-gradient(180deg, #010431 57.09%, #5C1FAA 100%)" position="relative" bgColor="#DADADA" minH="100vh" minW="100%">
+        <Box overflow="hidden" color="white" background="linear-gradient(180deg, #010431 57.09%, #5C1FAA 100%)" position="relative" bgColor="#DADADA" minH="100vh" minW="100%">
             {hasNavbar &&
                 <Box bgColor={"#020234"} color="white" h="72px" alignItems={"center"} w="full" position="sticky" className="secondaryFont" fontWeight={600} display="flex" justifyContent={"space-between"}>
                     <Box marginLeft={"120px"} >
@@ -33,7 +33,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                     <Box position="absolute" bottom="0" w="100vw" h="60%" background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"></Box>
                     <Jumbotron />
                 </Box>
-                <Image opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.svg" alt="wavy bg" />
+                <Image opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.png" alt="wavy bg" />
             </>}
 
             <Box h="fit-content" px={{ base: "5%", md: "10%" }}>
