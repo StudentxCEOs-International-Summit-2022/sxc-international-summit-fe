@@ -1,4 +1,23 @@
-import { FormLabel, FormHelperText, Link, Text, Box, Divider, Flex, FormControl, Input, Button } from "@chakra-ui/react";
+import {
+    FormLabel,
+    FormHelperText,
+    Link,
+    Text,
+    Box,
+    Divider,
+    Flex,
+    FormControl,
+    Input,
+    Button,
+    UnorderedList,
+    ListItem,
+    useDisclosure,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalBody,
+    ModalCloseButton
+} from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import Layout from "../../../components/Layout";
@@ -6,8 +25,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import Stepper from "../../../components/Stepper";
+import CustomModal from "../../../components/CustomModal";
 
 const RegisterPage = () => {
+    const { isOpen: isOpenRegistration, onOpen: onOpenRegistration, onClose: onCloseRegistration } = useDisclosure()
     const [currentStep, setCurrentStep] = useState(1)
     const [savedData, setSavedData] = useState(null)
     const router = useRouter
@@ -856,10 +877,264 @@ const RegisterPage = () => {
                                 </Flex>
                             </Box>
                         )
-                    } else if(currentStep === 4 ){
-                        return(
-                            <Box>
-                                tessss
+                    } else if (currentStep === 4) {
+                        return (
+                            <Box
+                                mt="66px"
+                                position="relative"
+                                bgColor="#020234"
+                                w="100%"
+                                borderRadius="20px"
+                                border="2px solid #5D11AB"
+                                boxShadow="inset 0px 4px 4px #5D11AB"
+                            >
+                                <Flex w="full" justify="center">
+                                    <Box my="36px"
+                                        className="primaryFont"
+                                        bgColor="#5D11AB"
+                                        border="3px solid #A170FD"
+                                        borderRadius="30px"
+                                        p="12px 20px"
+                                        fontWeight={600}
+                                        fontSize="20px"
+                                        lineHeight={1.5}>
+                                        Registration Payment
+                                    </Box>
+                                </Flex>
+                                <Divider orientation="horizontal" />
+                                <FormControl className="primaryFont" key="registerForm" maxW="720px" mx="auto">
+                                    <Text
+                                        mt="40px"
+                                        fontWeight={700}
+                                        fontSize="24px"
+                                        lineHeight={1.5}
+                                        className="primaryFont">
+                                        Competition Name
+                                    </Text>
+                                    <Text fontWeight={800}
+                                        fontSize="32px"
+                                        lineHeight={1.2}
+                                        className="primaryFont">SxC Business Case Competition</Text>
+                                    {/* <FormLabel
+                                        mt="48px"
+                                        htmlFor="referralCode"
+                                        fontWeight={700}
+                                        fontSize="16px"
+                                        lineHeight={1.5}
+                                    >
+                                        Referral Code
+                                    </FormLabel>
+                                    <Input
+                                        mt="8px"
+                                        {...register("Referral Code")}
+                                        id="referralCode"
+                                        placeholder="Ex: ABC1234" />
+                                    <FormHelperText fontWeight={500}>
+                                        For referral code, be sure to check our instagram account @sxcintersummit!
+                                    </FormHelperText> */}
+
+                                    <Flex align="center" mt="24px">
+                                        <Text
+                                            className="primaryFont"
+                                            fontWeight={700}
+                                            fontSize="24px"
+                                            lineHeight={1.5}
+                                            color="#0FA1DB"
+                                        >
+                                            DOMESTIC
+                                        </Text>
+                                        <Box width="100%">
+                                            <Divider ml="10px" bgColor="#0FA1DB" borderWidth="2px" width="100%" height="100%" />
+                                        </Box>
+                                    </Flex>
+                                    <Text
+                                        mt="24px"
+                                        className="primaryFont"
+                                        fontWeight={700}
+                                        fontSize="24px"
+                                        lineHeight={1.5}
+                                        color="#CCCCCC"
+                                    >
+                                        Registration Fee
+                                    </Text>
+                                    <Text
+                                        className="primaryFont"
+                                        fontWeight={800}
+                                        fontSize="24px"
+                                        lineHeight={1.2}
+                                        color="#F8C800"
+                                    >
+                                        Rp70.000,-
+                                    </Text>
+                                    <Text
+                                        mt="24px"
+                                        className="primaryFont"
+                                        fontWeight={700}
+                                        fontSize="24px"
+                                        lineHeight={1.5}
+                                        color="#CCCCCC"
+                                    >
+                                        Payment Options
+                                    </Text>
+                                    <UnorderedList color="#F8C800">
+                                        <ListItem>
+                                            <Text
+                                                className="primaryFont"
+                                                fontWeight={800}
+                                                fontSize="24px"
+                                                lineHeight={1.2}
+                                                color="#F8C800"
+                                            >
+                                                {'BCA Digital - 005353176792 (Andrea Fahira)'}
+                                            </Text>
+                                        </ListItem>
+                                        <ListItem>
+                                            <Text
+                                                className="primaryFont"
+                                                fontWeight={800}
+                                                fontSize="24px"
+                                                lineHeight={1.2}
+                                                color="#F8C800"
+                                            >
+                                                {'Dana - 085921725311 (Andrea Fahira)'}
+                                            </Text>
+                                        </ListItem>
+                                    </UnorderedList>
+
+                                    <Flex align="center" mt="24px">
+                                        <Text
+                                            className="primaryFont"
+                                            fontWeight={700}
+                                            fontSize="24px"
+                                            lineHeight={1.5}
+                                            color="#0FA1DB"
+                                        >
+                                            International
+                                        </Text>
+                                        <Box width="100%">
+                                            <Divider ml="10px" bgColor="#0FA1DB" borderWidth="2px" width="100%" height="100%" />
+                                        </Box>
+                                    </Flex>
+                                    <Text
+                                        mt="24px"
+                                        className="primaryFont"
+                                        fontWeight={700}
+                                        fontSize="24px"
+                                        lineHeight={1.5}
+                                        color="#CCCCCC"
+                                    >
+                                        Registration Fee
+                                    </Text>
+                                    <Text
+                                        className="primaryFont"
+                                        fontWeight={800}
+                                        fontSize="24px"
+                                        lineHeight={1.2}
+                                        color="#F8C800"
+                                    >
+                                        US$18.30
+                                    </Text>
+                                    <Text
+                                        mt="24px"
+                                        className="primaryFont"
+                                        fontWeight={700}
+                                        fontSize="24px"
+                                        lineHeight={1.5}
+                                        color="#CCCCCC"
+                                    >
+                                        Payment Options
+                                    </Text>
+                                    <UnorderedList color="#F8C800">
+                                        <ListItem>
+                                            <Text
+                                                className="primaryFont"
+                                                fontWeight={800}
+                                                fontSize="24px"
+                                                lineHeight={1.2}
+                                                color="#F8C800"
+                                            >
+                                                {'Paypal'}
+                                            </Text>
+                                        </ListItem>
+                                    </UnorderedList>
+
+                                    <Divider my="24px" bgColor="#0FA1DB" borderWidth="2px" width="100%" height="100%" />
+
+                                    <Text
+                                        mt="24px"
+                                        className="primaryFont"
+                                        fontWeight={700}
+                                        fontSize="24px"
+                                        lineHeight={1.5}
+                                        color="#CCCCCC"
+                                    >
+                                        Proof of Payment
+                                    </Text>
+
+                                    <FormLabel
+                                        mt="24px"
+                                        htmlFor="paymentLink"
+                                        fontWeight={700}
+                                        fontSize="16px"
+                                        lineHeight={1.5}
+                                    >
+                                        {`Google Drive Link`}
+                                    </FormLabel>
+                                    <Input
+                                        mt="8px"
+                                        {...register("Payment Drive", { required: true })}
+                                        id="paymentLink"
+                                        placeholder="Ex: bit.ly/FantasticFour" />
+                                    <FormHelperText fontWeight={500}>
+                                        Fill this field with your GDrive link containing a photo or screenshot of your payment proof.
+                                        <br />
+                                        File name: NamaTeam_Instansi_BuktiPembayaran
+                                    </FormHelperText>
+                                    <Flex justify="space-around">
+                                        <Button
+                                            onClick={() => setCurrentStep(currentStep - 1)}
+                                            mb="40px"
+                                            mt="80px"
+                                            borderRadius="4px"
+                                            border="2.5px solid #5D11AB"
+                                            p="10px 24px"
+                                            color="white"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                            className="primaryFont"
+                                            variant="outline"
+                                            bg="transparent">
+                                            Previous
+                                        </Button>
+                                        <Button
+                                            onClick={() => {
+                                                handleSubmit(onSubmit); onOpenRegistration()
+                                            }}
+                                            mb="40px"
+                                            mt="80px"
+                                            borderRadius="4px"
+                                            bgColor="#5D11AB"
+                                            p="10px 24px"
+                                            color="white"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                            className="primaryFont"
+                                            isDisabled={Object.keys(errors).length !== 0}>
+                                            Confirm Registration
+                                        </Button>
+                                        <CustomModal
+                                            isOpen={isOpenRegistration}
+                                            onClose={onCloseRegistration}
+                                            title="Registration Complete!"
+                                            body={"Thank you for registering! We'll review your payment and we'll give you the event details soon! We're looking forward to your participation!"}
+                                            additionalText={["If you need help, feel free to contact us at",
+                                            "Bima - +62 85731710570 (bimadwidr)", 
+                                            "Fauzan - +62 85735509685 (fauuzaann)"]} />
+                                    </Flex>
+
+                                </FormControl>
                             </Box>
                         )
                     }
