@@ -3,7 +3,7 @@ import Jumbotron from "./jumbotron"
 
 const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
     return (
-        <Box overflow="hidden" background="linear-gradient(180deg, #010431 57.09%, #5C1FAA 100%)" position="relative" bgColor="#DADADA" minH="100vh" minW="100%">
+        <Box overflow="hidden" color="white" background="linear-gradient(180deg, #010431 57.09%, #5C1FAA 100%)" position="relative" bgColor="#DADADA" minH="100vh" minW="100%">
             {hasNavbar &&
                 <Box bgColor={"#020234"} color="white" h="72px" alignItems={"center"} w="full" position="sticky" className="secondaryFont" fontWeight={600} display="flex" justifyContent={"space-between"}>
                     <Box marginLeft={"120px"} >

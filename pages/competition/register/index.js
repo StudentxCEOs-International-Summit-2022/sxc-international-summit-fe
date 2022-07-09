@@ -856,6 +856,12 @@ const RegisterPage = () => {
                                 </Flex>
                             </Box>
                         )
+                    } else if(currentStep === 4 ){
+                        return(
+                            <Box>
+                                tessss
+                            </Box>
+                        )
                     }
                 })()}
             </Layout>
