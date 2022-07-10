@@ -15,6 +15,7 @@ import book from "../../public/competition/book.svg";
 import school from "../../public/competition/school.svg";
 import bag from "../../public/competition/bag.svg";
 import speaker from "../../public/competition/speaker.svg";
+import Exploreourevent from "../../components/Exploreourevent";
 
 export default function Competition() {
   const [isOnCaseCollaborator, setIsOnCaseCollaborator] = useState(false)
@@ -67,6 +68,8 @@ export default function Competition() {
       isActive: false
     },
   ];
+
+
 
 
   return (
@@ -344,9 +347,8 @@ export default function Competition() {
         </Box>
 
       </Box>
-
       <Faq />
-      curious about other events?<br></br>
+      <Exploreourevent />
     </Layout>
   );
 }
