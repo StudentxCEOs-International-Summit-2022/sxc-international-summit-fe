@@ -27,7 +27,7 @@ const faq = () => {
           mb="45px"
           textAlign="center"
           color="white"
-          fontclassName="primaryFont"
+          className="primaryFont"
           fontWeight="700"
           fontSize={{ base: "32px", md: "64px" }}
           lineHeight={1.3}

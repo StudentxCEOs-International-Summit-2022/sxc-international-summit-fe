@@ -71,9 +71,9 @@ export default function Competition() {
 
   return (
     <Layout hasNavbar hasFooter currentPage="competition">
-      <Box maxW="1144px" mx="auto" overflowX="scroll" >
+      <Box maxW="1144px" mx="auto" >
         <Text className="gradientTextRed primaryFont"
-          fontSize="64px"
+          fontSize={{ base: "32px", md: "48px", lg: "64px" }}
           lineHeight={1.2}
           fontWeight="800"
           textAlign="center"
@@ -81,8 +81,9 @@ export default function Competition() {
           {'“Sustainability Roadmaps towards Industry 4.0 & Society 5.0”'}
         </Text>
         <Text className="primaryFont"
+          mt={{ base: "16px", md: "8px", lg: "0px" }}
           fontWeight={800}
-          fontSize="32px"
+          fontSize={{ base: "20px", md: "26px", lg: "32px" }}
           color="white"
           liineHeight={1.2}
           textAlign="center"
@@ -98,8 +99,9 @@ export default function Competition() {
           border="2px solid #5D11AB"
           boxShadow="inset 0px 4px 4px #5D11AB"
         >
-          <Flex w="full" justify="center" color="white" gap="20px">
+          <Flex w="full" justify={{ base: "auto", md: "center" }} color="white" gap="20px" overflowX="auto">
             <Box my="36px"
+              ml="0"
               className="primaryFont"
               bgColor={isOnCaseCollaborator ? "transparent" : "#5D11AB"}
               border="3px solid #A170FD"
@@ -109,7 +111,7 @@ export default function Competition() {
               onClick={() => setIsOnCaseCollaborator(false)}
               fontWeight={600}
               fontSize="20px"
-              lineHeight={1.5}>
+              lineHeight={1.5} minW="fit-content">
               Our Subtheme
             </Box>
             <Box my="36px"
@@ -122,7 +124,7 @@ export default function Competition() {
               fontSize="20px"
               cursor={"pointer"}
               onClick={() => setIsOnCaseCollaborator(true)}
-              lineHeight={1.5}>
+              lineHeight={1.5} minW="fit-content">
               Case Collaborator
             </Box>
           </Flex>
@@ -133,15 +135,15 @@ export default function Competition() {
                 <Image src={subtheme} alt="" />
               </Flex>
               <Box>
-                <Text className="primaryFont" fontWeight="500" fontSize="24px" lineHeight={1.5} textAlign="justify">
+                <Text mt="52px" className="primaryFont" fontWeight="500" fontSize={{ base: "16px", md: "24px" }} lineHeight={1.5} textAlign={{ base: "center", md: "justify" }}>
                   Bukalapak is and Indonesian e-commerce company with a mission to create a fair economy for all. It was founded in 2010 as an online marketplace to enable small and medium enterprises to expand online and has now also grown to support smaller traditional family-owned businesses (warungs). Through its online and offline platforms, Bukalapak provides opportunities and choices for everyone to achieve a better life.
                 </Text>
               </Box>
-            </Box> : <Flex align="center" p="36px 42px" gap="52px">
-              <Box w="35%">
+            </Box> : <Flex flexDirection={{ base: "column", md: "row" }} align="center" p="36px 42px" gap="52px">
+              <Box w={{ base: "100%", md: "35%" }}>
                 <Image src={subtheme} alt="" />
               </Box>
-              <Box w="65%" className="primaryFont" fontWeight="500" fontSize="24px" lineHeight={1.5} textAlign="justify">
+              <Box w={{ base: "100%", md: "65%" }} className="primaryFont" fontWeight="500" fontSize={{ base: "16px", md: "24px" }} lineHeight={1.5} textAlign={{ base: "center", md: "justify" }}>
                 <Text>
                   The StudentsxCEOs International Summit Competition is a case-based competition with two stages: proposal and pitching. Participants can anticipate engaging in extensive problem-solving for the case will put the branding issues to the forefront.
                 </Text>
@@ -152,122 +154,195 @@ export default function Competition() {
               </Box>
             </Flex>}
         </Box>
-        <Flex gap="20px" mt="200px" align="center">
-          <Box w="75%">
+        <Flex gap="20px" mt={{ base: "100px", sm: "150px", lg: "200px" }} align="center" flexDirection={{ base: "column", sm: "row" }}>
+          <Box w={{ base: "100%", sm: "75%" }}>
             <Box>
-              <Text className="primaryFont gradientTextRed" fontWeight="800" fontSize="64px" lineHeight={1.2}>
+              <Text textAlign={{ base: "center", sm: "left" }} className="primaryFont gradientTextRed" fontWeight="800" fontSize={{ base: "32px", sm: "48px", lg: "64px" }} lineHeight={1.2}>
                 What Are You Waiting For?
               </Text>
-              <Text alignSelf="baseline" mt="12px" className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2}>
+              <Text textAlign={{ base: "center", sm: "left" }} alignSelf="baseline" mt="12px" className="primaryFont" fontWeight={800} fontSize={{ base: "20px", sm: "26px", lg: "32px" }}
+                mx={{ base: "24px", sm: "0" }} lineHeight={1.2}>
                 {"Let's get ready to win our special prize!"}
               </Text>
             </Box>
-            <Box>
-              <Flex gap="20px" mt="80px" align="flex-end">
-                <Box>
-                  <Text className="primaryFont" textAlign="center"
-                    fontWeight={800} fontSize="32px" lineHeight={1.2} color="#F8C800">
-                    1<sup>st</sup> Place
-                  </Text>
-                  <Text className="primaryFont" textAlign="center" fontWeight={500} fontSize="24px" lineHeight={1.5}>
-                    Rp6.500.000
-                  </Text>
-                  <Box
-                    mt="12px"
-                    w="200px" h="160px"
-                    border="2px solid #FF6941"
-                    borderBottom="none"
-                    background="linear-gradient(to bottom, #000000, transparent)"
-                    borderRadius="20px 20px 0px 0px" p="2px 2px 0px 2px"
-                  >
-                  </Box>
-                </Box>
 
-                <Box>
-                  <Text className="primaryFont" textAlign="center"
-                    fontWeight={800} fontSize="32px" lineHeight={1.2} color="#F8C800">
-                    2<sup>nd</sup> Place
-                  </Text>
-                  <Text className="primaryFont" textAlign="center" fontWeight={500} fontSize="24px" lineHeight={1.5}>
-                    Rp3.500.000
-                  </Text>
-                  <Box
-                    mt="12px"
-                    w="200px" h="86px"
-                    border="2px solid #FF6941"
-                    borderBottom="none"
-                    background="linear-gradient(to bottom, #000000, transparent)"
-                    borderRadius="20px 20px 0px 0px" p="2px 2px 0px 2px"
-                  >
-                  </Box>
-                </Box>
-                <Box>
-                  <Text className="primaryFont" textAlign="center"
-                    fontWeight={800} fontSize="32px" lineHeight={1.2} color="#F8C800">
-                    3<sup>rd</sup> Place
-                  </Text>
-                  <Text className="primaryFont" textAlign="center" fontWeight={500} fontSize="24px" lineHeight={1.5}>
-                    Rp2.000.000
-                  </Text>
-                  <Box
-                    mt="12px"
-                    w="200px" h="48px"
-                    border="2px solid #FF6941"
-                    borderBottom="none"
-                    background="linear-gradient(to bottom, #000000, transparent)"
-                    borderRadius="20px 20px 0px 0px" p="2px 2px 0px 2px"
-                  >
-                  </Box>
-                </Box>
-              </Flex>
+            <Box w="60%" mx="20%" mt="32px" display={{ base: "block", sm: "none" }}>
+              <Image src={trophy} alt="" />
             </Box>
 
+            <Flex
+              transform={{ base: "translateX(-10%)", sm: "translateX(0px)" }}
+              gap={{ base: "36px", sm: "20px" }}
+              mt={{ base: "32px", sm: "80px" }}
+              flexDirection={{ base: "column", sm: "row" }}
+              align={{ base: "flex-start", sm: "flex-end" }}>
+              <Box>
+                <Flex
+                  align="center"
+                  flexDirection={{ base: "row-reverse", sm: "column" }}>
+                  <Box ml={{ base: "16px", sm: "0" }}>
+                    <Text
+                      className="primaryFont"
+                      textAlign="center"
+                      fontWeight={800}
+                      fontSize={{ base: "32px", sm: "24px", md: "32px" }}
+                      lineHeight={1.2}
+                      color="#F8C800">
+                      1<sup>st</sup> Place
+                    </Text>
+                    <Text
+                      className="primaryFont"
+                      textAlign="center"
+                      fontWeight={500}
+                      fontSize={{ base: "24px", sm: "16px", md: "24px" }}
+                      lineHeight={1.5}>
+                      Rp6.500.000
+                    </Text>
+                  </Box>
+                  <Box
+                    mt="12px"
+                    w={{ base: "172px", sm: "150px", md: "200px" }}
+                    h={{ base: "128px", sm: "160px", md: "160px" }}
+                    border={isMobile ? "2px solid #F8C800" : "2px solid #FF6941"}
+                    borderBottom={{ base: "auto", sm: "none" }}
+                    background="linear-gradient(to bottom, #000000, transparent)"
+                    borderRadius={{ base: "0px 20px 20px 0px", sm: "20px 20px 0px 0px" }} p="2px 2px 0px 2px"
+                  >
+                  </Box>
+                </Flex>
+              </Box>
+
+              <Box>
+                <Flex
+                  align="center"
+                  flexDirection={{ base: "row-reverse", sm: "column" }}>
+                  <Box ml={{ base: "16px", sm: "0" }}>
+                    <Text
+                      className="primaryFont"
+                      textAlign="center"
+                      fontWeight={800}
+                      fontSize={{ base: "32px", sm: "24px", md: "32px" }}
+                      lineHeight={1.2}
+                      color="#F8C800">
+                      2<sup>nd</sup> Place
+                    </Text>
+                    <Text
+                      className="primaryFont"
+                      textAlign="center"
+                      fontWeight={500}
+                      fontSize={{ base: "24px", sm: "16px", md: "24px" }}
+                      lineHeight={1.5}>
+                      Rp3.500.000
+                    </Text>
+                  </Box>
+                  <Box
+                    mt="12px"
+                    w={{ base: "126px", sm: "150px", md: "200px" }}
+                    h={{ base: "128px", sm: "100px" }}
+                    border={isMobile ? "2px solid #F8C800" : "2px solid #FF6941"}
+                    borderBottom={{ base: "auto", sm: "none" }}
+                    background="linear-gradient(to bottom, #000000, transparent)"
+                    borderRadius={{ base: "0px 20px 20px 0px", sm: "20px 20px 0px 0px" }} p="2px 2px 0px 2px"
+                  >
+                  </Box>
+                </Flex>
+              </Box>
+
+
+              <Box>
+                <Flex
+                  align="center"
+                  flexDirection={{ base: "row-reverse", sm: "column" }}>
+                  <Box ml={{ base: "16px", sm: "0" }}>
+                    <Text
+                      className="primaryFont"
+                      textAlign="center"
+                      fontWeight={800}
+                      fontSize={{ base: "32px", sm: "24px", md: "32px" }}
+                      lineHeight={1.2}
+                      color="#F8C800">
+                      3<sup>rd</sup> Place
+                    </Text>
+                    <Text
+                      className="primaryFont"
+                      textAlign="center"
+                      fontWeight={500}
+                      fontSize={{ base: "24px", sm: "16px", md: "24px" }}
+                      lineHeight={1.5}>
+                      Rp2.000.000
+                    </Text>
+                  </Box>
+                  <Box
+                    mt="12px"
+                    w={{ base: "80px", sm: "150px", md: "200px" }}
+                    h={{ base: "128px", sm: "48px" }}
+                    border={isMobile ? "2px solid #F8C800" : "2px solid #FF6941"}
+                    borderBottom={{ base: "auto", sm: "none" }}
+                    background="linear-gradient(to bottom, #000000, transparent)"
+                    borderRadius={{ base: "0px 20px 20px 0px", sm: "20px 20px 0px 0px" }} p="2px 2px 0px 2px"
+                  >
+                  </Box>
+                </Flex>
+              </Box>
+            </Flex>
+
           </Box>
-          <Box w="25%">
+          <Box w="25%" display={{ base: "none", lg: "block" }}>
             <Image src={trophy} alt="" />
           </Box>
         </Flex>
         <Text className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2} textAlign="center" mt="200px" mb="64px">{"Don't Miss Your Opportunity to Shine!"}</Text>
-        <Grid position="relative" w='1630px' justify='space-between' templateColumns='repeat(7, 1fr)' justifyItems='center' alignItems='baseline'>
-          {timelines.map((el, idx) => (
-            <GridItem
-              key={idx}>
-              <Flex w='fit-content' align='center' flexDirection='column'>
-                <Circle
-                  p="15px"
-                  className={el.isActive ? styles.activebutton : styles.inactivebutton}>
-                  <Image
-                    borderRadius={'100%'}
-                    h={() => {
-                      if (el.isActive) {
-                        if (isTablet) {
-                          return '48px'
+        <Box overflowX="auto">
+          <Grid
+            position="relative"
+            minW='1630px'
+            justify='space-between'
+            templateColumns='repeat(7, 1fr)'
+            justifyItems='center'
+            alignItems='baseline'>
+            {timelines.map((el, idx) => (
+              <GridItem
+                mt="16px"
+                key={idx}>
+                <Flex w='fit-content' align='center' flexDirection='column'>
+                  <Circle
+                    p="15px"
+                    className={el.isActive ? styles.activebutton : styles.inactivebutton}>
+                    <Image
+                      borderRadius={'100%'}
+                      h={() => {
+                        if (el.isActive) {
+                          if (isTablet) {
+                            return '48px'
+                          } else {
+                            return '60px'
+                          }
                         } else {
-                          return '60px'
+                          if (isTablet) {
+                            return '40px'
+                          } else {
+                            return '48px'
+                          }
                         }
-                      } else {
-                        if (isTablet) {
-                          return '40px'
-                        } else {
-                          return '48px'
-                        }
-                      }
-                    }}
-                    src={el.btn_icon}
-                    objectFit='scale-down'
-                    alt=""
-                    className={el.isActive ? styles.activebuttonimg : styles.inactivebuttonimg} />
-                </Circle>
-                <Text mt={isTablet ? "50px" : "70px"} className="primaryFont" textAlign="center" fontSize={['12px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
-                <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']} color='#ffffff'>{el.date}</Text>
-              </Flex>
-            </GridItem>
-          ))}
-          <Box w="full" top={isTablet ? "100px" : "120px"} position="absolute">
-            <Image width="1630px" src={timelineCompetition} alt="" />
-          </Box>
+                      }}
+                      src={el.btn_icon}
+                      objectFit='scale-down'
+                      alt=""
+                      className={el.isActive ? styles.activebuttonimg : styles.inactivebuttonimg} />
+                  </Circle>
+                  <Text mt={"70px"} className="primaryFont" textAlign="center" fontSize={['16px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
+                  {el.additional_text && <Text className="primaryFont" textAlign="center" fontSize={['16px', '16px', '20px', '24px']} color='#ffffff'>{el.additional_text}</Text>}
+                  <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']} color='#ffffff'>{el.date}</Text>
+                </Flex>
+              </GridItem>
+            ))}
+            <Box w="full" top={isTablet ? "135px" : "120px"} position="absolute">
+              <Image width="1630px" src={timelineCompetition} alt="" />
+            </Box>
 
-        </Grid>
+          </Grid>
+        </Box>
+
       </Box>
 
       <Faq />
