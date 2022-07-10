@@ -17,7 +17,7 @@ const Partner = () => {
           mb="45px"
           textAlign="center"
           color="white"
-          fontclassName="primaryFont"
+          className="primaryFont"
           fontWeight="700"
           fontSize={{ base: "32px", md: "70px" }}
           lineHeight={1.3}

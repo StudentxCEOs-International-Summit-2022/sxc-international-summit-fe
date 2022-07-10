@@ -11,7 +11,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
-const faq = () => {
+const Faq = () => {
   return (
     <Box mt={{ base: "100px", md: "145px", lg: "64px" }}>
       <Box
@@ -28,8 +28,8 @@ const faq = () => {
         <Text
           mb="45px"
           textAlign="center"
-          textColor="white"
-          fontclassName="primaryFont"
+          color="white"
+          className="primaryFont"
           fontWeight="700"
           fontSize={{ base: "32px", md: "64px" }}
           lineHeight={1.3}
@@ -220,6 +220,7 @@ const faq = () => {
               h="36px"
               src={"/dashicons_whatsapp.svg"}
               mr="17.5px"
+              alt="Whatsapp icon"
             />
             <Text> Bima - +62 85731710570 (bimadwidr)</Text>
           </Center>
@@ -239,6 +240,7 @@ const faq = () => {
               h="36px"
               src={"/dashicons_whatsapp.svg"}
               mr={{ base: "20px", md: "17.5px" }}
+              alt="Whatsapp icon"
             />
             Fauzan - +62 85735509685 (fauuzaann)
           </Center>
@@ -248,4 +250,4 @@ const faq = () => {
   );
 };
 
-export default faq;
+export default Faq;

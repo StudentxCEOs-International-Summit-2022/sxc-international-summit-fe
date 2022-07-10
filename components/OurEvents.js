@@ -180,7 +180,7 @@ const OurEvents = () => {
                                         p="15px"
                                         className={idx === activeId ? styles.activebutton : styles.inactivebutton}>
                                         <Image
-                                            borderRadius={'100%'}
+                                            borderradius={'100%'}
                                             h={() => {
                                                 if (idx === activeId) {
                                                     if (isTablet) {
