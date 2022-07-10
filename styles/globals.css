@@ -19,6 +19,13 @@ html{
   background-clip: text;
 }
 
+.gradientTextRed {
+  background: linear-gradient(180deg, #F8C800 0%, #FF6941 42.71%, #AA0070 97.92%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .gradientBorder {
   border: 4px solid;
   border-image: linear-gradient(to bottom right, rgba(255, 105, 65, 1) 0%, rgba(248, 200, 0, 0.15) 100%) 1 stretch;
