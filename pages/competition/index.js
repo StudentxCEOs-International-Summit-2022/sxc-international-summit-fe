@@ -1,8 +1,9 @@
 import Faq from "../../components/faq";
 import Layout from "../../components/Layout";
 import { Box } from "@chakra-ui/react";
+import Exploreourevent from "../../components/Exploreourevent";
 
-export default function competition() {
+export default function Competition() {
   return (
     <Layout hasNavbar hasFooter currentPage="competition">
       <Box id="register">
@@ -11,9 +12,8 @@ export default function competition() {
         dontmiss your opportunity to shine<br></br>
         rules and requirements<br></br>
       </Box>
-
       <Faq />
-      curious about other events?<br></br>
+      <Exploreourevent />
     </Layout>
   );
 }
