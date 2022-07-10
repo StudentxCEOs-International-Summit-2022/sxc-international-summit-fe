@@ -7,7 +7,7 @@ import trophy from "../../public/trophy.png"
 import Image from "next/image";
 import styles from "../../styles/ourevents.module.scss";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import timelineCompetition from "../../public/timeline-competition.png";
+import timelineCompetition from "../../public/timeline-competition.svg";
 import earlyBird from "../../public/competition/earlyBird.svg";
 import pencil from "../../public/competition/pencil.svg";
 import group from "../../public/competition/group.svg";
@@ -323,7 +323,7 @@ export default function Competition() {
               </GridItem>
             ))}
             <Box w="full" top={isTablet ? "135px" : "120px"} position="absolute">
-              <Image width="1630px" src={timelineCompetition} alt="" />
+              <Image width="1630px" height="24px" src={timelineCompetition} alt="" />
             </Box>
 
           </Grid>
