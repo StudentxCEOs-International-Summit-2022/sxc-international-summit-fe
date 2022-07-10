@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import { Box, Text, Divider, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import subtheme from "../../public/subtheme-competition.png"
+import trophy from "../../public/trophy.png"
 import Image from "next/image";
 
 export default function Competition() {
@@ -86,13 +87,85 @@ export default function Competition() {
                 <br />
                 <Text>
                   Participants are challenged to engage in our subtheme, which revolves around the Triple Bottom Line of sustainability as an essential factor of business success  (People, Planet, Profit). In the 2030 agenda, the Triple Bottom Line then has been adjusted into 5P (People, Planet, Peace, Prosperity, and Partnership) for a more sustainable future.
-
                 </Text>
               </Box>
-
             </Flex>}
         </Box>
-        sustain <br></br>
+        <Flex gap="20px" mt="200px">
+          <Box w="75%">
+            <Box>
+              <Text className="primaryFont gradientTextRed" fontWeight="800" fontSize="64px" lineHeight={1.2}>
+                What Are You Waiting For?
+              </Text>
+              <Text alignSelf="baseline" mt="12px" className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2}>
+                {"Let's get ready to win our special prize!"}
+              </Text>
+            </Box>
+            <Box>
+              <Flex gap="20px" mt="80px" align="flex-end">
+                <Box>
+                  <Text className="primaryFont" textAlign="center"
+                    fontWeight={800} fontSize="32px" lineHeight={1.2} color="#F8C800">
+                    1<sup>st</sup> Place
+                  </Text>
+                  <Text className="primaryFont" textAlign="center" fontWeight={500} fontSize="24px" lineHeight={1.5}>
+                    Rp6.500.000
+                  </Text>
+                  <Box
+                    mt="12px"
+                    w="200px" h="160px"
+                    border="2px solid #FF6941"
+                    borderBottom="none"
+                    background="linear-gradient(to bottom, #000000, transparent)"
+                    borderRadius="20px 20px 0px 0px" p="2px 2px 0px 2px"
+                  >
+                  </Box>
+                </Box>
+
+                <Box>
+                  <Text className="primaryFont" textAlign="center"
+                    fontWeight={800} fontSize="32px" lineHeight={1.2} color="#F8C800">
+                    2<sup>nd</sup> Place
+                  </Text>
+                  <Text className="primaryFont" textAlign="center" fontWeight={500} fontSize="24px" lineHeight={1.5}>
+                    Rp3.500.000
+                  </Text>
+                  <Box
+                    mt="12px"
+                    w="200px" h="86px"
+                    border="2px solid #FF6941"
+                    borderBottom="none"
+                    background="linear-gradient(to bottom, #000000, transparent)"
+                    borderRadius="20px 20px 0px 0px" p="2px 2px 0px 2px"
+                  >
+                  </Box>
+                </Box>
+                <Box>
+                  <Text className="primaryFont" textAlign="center"
+                    fontWeight={800} fontSize="32px" lineHeight={1.2} color="#F8C800">
+                    3<sup>rd</sup> Place
+                  </Text>
+                  <Text className="primaryFont" textAlign="center" fontWeight={500} fontSize="24px" lineHeight={1.5}>
+                    Rp2.000.000
+                  </Text>
+                  <Box
+                    mt="12px"
+                    w="200px" h="48px"
+                    border="2px solid #FF6941"
+                    borderBottom="none"
+                    background="linear-gradient(to bottom, #000000, transparent)"
+                    borderRadius="20px 20px 0px 0px" p="2px 2px 0px 2px"
+                  >
+                  </Box>
+                </Box>
+              </Flex>
+            </Box>
+
+          </Box>
+          <Box w="25%">
+            <Image src={trophy} alt="" />
+          </Box>
+        </Flex>
         what are you waiting for<br></br>
         dontmiss your opportunity to shine<br></br>
         rules and requirements<br></br>

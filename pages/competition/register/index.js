@@ -1137,7 +1137,6 @@ const RegisterPage = () => {
                                             nextButtonText="Back to Event Page"
                                             nextButtonClick={handleSubmit(onSubmit)} />
                                     </Flex>
-
                                 </FormControl>
                             </Box>
                         )
