@@ -3,12 +3,14 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useState, useEffect } from "react"
 import { useWindowSize } from "../hooks/useWindowSize";
 import styles from "../styles/ourevents.module.scss"
+import { useRouter } from "next/router";
 
 const OurEvents = () => {
     const [activeId, setActiveId] = useState(0);
     const { width } = useWindowSize()
     const isMobile = width < 768
     const isTablet = width < 1024
+    const router = useRouter()
 
     const [time, setTime] = useState(Date.now());
 
@@ -27,7 +29,7 @@ const OurEvents = () => {
             date: "13 August",
             caption: `Ini caption untuk Pre-Event. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
-            url: "#",
+            url: "/pre-event",
             btn_icon: "/images/our_events/icon-preevent.png",
             pict: "/images/our_events/pict-preevent.png"
         },
@@ -37,7 +39,7 @@ const OurEvents = () => {
             date: "21 August - 22 October",
             caption: `Ini caption untuk Competition. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
-            url: "#",
+            url: "/competition",
             btn_icon: "/images/our_events/icon-competition.png",
             pict: "/images/our_events/pict-preevent.png"
         },
@@ -47,7 +49,7 @@ const OurEvents = () => {
             date: "22 October",
             caption: `Ini caption untuk Chambers. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
-            url: "#",
+            url: "/chambers",
             btn_icon: "/images/our_events/icon-chambers.png",
             pict: "/images/our_events/pict-preevent.png"
         },
@@ -57,7 +59,7 @@ const OurEvents = () => {
             date: "22 October",
             caption: `Ini caption untuk Company Visit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
-            url: "#",
+            url: "/company-visit",
             btn_icon: "/images/our_events/icon-comvis.png",
             pict: "/images/our_events/pict-preevent.png"
         },
@@ -67,7 +69,7 @@ const OurEvents = () => {
             date: "29 October",
             caption: `Ini caption untuk Main Conference. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
-            url: "#",
+            url: "/main-conference",
             btn_icon: "/images/our_events/icon-mainconference.png",
             pict: "/images/our_events/pict-preevent.png"
         },
@@ -161,7 +163,8 @@ const OurEvents = () => {
                                     fontSize='16px'
                                     w="fit-content"
                                     align="center"
-                                    _hover={{ "backgroundColor": "purple.800" }}>
+                                    _hover={{ "backgroundColor": "purple.800" }}
+                                    onClick={() => router.push(ourEvents[activeId].url)}>
                                     <span>See more</span>
                                     <ChevronRightIcon ml="24px" float='right' />
                                 </Button>
