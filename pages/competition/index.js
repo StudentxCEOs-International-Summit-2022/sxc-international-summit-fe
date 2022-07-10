@@ -1,16 +1,77 @@
 import Faq from "../../components/faq";
 import Layout from "../../components/Layout";
-import { Box, Text, Divider, Flex } from "@chakra-ui/react";
+import { Box, Text, Divider, Flex, Grid, GridItem, Circle } from "@chakra-ui/react";
 import { useState } from "react";
 import subtheme from "../../public/subtheme-competition.png"
 import trophy from "../../public/trophy.png"
 import Image from "next/image";
+import styles from "../../styles/ourevents.module.scss";
+import { useWindowSize } from "../../hooks/useWindowSize";
+import timelineCompetition from "../../public/timeline-competition.png";
+import earlyBird from "../../public/competition/earlyBird.svg";
+import pencil from "../../public/competition/pencil.svg";
+import group from "../../public/competition/group.svg";
+import book from "../../public/competition/book.svg";
+import school from "../../public/competition/school.svg";
+import bag from "../../public/competition/bag.svg";
+import speaker from "../../public/competition/speaker.svg";
 
 export default function Competition() {
   const [isOnCaseCollaborator, setIsOnCaseCollaborator] = useState(false)
+  const { width } = useWindowSize()
+  const isMobile = width < 768
+  const isTablet = width < 1024
+
+  const timelines = [
+    {
+      heading: "Early Bird Registration",
+      date: "11 Juli 2022 - 24 July 2022",
+      btn_icon: earlyBird,
+      isActive: true
+    },
+    {
+      heading: "Normal Registration",
+      date: "25 July 2022 - 7 August",
+      btn_icon: pencil,
+      isActive: false
+    },
+    {
+      heading: "IG Takeover",
+      date: "23 July 2022",
+      btn_icon: group,
+      isActive: false
+    },
+    {
+      heading: "Coaching Clinic 1",
+      date: "3 September 2022",
+      btn_icon: book,
+      isActive: false
+    },
+    {
+      heading: "Coaching Clinic 2",
+      date: "10 September 2022",
+      btn_icon: school,
+      isActive: false
+    },
+    {
+      heading: "Coaching Clinic 3",
+      additional_text: "(For Top 10 Winners)",
+      date: "11 October 2022",
+      btn_icon: bag,
+      isActive: false
+    },
+    {
+      heading: "Presentation Day",
+      date: "29 October 2022",
+      btn_icon: speaker,
+      isActive: false
+    },
+  ];
+
+
   return (
     <Layout hasNavbar hasFooter currentPage="competition">
-      <Box id="register" maxW="1144px" mx="auto">
+      <Box maxW="1144px" mx="auto" overflowX="scroll" >
         <Text className="gradientTextRed primaryFont"
           fontSize="64px"
           lineHeight={1.2}
@@ -91,7 +152,7 @@ export default function Competition() {
               </Box>
             </Flex>}
         </Box>
-        <Flex gap="20px" mt="200px">
+        <Flex gap="20px" mt="200px" align="center">
           <Box w="75%">
             <Box>
               <Text className="primaryFont gradientTextRed" fontWeight="800" fontSize="64px" lineHeight={1.2}>
@@ -166,9 +227,47 @@ export default function Competition() {
             <Image src={trophy} alt="" />
           </Box>
         </Flex>
-        what are you waiting for<br></br>
-        dontmiss your opportunity to shine<br></br>
-        rules and requirements<br></br>
+        <Text className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2} textAlign="center" mt="200px" mb="64px">{"Don't Miss Your Opportunity to Shine!"}</Text>
+        <Grid position="relative" w='1630px' justify='space-between' templateColumns='repeat(7, 1fr)' justifyItems='center' alignItems='baseline'>
+          {timelines.map((el, idx) => (
+            <GridItem
+              key={idx}>
+              <Flex w='fit-content' align='center' flexDirection='column'>
+                <Circle
+                  p="15px"
+                  className={el.isActive ? styles.activebutton : styles.inactivebutton}>
+                  <Image
+                    borderRadius={'100%'}
+                    h={() => {
+                      if (el.isActive) {
+                        if (isTablet) {
+                          return '48px'
+                        } else {
+                          return '60px'
+                        }
+                      } else {
+                        if (isTablet) {
+                          return '40px'
+                        } else {
+                          return '48px'
+                        }
+                      }
+                    }}
+                    src={el.btn_icon}
+                    objectFit='scale-down'
+                    alt=""
+                    className={el.isActive ? styles.activebuttonimg : styles.inactivebuttonimg} />
+                </Circle>
+                <Text mt={isTablet ? "50px" : "70px"} className="primaryFont" textAlign="center" fontSize={['12px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
+                <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']} color='#ffffff'>{el.date}</Text>
+              </Flex>
+            </GridItem>
+          ))}
+          <Box w="full" top={isTablet ? "100px" : "120px"} position="absolute">
+            <Image width="1630px" src={timelineCompetition} alt="" />
+          </Box>
+
+        </Grid>
       </Box>
 
       <Faq />

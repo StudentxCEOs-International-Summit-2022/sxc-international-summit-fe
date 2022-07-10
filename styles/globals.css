@@ -5,6 +5,28 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  max-width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #001048;
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1FA1DB;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1FA1DB;
+}
+
 .primaryFont {
   font-family: 'Raleway', sans-serif;
 }
