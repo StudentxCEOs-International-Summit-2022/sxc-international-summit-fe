@@ -14,12 +14,11 @@ const Exploreourevent = () => {
       className="primaryFont"
       align="center"
       justify="center"
-      backgroundImage="/Frame 13.svg"
+      backgroundImage="/otherEvent.png"
       backgroundRepeat="no-repeat"
       backgroundPosition="center"
     >
       <Text
-        mt={{ base: "60%", md: "auto" }}
         pb="16px"
         align="center"
         justify="center"
@@ -28,7 +27,7 @@ const Exploreourevent = () => {
         lineHeight={1.2}
         fontWeight={800}
         className="primaryFont"
-        Color="white"
+        color="white"
       >
         Curious about other events?
       </Text>
@@ -41,7 +40,7 @@ const Exploreourevent = () => {
         justify="center"
         className="primaryFont"
       >
-        Let’s go back and explore our events!
+        {"Let's go back and explore our events!"}
       </Text>
       <Button
         w={{ base: "100%", md: "auto" }}
@@ -49,7 +48,6 @@ const Exploreourevent = () => {
         color="white"
         variant="solid"
         mt="24px"
-        mb={{ base: "250px", sm: "125px", md: "250px" }}
         p="24px 30px"
         borderRadius="5px"
         fontSize={{ base: "16px", lg: "16px" }}

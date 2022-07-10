@@ -88,7 +88,7 @@ export default function Competition() {
           fontWeight={800}
           fontSize={{ base: "20px", md: "26px", lg: "32px" }}
           color="white"
-          liineHeight={1.2}
+          lineHeight={1.2}
           textAlign="center"
         >
           Get to know more about our competition!
@@ -312,24 +312,7 @@ export default function Competition() {
                     p="15px"
                     className={el.isActive ? styles.activebutton : styles.inactivebutton}>
                     <Image
-                      borderRadius={'100%'}
-                      h={() => {
-                        if (el.isActive) {
-                          if (isTablet) {
-                            return '48px'
-                          } else {
-                            return '60px'
-                          }
-                        } else {
-                          if (isTablet) {
-                            return '40px'
-                          } else {
-                            return '48px'
-                          }
-                        }
-                      }}
                       src={el.btn_icon}
-                      objectFit='scale-down'
                       alt=""
                       className={el.isActive ? styles.activebuttonimg : styles.inactivebuttonimg} />
                   </Circle>
