@@ -9,7 +9,7 @@ export default function Home() {
     <Layout hasNavbar hasFooter currentPage="landing">
       <OurEvents />
       <Merch />
-      <Partners />
+      {/* <Partners /> */}
     </Layout>
   )
 }
