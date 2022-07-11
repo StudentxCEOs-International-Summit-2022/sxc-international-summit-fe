@@ -117,6 +117,7 @@ const OurEvents = () => {
                                     align="center"
                                     justify="center"
                                     position="relative"
+                                    onClick={() => {router.push(el.url)}}
                                     mt="12px">
                                     <Text fontWeight={700} fontSize="16px" lineHeight={1.5}>See more</Text>
                                     <ChevronRightIcon right="16px" position="absolute" />
