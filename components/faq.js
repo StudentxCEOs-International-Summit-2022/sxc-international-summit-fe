@@ -13,7 +13,7 @@ import {
 
 const Faq = () => {
   return (
-    <Box mt={{ base: "100px", md: "145px", lg: "64px" }}>
+    <Box mt={{ base: "100px", md: "145px", lg: "88px" }}>
       <Box
         position="relative"
         className="layout"

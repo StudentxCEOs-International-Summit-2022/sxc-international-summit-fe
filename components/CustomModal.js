@@ -1,4 +1,4 @@
-import { Modal, Box, ModalOverlay, ModalContent, ModalCloseButton, ModalBody, Text, Button } from "@chakra-ui/react";
+import { Modal, Flex, Box, ModalOverlay, ModalContent, ModalCloseButton, ModalBody, Text, Button } from "@chakra-ui/react";
 
 const CustomModal = ({
     isOpen,
@@ -10,9 +10,10 @@ const CustomModal = ({
     nextButtonText,
     title,
     body,
+    backButtonClick,
     additionalText,
     nextButtonClick
- }) => {
+}) => {
     return (
         <Modal
             isOpen={isOpen}
@@ -50,19 +51,33 @@ const CustomModal = ({
                         )}
                     </Box>}
 
-                    {hasNextButton && <Button
-                        mt="16px"
-                        borderRadius="4px"
-                        bgColor="#5D11AB"
-                        p="10px 24px"
-                        color="white"
-                        fontWeight={700}
-                        fontSize="16px"
-                        lineHeight={1.5}
-                        className="primaryFont"
-                        onClick={nextButtonClick}>
-                        {nextButtonText}
-                    </Button>}
+                    <Flex justify="center" flexDirection={{ base: "column", md: "row-reverse" }} gap="16px" mt="16px">
+                        {hasNextButton && <Button
+                            borderRadius="4px"
+                            bgColor="#5D11AB"
+                            p="10px 24px"
+                            color="white"
+                            fontWeight={700}
+                            fontSize="16px"
+                            lineHeight={1.5}
+                            className="primaryFont"
+                            onClick={nextButtonClick}>
+                            {nextButtonText}
+                        </Button>}
+                        {hasBackButton && <Button
+                            borderRadius="4px"
+                            bgColor="transparent"
+                            p="10px 24px"
+                            color="white"
+                            fontWeight={700}
+                            border="2.5px solid #5D11AB"
+                            fontSize="16px"
+                            lineHeight={1.5}
+                            className="primaryFont"
+                            onClick={backButtonClick}>
+                            {backButtonText}
+                        </Button>}
+                    </Flex>
 
                 </ModalBody>
             </ModalContent>
