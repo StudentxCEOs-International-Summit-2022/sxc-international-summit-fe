@@ -1,6 +1,6 @@
 import Faq from "../../components/faq";
 import Layout from "../../components/Layout";
-import { Box, Text, Divider, Flex, Grid, GridItem, Circle, OrderedList, ListItem, UnorderedList, Button } from "@chakra-ui/react";
+import { Box, Text, Divider, Flex, Grid, GridItem, Circle, OrderedList, ListItem, UnorderedList, Button, useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import subtheme from "../../public/subtheme-competition.png"
 import trophy from "../../public/trophy.png"
@@ -18,8 +18,16 @@ import speaker from "../../public/competition/speaker.svg";
 import Exploreourevent from "../../components/Exploreourevent";
 import discount from "../../public/discount.svg";
 import notDiscount from "../../public/notDiscount.svg";
+import CustomModal from "../../components/CustomModal";
+import { useRouter } from "next/router";
 
 export default function Competition() {
+  const { isOpen: isOpenTeam, onOpen: onOpenTeam, onClose: onCloseTeam } = useDisclosure()
+
+  const { isOpen: isOpenIndividual, onOpen: onOpenIndividual, onClose: onCloseIndividual } = useDisclosure()
+
+  const router = useRouter()
+
   const [isOnCaseCollaborator, setIsOnCaseCollaborator] = useState(false)
   const { width } = useWindowSize()
   const isMobile = width < 768
@@ -366,8 +374,8 @@ export default function Competition() {
           You can join <span style={{ color: "#FF6941" }}>either</span> as a Team or an Individual
         </Text>
 
-        <Flex gap="20px" id="register" flexDirection={{ base: "column", md: "row" }}>
-          <Box w="full">
+        <Flex h="max-content" align="stretch" gap="20px" id="register" flexDirection={{ base: "column", md: "row" }}>
+          <Box w="full" h="full">
             <Box
               border="1px solid #F8C800"
               borderRadius="10px"
@@ -380,7 +388,7 @@ export default function Competition() {
               py={{ base: "9px", md: "18px" }}
               className="primaryFont">
               Join as a Team</Box>
-            <Box p={{ base: "30px", md: "35px", lg: "40px" }} mt={{ base: "10px", md: "215px", lg: "20px" }} border="1px solid #F8C800" borderRadius="10px">
+            <Box p={{ base: "30px", md: "35px", lg: "40px" }} mt={{ base: "10px", md: "15px", lg: "20px" }} border="1px solid #F8C800" borderRadius="10px">
               <UnorderedList className="primaryFont" fontWeight={500} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5} textAlign="justify">
                 <ListItem>
                   Each team member can be from a different institution/major
@@ -404,11 +412,11 @@ export default function Competition() {
               <Text ml={{ base: "10px", md: "15px", lg: "20px" }} className="secondaryFont" fontSize={{ base: "12px", md: "14px", lg: "16px" }} lineHeight={1.5} fontWeight={500} textAlign="justify"><span style={{ color: "#53B656" }}>Can apply a referral (discount) code from Student Ambassadors.</span> Referral code can be obtained here.</Text>
             </Flex>
             <Flex justify="center" w="100%">
-              <Button w={isMobile && "100%"} mx="auto" p="10px 24px" className="primaryFont" fontWeight={700} fontSize="16px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px">Register as a Team</Button>
+              <Button w={isMobile && "100%"} mx="auto" p="10px 24px" className="primaryFont" fontWeight={700} fontSize="16px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px" onClick={onOpenTeam}>Register as a Team</Button>
             </Flex>
           </Box>
 
-          <Box w="full" mt={isMobile && "32px"}>
+          <Box w="full" h="full" mt={isMobile && "32px"}>
             <Box
               border="1px solid #F8C800"
               borderRadius="10px"
@@ -421,7 +429,7 @@ export default function Competition() {
               py={{ base: "9px", md: "18px" }}
               className="primaryFont">
               Join as an Individual</Box>
-            <Box p={{ base: "30px", md: "35px", lg: "40px" }} mt={{ base: "10px", md: "215px", lg: "20px" }} border="1px solid #F8C800" borderRadius="10px">
+            <Box p={{ base: "30px", md: "35px", lg: "40px" }} mt={{ base: "10px", md: "15px", lg: "20px" }} border="1px solid #F8C800" borderRadius="10px">
               <UnorderedList className="primaryFont" fontWeight={500} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5} textAlign="justify">
                 <ListItem>
                   Committee will arrange a new team randomly from individual registrants consisting of 3-4 members.
@@ -442,11 +450,40 @@ export default function Competition() {
               <Text ml={{ base: "10px", md: "15px", lg: "20px" }} className="secondaryFont" fontSize={{ base: "12px", md: "14px", lg: "16px" }} lineHeight={1.5} color="#EF586E" fontWeight={500} textAlign="justify">Cannot apply a referral (discount) code from Student Ambassadors.</Text>
             </Flex>
             <Flex justify="center" w="100%">
-              <Button w={isMobile && "100%"} mx="auto" p="10px 24px" className="primaryFont" fontWeight={700} fontSize="16px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px">Register as an Individual</Button>
+              <Button w={isMobile && "100%"} mx="auto" p="10px 24px" className="primaryFont" fontWeight={700} fontSize="16px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px"  onClick={onOpenIndividual}>Register as an Individual</Button>
             </Flex>
           </Box>
 
         </Flex>
+        <CustomModal
+          isOpen={isOpenTeam}
+          onClose={onCloseTeam}
+          title="Team, Assemble!"
+          body={"You will register one team leader and 2 to 3 team members. Are you ready?"}
+          hasBackButton
+          backButtonText="Back"
+          backButtonClick={onCloseTeam}
+          hasNextButton
+          nextButtonText="Next"
+          nextButtonClick={() => router.push({
+            pathname: '/competition/register',
+            query: { type: 'team' }
+          })} />
+
+<CustomModal
+          isOpen={isOpenIndividual}
+          onClose={onCloseIndividual}
+          title="Brace Yourself!"
+          body={"You will be assigned to a team with other participants that registered as individuals. Up for the challenge?"}
+          hasBackButton
+          backButtonText={"No, I'll build my own team"}
+          backButtonClick={onCloseIndividual}
+          hasNextButton
+          nextButtonText="Yes, please"
+          nextButtonClick={() => router.push({
+            pathname: '/competition/register',
+            query: { type: 'individual' }
+          })} />
 
       </Box>
       <Faq />
