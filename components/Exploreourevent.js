@@ -1,10 +1,9 @@
 import { Box, Text, Button, Flex, Icon } from "@chakra-ui/react";
-import { FaShoppingCart } from "react-icons/fa";
 const Exploreourevent = () => {
   return (
     <Box
       px={{ base: "12px", md: "auto" }}
-      mt={{ base: "110px", md: "171px", lg: "232px" }}
+      my={{ base: "110px", md: "171px", lg: "232px" }}
       position="relative"
       borderRadius="8px"
       backgroundSize="cover"

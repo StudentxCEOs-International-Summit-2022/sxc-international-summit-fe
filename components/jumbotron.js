@@ -6,8 +6,10 @@ import {
   Container,
   Button,
 } from "@chakra-ui/react";
+import { useRouter } from "next/dist/client/router";
 
 const Jumbotron = () => {
+  const router = useRouter();
   return (
     <Box position="relative" px={{ base: "5%", md: "10%" }}>
       <Flex
@@ -80,6 +82,7 @@ const Jumbotron = () => {
           boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
           _hover={{ bgColor: "#5D11AB" }}
           lineHeight="150%"
+          onClick={() => router.push("/competition")}
         >
           Explore our events
         </Button>

@@ -88,7 +88,7 @@ const JumbotronCompe = () => {
         </Link>
 
         <Link
-          href="https://chakra-ui.com"
+          href="https://bit.ly/BookletSxCInterSummit22"
           isExternal
           w={{ base: "100%", md: "auto" }}
           color="white"
