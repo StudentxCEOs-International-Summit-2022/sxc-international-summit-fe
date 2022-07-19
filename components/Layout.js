@@ -93,7 +93,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                 </Box> :
                 <Box overflow="hidden" color="white" background="linear-gradient(180deg, #010431 57.09%, #5C1FAA 100%)" position="relative" bgColor="#DADADA" minH="100vh" minW="100%">
                     {hasNavbar &&
-                        <Box zIndex={1} bgColor={"#020234"} color="white" h="72px" alignItems={"center"} w="full" position="sticky" className="secondaryFont" fontWeight={600} display="flex" justifyContent={"space-between"}>
+                        <Box zIndex={1} bgColor={"#020234"} color="white" mx="5%" h="72px" alignItems={"center"} w="90%" position="sticky" className="secondaryFont" fontWeight={600} display="flex" justifyContent={"space-between"}>
                             <Image src="/logo.png" alt="" />
 
                             <Box display={"flex"} className="primaryFont" fontWeight={800} >
@@ -136,7 +136,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                         <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/student-ambassador")}>Student Ambassador</MenuItem>
                                     </MenuList>
                                 </Menu>
-                                <Link mr="160px" href={"https://shopee.co.id/sxcinternationalsummit?categoryId=100533&itemId=16573970983"} isExternal>
+                                <Link href={"https://shopee.co.id/sxcinternationalsummit?categoryId=100533&itemId=16573970983"} isExternal>
                                     <Text color={currentPage === "store" ? "#F8C800" : "#ffffff"} href='/store'>
                                         Store
                                     </Text>
