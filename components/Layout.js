@@ -96,14 +96,14 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                         <Box zIndex={1} bgColor={"#020234"} color="white" h="72px" alignItems={"center"} w="full" position="sticky" className="secondaryFont" fontWeight={600} display="flex" justifyContent={"space-between"}>
                             <Image src="/logo.png" alt="" />
 
-                            <Box display={"flex"} >
+                            <Box display={"flex"} className="primaryFont" fontWeight={800} >
                                 <Link marginRight={"48px"} href='/'>
-                                    <Text color={currentPage === "landing" ? "#F8C800" : "#ffffff"}>
+                                    <Text color={"#F8C800"}>
                                         Home
                                     </Text>
                                 </Link>
                                 <Link marginRight={"48px"} href='/about'>
-                                    <Text color={currentPage === "about" ? "#F8C800" : "#ffffff"}>
+                                    <Text color={"#ffffff"}>
                                         About
                                     </Text>
                                 </Link>
@@ -114,19 +114,29 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                 </Text>
                             </Link>  */}
                                 <Menu>
-                                    <MenuButton marginRight={"48px"} fontWeight='semibold'>
+                                    <MenuButton marginRight={"48px"} className="primaryFont" fontWeight={800}>
                                         Events
                                         <ChevronDownIcon />
                                     </MenuButton>
                                     <MenuList bgColor="#ffffff" color='#000000' borderStyle='none' borderRadius='4px'>
-                                        <MenuItem onClick={() => router.push("/pre-event")}>Pre-Event</MenuItem>
-                                        <MenuItem onClick={() => router.push("/competition")}>Competition</MenuItem>
-                                        <MenuItem onClick={() => router.push("/chambers")}>Chambers</MenuItem>
-                                        <MenuItem onClick={() => router.push("/company-visit")}>Company Visit</MenuItem>
-                                        <MenuItem onClick={() => router.push("/main-conference")}>Main Conference</MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/pre-event")}>Pre-Event</MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/competition")}>Competition</MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/chambers")}>Chambers</MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/company-visit")}>Company Visit</MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/main-conference")}>Main Conference</MenuItem>
                                     </MenuList>
                                 </Menu>
-                                <Link mr="160px">
+                                <Menu>
+                                    <MenuButton marginRight={"48px"} className="primaryFont" fontWeight={800}>
+                                        Partnership
+                                        <ChevronDownIcon />
+                                    </MenuButton>
+                                    <MenuList bgColor="#ffffff" color='#000000' borderStyle='none' borderRadius='4px'>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/media-and-community-partner")}>Media dan Community Partner</MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/student-ambassador")}>Student Ambassador</MenuItem>
+                                    </MenuList>
+                                </Menu>
+                                <Link mr="160px" href={"https://shopee.co.id/sxcinternationalsummit?categoryId=100533&itemId=16573970983"} isExternal>
                                     <Text color={currentPage === "store" ? "#F8C800" : "#ffffff"} href='/store'>
                                         Store
                                     </Text>

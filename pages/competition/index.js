@@ -148,8 +148,9 @@ export default function Competition() {
                 <Image src={subtheme} alt="" />
               </Flex>
               <Box>
-                <Text mt="52px" className="primaryFont" fontWeight="500" fontSize={{ base: "16px", md: "24px" }} lineHeight={1.5} textAlign={{ base: "center", md: "justify" }}>
-                  Bukalapak is and Indonesian e-commerce company with a mission to create a fair economy for all. It was founded in 2010 as an online marketplace to enable small and medium enterprises to expand online and has now also grown to support smaller traditional family-owned businesses (warungs). Through its online and offline platforms, Bukalapak provides opportunities and choices for everyone to achieve a better life.
+                <Text mt="52px" className="primaryFont" fontWeight="500" fontSize={{ base: "16px", md: "24px" }} lineHeight={1.5} textAlign={{ base: "center", md: "center" }}>
+                  {/* Bukalapak is and Indonesian e-commerce company with a mission to create a fair economy for all. It was founded in 2010 as an online marketplace to enable small and medium enterprises to expand online and has now also grown to support smaller traditional family-owned businesses (warungs). Through its online and offline platforms, Bukalapak provides opportunities and choices for everyone to achieve a better life. */}
+                  COMING SOON!!
                 </Text>
               </Box>
             </Box> : <Flex flexDirection={{ base: "column", md: "row" }} align="center" p="36px 42px" gap="52px">
@@ -402,8 +403,8 @@ export default function Competition() {
               </UnorderedList>
               <Text mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
               <Box className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} color="#F8C800">
-                <Text>US$X.00 (International)</Text>
-                <Text mt="10px">RpX0.000,- (Domestic)</Text>
+                <Text>US$13.34 (International)</Text>
+                <Text mt="10px">Rp200.000,- (Domestic)</Text>
               </Box>
 
             </Box>
@@ -440,8 +441,8 @@ export default function Competition() {
               </UnorderedList>
               <Text mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
               <Box className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} color="#F8C800">
-                <Text>US$X.00 (International)</Text>
-                <Text mt="10px">RpX0.000,- (Domestic)</Text>
+                <Text>US$4.00 (International)</Text>
+                <Text mt="10px">Rp60.000,- (Domestic)</Text>
               </Box>
 
             </Box>

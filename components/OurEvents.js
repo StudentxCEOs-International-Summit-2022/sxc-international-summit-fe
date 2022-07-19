@@ -27,8 +27,7 @@ const OurEvents = () => {
             id: 0,
             heading: "Pre-Event",
             date: "13 August",
-            caption: `Ini caption untuk Pre-Event. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
+            caption: `Do not miss the International Summit series' opening ceremony in the form of a talkshow with inspiring speakers to expound on our theme.`,
             url: "/pre-event",
             btn_icon: "/images/our_events/icon-preevent.png",
             pict: "/images/our_events/pict-preevent.png"
@@ -37,8 +36,7 @@ const OurEvents = () => {
             id: 1,
             heading: "Competition",
             date: "21 August - 22 October",
-            caption: `Ini caption untuk Competition. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
+            caption: `Challenge yourself and your team with a brand new case-based competition consisting of two stages: proposal and pitching.  Coaching clinics are provided to aid participants in their competition.`,
             url: "/competition",
             btn_icon: "/images/our_events/icon-competition.png",
             pict: "/images/our_events/pict-preevent.png"
@@ -47,8 +45,7 @@ const OurEvents = () => {
             id: 2,
             heading: "Chambers",
             date: "22 October",
-            caption: `Ini caption untuk Chambers. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
+            caption: `Expand your knowledge and networks by joining one of our chambers (FMCG, Consultant, Start-Up, BUMN). Each chamber will discuss a topic with their speakers. `,
             url: "/chambers",
             btn_icon: "/images/our_events/icon-chambers.png",
             pict: "/images/our_events/pict-preevent.png"
@@ -57,8 +54,7 @@ const OurEvents = () => {
             id: 3,
             heading: "Company Visit",
             date: "22 October",
-            caption: `Ini caption untuk Company Visit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
+            caption: `Get to know and see the companies of your dreams in our Virtual Company Visit. Gain new insights by seeing companies give their point of view from our curated theme.`,
             url: "/company-visit",
             btn_icon: "/images/our_events/icon-comvis.png",
             pict: "/images/our_events/pict-preevent.png"
@@ -67,8 +63,7 @@ const OurEvents = () => {
             id: 4,
             heading: "Main Conference",
             date: "29 October",
-            caption: `Ini caption untuk Main Conference. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Cras tempor viverra rutrum. Duis vel ornare elit. In aliquet arcu ut risus facilisis, eget blandit arcu fermentum.`,
+            caption: `Do not miss the peak event of The SxC International Summit, with enriching Interactive International Talkshow and the Awarding Ceremony from our case competition.`,
             url: "/main-conference",
             btn_icon: "/images/our_events/icon-mainconference.png",
             pict: "/images/our_events/pict-preevent.png"
@@ -76,7 +71,7 @@ const OurEvents = () => {
     ];
 
     return (
-        <Box position="relative" mt={{base:"24px", md:"62px", lg:"100px"}}>
+        <Box id="ourevents" position="relative" mt={{base:"24px", md:"62px", lg:"100px"}}>
             <Center h='77px' >
                 <Text color="white" className="primaryFont" fontWeight={800} fontSize={['32px', '48px', '48px', '64px']}>
                     Our Events

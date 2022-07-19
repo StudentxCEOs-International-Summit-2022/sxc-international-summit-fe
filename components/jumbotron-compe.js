@@ -8,6 +8,7 @@ import {
   GridItem,
   Image,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { useWindowSize } from "../hooks/useWindowSize";
 
 const JumbotronCompe = () => {
@@ -69,26 +70,29 @@ const JumbotronCompe = () => {
         </Text>
       </Flex>
       <Flex flexDirection={{ base: "column", lg: "row" }}>
-        <Link href="#register">
-          <Button
-            w={{ base: "100%", md: "auto" }}
-            bgColor="#5D11AB"
-            color="white"
-            variant="solid"
-            mt="24px"
-            p={{ base: "10px 24px" }}
-            borderRadius="4px"
-            fontSize={{ base: "16px", md: "20px", lg: "16px" }}
-            boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
-            _hover={{ bgColor: "#5D11AB" }}
-            lineHeight="150%"
-          >
-            Register Now
-          </Button>
-        </Link>
+        <NextLink href="#register" passHref>
+          <Link>
+            <Button
+              w={{ base: "100%", md: "auto" }}
+              bgColor="#5D11AB"
+              color="white"
+              variant="solid"
+              mt="24px"
+              p={{ base: "10px 24px" }}
+              borderRadius="4px"
+              fontSize={{ base: "16px", md: "20px", lg: "16px" }}
+              boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
+              _hover={{ bgColor: "#5D11AB" }}
+              lineHeight="150%"
+            >
+              Register Now
+            </Button>
+          </Link>
+        </NextLink>
+
 
         <Link
-          href="https://chakra-ui.com"
+          href="https://bit.ly/BookletSxCInterSummit22"
           isExternal
           w={{ base: "100%", md: "auto" }}
           color="white"

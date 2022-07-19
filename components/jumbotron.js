@@ -2,10 +2,11 @@ import {
   Box,
   Text,
   Flex,
-  useMediaQuery,
   Container,
   Button,
+  Link,
 } from "@chakra-ui/react";
+import NextLink from "next/link"
 
 const Jumbotron = () => {
   return (
@@ -67,22 +68,30 @@ const Jumbotron = () => {
           Grand Event organized by StudentsxCEOs Jakarta consisting of a
           sequence of enriching and groundbreaking events.
         </Text>
-        <Button
-          w={{ base: "100%", md: "auto" }}
-          bgColor="#5D11AB"
-          color="white"
-          variant="solid"
-          mt="24px"
-          mb={{ base: "250px", sm: "125px", md: "250px" }}
-          p="24px 30px"
-          borderRadius="5px"
-          fontSize={{ base: "16px", md: "20px", lg: "24px" }}
-          boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
-          _hover={{ bgColor: "#5D11AB" }}
-          lineHeight="150%"
-        >
-          Explore our events
-        </Button>
+        <Box>
+          <NextLink href="#ourevents" passHref>
+            <Link>
+              <Button
+                w={{ base: "100%", md: "auto" }}
+                bgColor="#5D11AB"
+                color="white"
+                variant="solid"
+                mt="24px"
+                mb={{ base: "250px", sm: "125px", md: "250px" }}
+                p="24px 30px"
+                borderRadius="5px"
+                fontSize={{ base: "16px", md: "20px", lg: "24px" }}
+                boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
+                _hover={{ bgColor: "#5D11AB" }}
+                lineHeight="150%"
+              >
+                Explore our events
+              </Button>
+            </Link>
+          </NextLink>
+        </Box>
+
+
       </Flex>
     </Box>
   );
