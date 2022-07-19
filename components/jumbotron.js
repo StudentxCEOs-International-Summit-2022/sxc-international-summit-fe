@@ -80,6 +80,8 @@ const Jumbotron = () => {
                 mb={{ base: "250px", sm: "125px", md: "250px" }}
                 p="24px 30px"
                 borderRadius="5px"
+                className="primaryFont"
+                fontWeight={700}
                 fontSize={{ base: "16px", md: "20px", lg: "24px" }}
                 boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
                 _hover={{ bgColor: "#5D11AB" }}

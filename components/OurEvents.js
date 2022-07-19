@@ -39,16 +39,16 @@ const OurEvents = () => {
             caption: `Challenge yourself and your team with a brand new case-based competition consisting of two stages: proposal and pitching.  Coaching clinics are provided to aid participants in their competition.`,
             url: "/competition",
             btn_icon: "/images/our_events/icon-competition.png",
-            pict: "/images/our_events/pict-preevent.png"
+            pict: "/images/our_events/pict-competition.png"
         },
         {
             id: 2,
             heading: "Chambers",
-            date: "22 October",
+            date: "8 October",
             caption: `Expand your knowledge and networks by joining one of our chambers (FMCG, Consultant, Start-Up, BUMN). Each chamber will discuss a topic with their speakers. `,
             url: "/chambers",
             btn_icon: "/images/our_events/icon-chambers.png",
-            pict: "/images/our_events/pict-preevent.png"
+            pict: "/images/our_events/pict-chambers.png"
         },
         {
             id: 3,
@@ -57,16 +57,16 @@ const OurEvents = () => {
             caption: `Get to know and see the companies of your dreams in our Virtual Company Visit. Gain new insights by seeing companies give their point of view from our curated theme.`,
             url: "/company-visit",
             btn_icon: "/images/our_events/icon-comvis.png",
-            pict: "/images/our_events/pict-preevent.png"
+            pict: "/images/our_events/pict-comvis.png"
         },
         {
             id: 4,
             heading: "Main Conference",
-            date: "29 October",
+            date: "5 November",
             caption: `Do not miss the peak event of The SxC International Summit, with enriching Interactive International Talkshow and the Awarding Ceremony from our case competition.`,
             url: "/main-conference",
-            btn_icon: "/images/our_events/icon-mainconference.png",
-            pict: "/images/our_events/pict-preevent.png"
+            btn_icon: "/images/our_events/icon-mainconference.svg",
+            pict: "/images/our_events/pict-comvis.png"
         },
     ];
 
@@ -200,7 +200,7 @@ const OurEvents = () => {
                                             alt=""
                                             className={idx === activeId ? styles.activebuttonimg : styles.inactivebuttonimg} />
                                     </Circle>
-                                    <Text mt={isTablet ? "50px" : "70px"} className="primaryFont" textAlign="center" fontSize={['12px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
+                                    <Text mt={isTablet ? "50px" : "70px"} fontWeight={700} className="primaryFont" textAlign="center" fontSize={['12px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
                                     <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']} color='#ffffff'>{el.date}</Text>
                                 </Flex>
                             </GridItem>
