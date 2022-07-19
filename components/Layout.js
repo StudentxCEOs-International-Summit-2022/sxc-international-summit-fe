@@ -126,7 +126,17 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                         <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/main-conference")}>Main Conference</MenuItem>
                                     </MenuList>
                                 </Menu>
-                                <Link mr="160px">
+                                <Menu>
+                                    <MenuButton marginRight={"48px"} className="primaryFont" fontWeight={800}>
+                                        Partnership
+                                        <ChevronDownIcon />
+                                    </MenuButton>
+                                    <MenuList bgColor="#ffffff" color='#000000' borderStyle='none' borderRadius='4px'>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/media-and-community-partner")}>Media dan Community Partner</MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/student-ambassador")}>Student Ambassador</MenuItem>
+                                    </MenuList>
+                                </Menu>
+                                <Link mr="160px" href={"https://shopee.co.id/sxcinternationalsummit?categoryId=100533&itemId=16573970983"} isExternal>
                                     <Text color={currentPage === "store" ? "#F8C800" : "#ffffff"} href='/store'>
                                         Store
                                     </Text>
