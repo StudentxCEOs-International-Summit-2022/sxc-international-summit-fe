@@ -18,7 +18,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                 <Box bgColor={"#020234"} zIndex={1}>
                     {hasNavbar &&
                         <Box my='6px' mx='14px' display='flex' alignItems='center'>
-                            <Image src="/logo.png" alt="" />
+                            <Image src="/logo.svg" alt="" />
                             <Spacer />
                             <Box>
                                 <Menu>
@@ -94,7 +94,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                 <Box overflow="hidden" color="white" background="linear-gradient(180deg, #010431 57.09%, #5C1FAA 100%)" position="relative" bgColor="#DADADA" minH="100vh" minW="100%">
                     {hasNavbar &&
                         <Box zIndex={1} bgColor={"#020234"} color="white" mx="5%" h="72px" alignItems={"center"} w="90%" position="sticky" className="secondaryFont" fontWeight={600} display="flex" justifyContent={"space-between"}>
-                            <Image src="/logo.png" alt="" />
+                            <Image src="/logo.svg" alt="" />
 
                             <Box display={"flex"} className="primaryFont" fontWeight={800} >
                                 <Link marginRight={"48px"} href='/'>
