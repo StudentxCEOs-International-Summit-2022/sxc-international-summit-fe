@@ -33,7 +33,7 @@ const CustomModal = ({
                         {title}
                     </Text>
                     <Text mt="16px"
-                        xolor="#FFFFFF"
+                        color="#FFFFFF"
                         className="secondaryFont"
                         fontWeight={500}
                         fontSize="16px"
@@ -43,6 +43,7 @@ const CustomModal = ({
                             return (
                                 <Text
                                     className="secondaryFont"
+                                    color="#FFFFFF"
                                     fontWeight={500}
                                     fontSize="16px"
                                     lineHeight={1.5}
