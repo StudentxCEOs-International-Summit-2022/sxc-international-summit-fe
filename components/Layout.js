@@ -17,7 +17,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
             {isMobile ?
                 <Box bgColor={"#020234"} zIndex={1}>
                     {hasNavbar &&
-                        <Box my='6px' mx='14px' display='flex' alignItems='center'>
+                        <Box py='6px' mx='14px' display='flex' alignItems='center'>
                             <Image src="/logo.svg" alt="" />
                             <Spacer />
                             <Box>
