@@ -26,8 +26,7 @@ const Exploreourevent = () => {
         fontSize={{ base: "32px", md: "40px", lg: "48px" }}
         lineHeight={1.2}
         fontWeight={800}
-        className="primaryFont"
-        color="white"
+        className="primaryFont" color="#FFFFFF"
       >
         Curious about other events?
       </Text>
@@ -39,6 +38,7 @@ const Exploreourevent = () => {
         align="center"
         justify="center"
         className="primaryFont"
+        color="#FFFFFF"
       >
         {"Let's go back and explore our events!"}
       </Text>

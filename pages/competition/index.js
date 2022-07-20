@@ -148,7 +148,7 @@ export default function Competition() {
                 <Image src={subtheme} alt="" />
               </Flex>
               <Box>
-                <Text mt="52px" className="primaryFont" fontWeight="500" fontSize={{ base: "16px", md: "24px" }} lineHeight={1.5} textAlign={{ base: "center", md: "center" }}>
+                <Text color="#FFFFFF" mt="52px" className="primaryFont" fontWeight="500" fontSize={{ base: "16px", md: "24px" }} lineHeight={1.5} textAlign={{ base: "center", md: "center" }}>
                   {/* Bukalapak is and Indonesian e-commerce company with a mission to create a fair economy for all. It was founded in 2010 as an online marketplace to enable small and medium enterprises to expand online and has now also grown to support smaller traditional family-owned businesses (warungs). Through its online and offline platforms, Bukalapak provides opportunities and choices for everyone to achieve a better life. */}
                   COMING SOON!!
                 </Text>
@@ -158,11 +158,11 @@ export default function Competition() {
                 <Image src={subtheme} alt="" />
               </Box>
               <Box w={{ base: "100%", md: "65%" }} className="primaryFont" fontWeight="500" fontSize={{ base: "16px", md: "24px" }} lineHeight={1.5} textAlign={{ base: "center", md: "justify" }}>
-                <Text>
+                <Text color="#FFFFFF">
                   The StudentsxCEOs International Summit Competition is a case-based competition with two stages: proposal and pitching. Participants can anticipate engaging in extensive problem-solving for the case will put the branding issues to the forefront.
                 </Text>
                 <br />
-                <Text>
+                <Text color="#FFFFFF">
                   Participants are challenged to engage in our subtheme, which revolves around the Triple Bottom Line of sustainability as an essential factor of business success  (People, Planet, Profit). In the 2030 agenda, the Triple Bottom Line then has been adjusted into 5P (People, Planet, Peace, Prosperity, and Partnership) for a more sustainable future.
                 </Text>
               </Box>
@@ -174,7 +174,7 @@ export default function Competition() {
               <Text textAlign={{ base: "center", sm: "left" }} className="primaryFont gradientTextRed" fontWeight="800" fontSize={{ base: "32px", sm: "48px", lg: "64px" }} lineHeight={1.2}>
                 What Are You Waiting For?
               </Text>
-              <Text textAlign={{ base: "center", sm: "left" }} alignSelf="baseline" mt="12px" className="primaryFont" fontWeight={800} fontSize={{ base: "20px", sm: "26px", lg: "32px" }}
+              <Text color="#FFFFFF" textAlign={{ base: "center", sm: "left" }} alignSelf="baseline" mt="12px" className="primaryFont" fontWeight={800} fontSize={{ base: "20px", sm: "26px", lg: "32px" }}
                 mx={{ base: "24px", sm: "0" }} lineHeight={1.2}>
                 {"Let's get ready to win our special prize!"}
               </Text>
@@ -205,6 +205,7 @@ export default function Competition() {
                       1<sup>st</sup> Place
                     </Text>
                     <Text
+                      color="#FFFFFF"
                       className="primaryFont"
                       textAlign="center"
                       fontWeight={500}
@@ -241,6 +242,7 @@ export default function Competition() {
                       2<sup>nd</sup> Place
                     </Text>
                     <Text
+                      color="#FFFFFF"
                       className="primaryFont"
                       textAlign="center"
                       fontWeight={500}
@@ -278,6 +280,7 @@ export default function Competition() {
                       3<sup>rd</sup> Place
                     </Text>
                     <Text
+                      color="#FFFFFF"
                       className="primaryFont"
                       textAlign="center"
                       fontWeight={500}
@@ -305,7 +308,7 @@ export default function Competition() {
             <Image src={trophy} alt="" />
           </Box>
         </Flex>
-        <Text className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2} textAlign="center" mt="200px" mb="64px">{"Don't Miss Your Opportunity to Shine!"}</Text>
+        <Text  color="#FFFFFF" className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2} textAlign="center" mt="200px" mb="64px">{"Don't Miss Your Opportunity to Shine!"}</Text>
         <Box overflowX="auto">
           <Grid
             position="relative"
@@ -346,6 +349,7 @@ export default function Competition() {
           fontWeight={800}
           fontSize={{ base: "32px", md: "48px", lg: "64px" }}
           lineHeight={1.2}
+          color="#FFFFFF"
         >
           Rules and Requirements
         </Text>
@@ -371,7 +375,7 @@ export default function Competition() {
           </ListItem>
         </OrderedList>
 
-        <Text textAlign="center" my={{ base: "28px", md: "47px", lg: "66px" }} fontWeight={800} className="primaryFont" fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2}>
+        <Text  color="#FFFFFF" textAlign="center" my={{ base: "28px", md: "47px", lg: "66px" }} fontWeight={800} className="primaryFont" fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2}>
           You can join <span style={{ color: "#FF6941" }}>either</span> as a Team or an Individual
         </Text>
 
@@ -387,6 +391,7 @@ export default function Competition() {
               fontWeight={800}
               textAlign="center"
               py={{ base: "9px", md: "18px" }}
+              color="#FFFFFF"
               className="primaryFont">
               Join as a Team</Box>
             <Box p={{ base: "30px", md: "35px", lg: "40px" }} mt={{ base: "10px", md: "15px", lg: "20px" }} border="1px solid #F8C800" borderRadius="10px">
@@ -401,7 +406,7 @@ export default function Competition() {
                   Each team must have a name as the team identity during the competition.
                 </ListItem>
               </UnorderedList>
-              <Text mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
+              <Text  color="#FFFFFF" mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
               <Box className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} color="#F8C800">
                 <Text>US$13.34 (International)</Text>
                 <Text mt="10px">Rp200.000,- (Domestic)</Text>
@@ -410,7 +415,7 @@ export default function Competition() {
             </Box>
             <Flex mt="20px">
               <Image src={discount} alt="" />
-              <Text ml={{ base: "10px", md: "15px", lg: "20px" }} className="secondaryFont" fontSize={{ base: "12px", md: "14px", lg: "16px" }} lineHeight={1.5} fontWeight={500} textAlign="justify"><span style={{ color: "#53B656" }}>Can apply a referral (discount) code from Student Ambassadors.</span> Referral code can be obtained here.</Text>
+              <Text color="#FFFFFF" ml={{ base: "10px", md: "15px", lg: "20px" }} className="secondaryFont" fontSize={{ base: "12px", md: "14px", lg: "16px" }} lineHeight={1.5} fontWeight={500} textAlign="justify"><span style={{ color: "#53B656" }}>Can apply a referral (discount) code from Student Ambassadors.</span> Referral code can be obtained here.</Text>
             </Flex>
             <Flex justify="center" w="100%">
               <Button w={isMobile && "100%"} mx="auto" p="10px 24px" className="primaryFont" fontWeight={700} fontSize="16px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px" onClick={onOpenTeam}>Register as a Team</Button>
@@ -419,6 +424,7 @@ export default function Competition() {
 
           <Box w="full" h="full" mt={isMobile && "32px"}>
             <Box
+             color="#FFFFFF"
               border="1px solid #F8C800"
               borderRadius="10px"
               background="linear-gradient(180deg, #F8C800 0%, #66AE93 48.44%, #1FA1DB 100%)"
@@ -439,7 +445,7 @@ export default function Competition() {
                   Each participant will eventually be competing inside a team despite registering as an individual
                 </ListItem>
               </UnorderedList>
-              <Text mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
+              <Text color="#FFFFFF" mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
               <Box className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} color="#F8C800">
                 <Text>US$4.00 (International)</Text>
                 <Text mt="10px">Rp60.000,- (Domestic)</Text>
@@ -451,7 +457,7 @@ export default function Competition() {
               <Text ml={{ base: "10px", md: "15px", lg: "20px" }} className="secondaryFont" fontSize={{ base: "12px", md: "14px", lg: "16px" }} lineHeight={1.5} color="#EF586E" fontWeight={500} textAlign="justify">Cannot apply a referral (discount) code from Student Ambassadors.</Text>
             </Flex>
             <Flex justify="center" w="100%">
-              <Button w={isMobile && "100%"} mx="auto" p="10px 24px" className="primaryFont" fontWeight={700} fontSize="16px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px"  onClick={onOpenIndividual}>Register as an Individual</Button>
+              <Button color="#FFFFFF" w={isMobile && "100%"} mx="auto" p="10px 24px" className="primaryFont" fontWeight={700} fontSize="16px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px" onClick={onOpenIndividual}>Register as an Individual</Button>
             </Flex>
           </Box>
 
@@ -471,7 +477,7 @@ export default function Competition() {
             query: { type: 'team' }
           })} />
 
-<CustomModal
+        <CustomModal
           isOpen={isOpenIndividual}
           onClose={onCloseIndividual}
           title="Brace Yourself!"
