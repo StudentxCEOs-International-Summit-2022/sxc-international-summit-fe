@@ -1,4 +1,4 @@
-import { Box, Link, Image, Text, Spacer, IconButton, Flex } from "@chakra-ui/react"
+import { Box, Link, Image, Text, Spacer, IconButton, Flex, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from "@chakra-ui/react"
 import { Menu, MenuButton, MenuList, MenuItem, MenuGroup, MenuDivider } from '@chakra-ui/react'
 import { HamburgerIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import Jumbotron from "./jumbotron"
@@ -28,19 +28,69 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                         background='transparent'
                                         icon={<HamburgerIcon h='24px' color='#ffffff' />}
                                     />
-                                    <MenuList>
-                                        <MenuItem onClick={() => router.push("/")}> Home </MenuItem>
-                                        <MenuItem onClick={() => router.push("/about")}> About </MenuItem>
-                                        <MenuDivider />
-                                        <MenuGroup title="Events">
-                                            <MenuItem onClick={() => router.push("/pre-event")}>Pre-Event</MenuItem>
-                                            <MenuItem onClick={() => router.push("/competition")}>Competition</MenuItem>
-                                            <MenuItem onClick={() => router.push("/chambers")}>Chambers</MenuItem>
-                                            <MenuItem onClick={() => router.push("/company-visit")}>Company Visit</MenuItem>
-                                            <MenuItem onClick={() => router.push("/main-conference")}>Main Conference</MenuItem>
-                                        </MenuGroup>
-                                        <MenuDivider />
-                                        <MenuItem onClick={() => router.push("/store")}> Store </MenuItem>
+                                    <MenuList color="#FFFFFF" bgColor="#020234" borderRadius="12px">
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/")}> Home </MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/about")}> About </MenuItem>
+                                        <Accordion border="transparent" allowToggle>
+                                            <AccordionItem>
+                                                <h2>
+                                                    <AccordionButton>
+                                                        <Box flex='1' textAlign='left' className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2}>
+                                                            Events
+                                                        </Box>
+                                                        <AccordionIcon />
+                                                    </AccordionButton>
+                                                </h2>
+                                                <AccordionPanel py={0}>
+                                                    <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/pre-event")}>
+                                                        <Image src="/images/our_events/icon-preevent.png" h="24px" alt="" />
+                                                        <Text ml="20px">
+                                                            Pre-Event
+                                                        </Text>
+                                                    </MenuItem>
+                                                    <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/competition")}>
+                                                        <Image src="/images/our_events/icon-competition.png" h="24px" alt="" />
+                                                        <Text ml="20px">
+                                                            Competition
+                                                        </Text>
+                                                    </MenuItem>
+                                                    <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/chambers")}>
+                                                        <Image src="/images/our_events/icon-chambers.png" h="24px" alt="" />
+                                                        <Text ml="20px">
+                                                            Chambers
+                                                        </Text>
+                                                    </MenuItem>
+                                                    <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/company-visit")}>
+                                                        <Image src="/images/our_events/icon-comvis.png" h="24px" alt="" />
+                                                        <Text ml="20px">
+                                                            Company Visit
+                                                        </Text>
+                                                    </MenuItem>
+                                                    <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/main-conference")}>
+                                                        <Image src="/images/our_events/icon-mainconference.svg" h="24px" alt="" />
+                                                        <Text ml="20px">
+                                                            Main Conference
+                                                        </Text>
+                                                    </MenuItem>
+                                                </AccordionPanel>
+                                            </AccordionItem>
+
+                                            <AccordionItem>
+                                                <h2>
+                                                    <AccordionButton>
+                                                        <Box className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} flex='1' textAlign='left'>
+                                                            Partnership
+                                                        </Box>
+                                                        <AccordionIcon />
+                                                    </AccordionButton>
+                                                </h2>
+                                                <AccordionPanel pb={4}>
+                                                    <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/media-and-community-partner")}>Media and <br /> Community Partner</MenuItem>
+                                                    <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/student-ambassador")}>Student Ambassador</MenuItem>
+                                                </AccordionPanel>
+                                            </AccordionItem>
+                                        </Accordion>
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/store")}> Store </MenuItem>
                                     </MenuList>
                                 </Menu>
                             </Box>
@@ -107,23 +157,42 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                         About
                                     </Text>
                                 </Link>
-                                {/* <Link marginRight={"48px"}>
-                                <Text color = "#ffffff"}>
-                                    Events
-                                <ChevronDownIcon />
-                                </Text>
-                            </Link>  */}
                                 <Menu>
                                     <MenuButton marginRight={"48px"} className="primaryFont" fontWeight={800}>
                                         Events
                                         <ChevronDownIcon />
                                     </MenuButton>
-                                    <MenuList bgColor="#ffffff" color='#000000' borderStyle='none' borderRadius='4px'>
-                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/pre-event")}>Pre-Event</MenuItem>
-                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/competition")}>Competition</MenuItem>
-                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/chambers")}>Chambers</MenuItem>
-                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/company-visit")}>Company Visit</MenuItem>
-                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/main-conference")}>Main Conference</MenuItem>
+                                    <MenuList color="#FFFFFF" bgColor="#020234" borderRadius="12px" borderStyle='none'>
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/pre-event")}>
+                                            <Image src="/images/our_events/icon-preevent.png" h="24px" alt="" />
+                                            <Text ml="20px">
+                                                Pre-Event
+                                            </Text>
+                                        </MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/competition")}>
+                                            <Image src="/images/our_events/icon-competition.png" h="24px" alt="" />
+                                            <Text ml="20px">
+                                                Competition
+                                            </Text>
+                                        </MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/chambers")}>
+                                            <Image src="/images/our_events/icon-chambers.png" h="24px" alt="" />
+                                            <Text ml="20px">
+                                                Chambers
+                                            </Text>
+                                        </MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/company-visit")}>
+                                            <Image src="/images/our_events/icon-comvis.png" h="24px" alt="" />
+                                            <Text ml="20px">
+                                                Company Visit
+                                            </Text>
+                                        </MenuItem>
+                                        <MenuItem className="primaryFont" fontWeight={800} fontSize="16px" lineHeight={1.2} onClick={() => router.push("/main-conference")}>
+                                            <Image src="/images/our_events/icon-mainconference.svg" h="24px" alt="" />
+                                            <Text ml="20px">
+                                                Main Conference
+                                            </Text>
+                                        </MenuItem>
                                     </MenuList>
                                 </Menu>
                                 <Menu>
@@ -131,8 +200,8 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                         Partnership
                                         <ChevronDownIcon />
                                     </MenuButton>
-                                    <MenuList bgColor="#ffffff" color='#000000' borderStyle='none' borderRadius='4px'>
-                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/media-and-community-partner")}>Media dan Community Partner</MenuItem>
+                                    <MenuList color="#FFFFFF" bgColor="#020234" borderRadius="12px" borderStyle='none'>
+                                        <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/media-and-community-partner")}>Media and Community Partner</MenuItem>
                                         <MenuItem className="primaryFont" fontWeight={800} onClick={() => router.push("/student-ambassador")}>Student Ambassador</MenuItem>
                                     </MenuList>
                                 </Menu>
