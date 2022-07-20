@@ -1,4 +1,5 @@
-import { Box, Text, Button, Flex, Icon } from "@chakra-ui/react";
+import { Box, Text, Button, Link, Icon } from "@chakra-ui/react";
+import NextLink from "next/link";
 const Exploreourevent = () => {
   return (
     <Box
@@ -41,22 +42,27 @@ const Exploreourevent = () => {
       >
         {"Let's go back and explore our events!"}
       </Text>
-      <Button
-        w={{ base: "100%", md: "auto" }}
-        bgColor="#5D11AB"
-        color="white"
-        variant="solid"
-        mt="24px"
-        p="24px 30px"
-        borderRadius="5px"
-        fontSize={{ base: "16px", lg: "16px" }}
-        boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
-        _hover={{ bgColor: "#5D11AB" }}
-        lineHeight="150%"
-      >
-        {" "}
-        <Text>Explore our events</Text>
-      </Button>
+      <NextLink href="/#ourevents" passHref>
+        <Link>
+          <Button
+            w={{ base: "100%", md: "auto" }}
+            bgColor="#5D11AB"
+            color="white"
+            variant="solid"
+            mt="24px"
+            p="24px 30px"
+            borderRadius="5px"
+            fontSize={{ base: "16px", lg: "16px" }}
+            boxShadow="0px 4px 20px rgba(0, 0, 0, 0.25)"
+            _hover={{ bgColor: "#5D11AB" }}
+            lineHeight="150%"
+          >
+            {" "}
+            <Text>Explore our events</Text>
+          </Button>
+        </Link>
+      </NextLink>
+
     </Box>
   );
 };

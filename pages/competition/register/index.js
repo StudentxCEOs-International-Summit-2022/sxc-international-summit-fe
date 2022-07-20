@@ -108,7 +108,7 @@ const RegisterPage = () => {
                         if (currentStep === 1) {
                             return (
                                 <Box
-                                    mt="66px"
+                                    my="66px"
                                     position="relative"
                                     bgColor="#020234"
                                     w="100%"
@@ -1175,7 +1175,7 @@ const RegisterPage = () => {
                         if (currentStep === 1) {
                             return (
                                 <Box
-                                    mt="66px"
+                                    my="66px"
                                     position="relative"
                                     bgColor="#020234"
                                     w="100%"

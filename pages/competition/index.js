@@ -327,7 +327,7 @@ export default function Competition() {
                       alt=""
                       className={el.isActive ? styles.activebuttonimg : styles.inactivebuttonimg} />
                   </Circle>
-                  <Text mt={"70px"} className="primaryFont" textAlign="center" fontSize={['16px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
+                  <Text mt={"70px"} className="primaryFont" fontWeight={700} textAlign="center" fontSize={['16px', '16px', '20px', '24px']} color='#ffffff'>{el.heading}</Text>
                   {el.additional_text && <Text className="primaryFont" textAlign="center" fontSize={['16px', '16px', '20px', '24px']} color='#ffffff'>{el.additional_text}</Text>}
                   <Text className="primaryFont" textAlign="center" fontSize={['12px', '12px', '12px', '16px']} color='#ffffff'>{el.date}</Text>
                 </Flex>

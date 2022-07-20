@@ -35,7 +35,7 @@ const OurEvents = () => {
         {
             id: 1,
             heading: "Competition",
-            date: "21 August - 22 October",
+            date: "10 July - 22 October",
             caption: `Challenge yourself and your team with a brand new case-based competition consisting of two stages: proposal and pitching.  Coaching clinics are provided to aid participants in their competition.`,
             url: "/competition",
             btn_icon: "/images/our_events/icon-competition.png",
