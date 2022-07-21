@@ -563,6 +563,8 @@ const RegisterPage = () => {
                                                         fontWeight={700}
                                                         fontSize="16px"
                                                         lineHeight={1.5}
+                                                        variant="outline"
+                                                        bg="transparent"
                                                         className="primaryFont">
                                                         Previous
                                                     </Button>
