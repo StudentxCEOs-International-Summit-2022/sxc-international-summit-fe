@@ -236,19 +236,19 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                     </Box>
                     {hasFooter && <Box zIndex={2} bgColor='#020234' color="white" w="full" className="primaryFont" fontWeight={500} lineHeight='150%' py='36px' px='120px'>
                         <Box display='flex' mb='10px'>
-                            <Image src="/logo.png" maxW='158px' objectFit='contain' mr='36px' alt="" />
+                            <Image src="/logo.svg" maxW='158px' objectFit='contain' mr='36px' alt="" />
                             <Text maxW='330' fontSize='12px'> SxC InterSummit is a Grand Event organized by StudentsxCEOs Jakarta consisting of a sequence of Pre-Event, PBC, Chambers, Virtual Company Visit, & Main Conference. </Text>
                         </Box>
                         <Flex my='4px'>
                             <Spacer />
                             <Link isExternal href="https://www.linkedin.com/company/studentsxceos-summit/">
-                                <Image cursor='pointer' boxSize='56px' src="linkedin.png" alt="" />
+                                <Image cursor='pointer' boxSize='56px' src="/linkedin.png" alt="" />
                             </Link>
                             <Link isExternal href="https://www.instagram.com/sxcintersummit/">
-                                <Image cursor='pointer' boxSize='56px' src="instagram.png" alt="" />
+                                <Image cursor='pointer' boxSize='56px' src="/instagram.png" alt="" />
                             </Link>
                             <Link isExternal href="https://www.tiktok.com/@sxcintersummit">
-                                <Image cursor='pointer' boxSize='56px' src="tiktok.png" alt="" />
+                                <Image cursor='pointer' boxSize='56px' src="/tiktok.png" alt="" />
                             </Link>
                         </Flex>
                         <Flex fontSize='16px'>
