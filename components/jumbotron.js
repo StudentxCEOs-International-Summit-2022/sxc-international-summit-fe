@@ -43,7 +43,7 @@ const Jumbotron = () => {
         </Flex>
         <Container maxWidth={{ base: "100%", md: "65%" }}>
           <Text
-            className="primaryFont"
+            className="primaryFont gradientText"
             fontSize={{ base: "32px", md: "48px", lg: "64px" }}
             fontWeight="700"
             color="white"
