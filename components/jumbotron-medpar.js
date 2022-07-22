@@ -4,17 +4,17 @@ import {
   Flex,
   Button,
   Link,
-  Grid,
-  GridItem,
-  Image,
+  //   Grid,
+  //   GridItem,
+  //   Image,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useWindowSize } from "../hooks/useWindowSize";
 
-const JumbotronCompe = () => {
+const JumbotronMedpar = () => {
   const { width } = useWindowSize();
-  const isMobile = width < 768;
-  const isTablet = width < 1024;
+  //   const isMobile = width < 768;
+  //   const isTablet = width < 1024;
   return (
     <Box position="relative" mx="auto" maxW="1144px">
       <Flex
@@ -25,7 +25,7 @@ const JumbotronCompe = () => {
         h="100%"
       >
         <Flex
-          mt={{ base: "150px", md: "344px" }}
+          mt={{ base: "150px", md: "338px" }}
           justifyContent={{ base: "center", lg: "left" }}
         >
           <Text
@@ -40,7 +40,7 @@ const JumbotronCompe = () => {
             SxC International Summit
           </Text>
         </Flex>
-        <Box maxWidth={{ base: "100%", md: "100%" }}>
+        <Box maxWidth={{ base: "100%", md: "100%", lg: "85%" }}>
           <Text
             className="gradientText"
             fontSize={{ base: "32px", md: "48px", lg: "64px" }}
@@ -51,22 +51,23 @@ const JumbotronCompe = () => {
             pt="24px"
             pb="24px"
           >
-            Business Case Competition
+            Media & Community Partnership
           </Text>
         </Box>
         <Text
           className="primaryFont"
+          //   maxW={{ base: "100%", md: "100%", lg: "1148px" }}
+          w={{ base: "95%", md: "100%", lg: "1144px" }}
           h="100%"
           fontSize={{ base: "12px", md: "18px", lg: "24px" }}
           fontWeight="500"
           color="white"
           lineHeight="150%"
-          textAlign={{ base: "center", md: "left", lg: "left" }}
+          textAlign={{ base: "center", md: "center", lg: "left" }}
           mx={{ base: "14px", md: "0px" }}
         >
-          {isMobile
-            ? "Case based competition that will encourage each participant to see themself as a leader, who is responsible for solving a business problem of a company in a creative and innovative way with a high level of realization and practice."
-            : "Challenge and embrace your critical thinking, problem-solving, teamwork, and collaboration skills by joining our exclusive case-based competition."}
+          StudentsxCEOs International Summit 2022 is seeking partners to trade
+          advantages in promoting both parties' events or organizations.
         </Text>
       </Flex>
       <Flex flexDirection={{ base: "column", lg: "row" }}>
@@ -86,29 +87,13 @@ const JumbotronCompe = () => {
               _hover={{ bgColor: "#5D11AB" }}
               lineHeight="150%"
             >
-              Register Now
+              Contact Us!
             </Button>
           </Link>
         </NextLink>
-
-        <Link
-          href="https://bit.ly/BookletSxCInterSummit22"
-          isExternal
-          w={{ base: "100%", md: "auto" }}
-          color="white"
-          fontSize="16px"
-          mt="24px"
-          mb={{ base: "250px", sm: "125px", md: "250px" }}
-          p="10px 24px"
-        >
-          <Flex justify="center">
-            <Text fontWeight={700}>Read Guidebook</Text>
-            <Image src="/bookIcon.svg" alt="" w="24px" h="24px" ml="2px" />
-          </Flex>
-        </Link>
       </Flex>
     </Box>
   );
 };
 
-export default JumbotronCompe;
+export default JumbotronMedpar;
