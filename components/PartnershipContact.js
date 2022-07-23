@@ -15,7 +15,7 @@ const PartnershipContact = () => {
                 alignItems="center">
                 {/* base, 480px upwards, 768px upwards, 992px upwards */}
                 <Text
-                    fontSize={['16px', '32px', '48px', '64px']}
+                    fontSize={['32px', '42px', '52px', '64px']}
                     fontWeight='800'
                     lineHeight='120%'
                     className='primaryFont gradientTextRed'
@@ -25,7 +25,7 @@ const PartnershipContact = () => {
                 </Text>
                 <Text
                     color='#ffffff'
-                    fontSize={['14px', '20px', '26px', '32px']}
+                    fontSize={['20px', '24px', '28px', '32px']}
                     fontWeight='800'
                     lineHeight='120%'
                     className='primaryFont'
@@ -35,12 +35,13 @@ const PartnershipContact = () => {
                 </Text>
                 <Text
                     color='#ffffff'
-                    fontSize={['12px', '16px', '20px', '24px']}
+                    fontSize={['16px', '18px', '20px', '24px']}
                     fontWeight='500'
                     lineHeight='150%'
                     className='primaryFont'
                     textAlign='justify'
-                    mb='18px'>
+                    mb='18px'
+                    maxW='908px'>
                     If you are interested in partnering with StudentsxCEOs International Summit 2022 and have a few questions regarding partnerships, please kindly contact us through:
                 </Text>
             </Flex>
