@@ -2,7 +2,8 @@ import { Box, Image, Text, Divider, Flex } from "@chakra-ui/react";
 
 const PreviousPartner = () => {
   return (
-    <Box mt={{ base: "77px", md: "145px", lg: "213px" }}>
+    <Flex mt={{ base: "77px", md: "145px", lg: "213px" }} justifyContent="center"
+      alignItems="center">
       <Box
         position="relative"
         className="layout"
@@ -30,9 +31,10 @@ const PreviousPartner = () => {
           direction="row"
           align="center"
           flexWrap="wrap"
-          mt={{ base: "30px", md: "120px" }}
+          mt={{ base: "30px", md: "75px" }}
           justifyContent="space-between"
           w={{ base: "90%", md: "80%" }}
+          mx="auto"
         >
           <Box w="17%">
             <Flex justifyContent="space-between">
@@ -69,7 +71,7 @@ const PreviousPartner = () => {
           and many more!
         </Text>
       </Box>
-    </Box>
+    </Flex>
   );
 };
 

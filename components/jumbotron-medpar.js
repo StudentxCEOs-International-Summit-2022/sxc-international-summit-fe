@@ -66,12 +66,11 @@ const JumbotronMedpar = () => {
           textAlign={{ base: "center", md: "center", lg: "left" }}
           mx={{ base: "14px", md: "0px" }}
         >
-          StudentsxCEOs International Summit 2022 is seeking partners to trade
-          advantages in promoting both parties' events or organizations.
+          {"StudentsxCEOs International Summit 2022 is seeking partners to trade advantages in promoting both parties' events or organizations."}
         </Text>
       </Flex>
       <Flex flexDirection={{ base: "column", lg: "row" }}>
-        <NextLink href="#register" passHref>
+        <NextLink href="#partnership-contact" passHref>
           <Link>
             <Button
               w={{ base: "100%", md: "auto" }}
