@@ -1,6 +1,6 @@
 import Faq from "../../components/faq";
 import Layout from "../../components/Layout";
-import { Box, Text, Divider, Flex, Grid, GridItem, Circle, OrderedList, ListItem, UnorderedList, Button, useDisclosure } from "@chakra-ui/react";
+import { Box, Text, Divider, Flex, Grid, GridItem, Circle, OrderedList, ListItem, UnorderedList, Button, useDisclosure, Link } from "@chakra-ui/react";
 import { useState } from "react";
 import subtheme from "../../public/subtheme-competition.png"
 import trophy from "../../public/trophy.png"
@@ -359,7 +359,7 @@ export default function Competition() {
           </ListItem>
           <ListItem>Each participant is required to follow @sxcintersummit @studentsxceosjkt on Instagram. Proof will be handed over as a screenshot</ListItem>
           <ListItem>
-            {"Each participant must post a Twibbon on their main Instagram's feeds, tag three friends as well as @sxcintersummit. All requirements (twibbon, caption, etc.) can be accessed through [link TBA]. Proof will be handed over as a screenshot"}
+            Each participant must post a Twibbon on their main Instagram feeds, tag three friends as well as @sxcintersummit. All requirements (twibbon, caption, etc.) can be accessed through <Link href="https://bit.ly/RequirmentsSxCInterSummit22">bit.ly/RequirmentsSxCInterSummit22</Link>. Proof will be handed over as a screenshot
           </ListItem>
           <ListItem>
             Any form of cheating, plagiarism, and dishonesty will result in a disqualification
@@ -371,7 +371,7 @@ export default function Competition() {
             Proof of registration fee payment will be handed over as a Google Drive link. Make sure the link is accessible to everyone
           </ListItem>
           <ListItem>
-            For more details, read our guidebook here.
+            For more details, read our<Link href="https://bit.ly/BookletSxCInterSummit22"> guidebook here.</Link>
           </ListItem>
         </OrderedList>
 
