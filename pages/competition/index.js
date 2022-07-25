@@ -38,13 +38,13 @@ export default function Competition() {
       heading: "Early Bird Registration",
       date: "11 Juli 2022 - 24 July 2022",
       btn_icon: earlyBird,
-      isActive: true
+      isActive: false
     },
     {
       heading: "Normal Registration",
       date: "25 July 2022 - 7 August",
       btn_icon: pencil,
-      isActive: false
+      isActive: true
     },
     {
       heading: "IG Takeover",

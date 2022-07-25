@@ -308,7 +308,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                             {/* masih ada salah di image. */}
                             <Image
                                 my="16px"
-                                src="/logo.png"
+                                src="/logo.svg"
                                 maxW="158px"
                                 objectFit="cover"
                                 mr="36px"
@@ -592,7 +592,7 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                     )}
 
                     {currentPage === "mediaPartner" && (
-                        <Box>
+                        <Box zIndex={0}>
                             <Image
                                 h="982px"
                                 minW="978px"
@@ -608,9 +608,8 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                 alt="wavy bg"
                             />
                             <Box
-                                zIndex={1}
                                 position="relative"
-                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title.png);"
+                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-mediapartner.png);"
                                 backgroundSize="cover"
                                 backgroundPosition="center center"
                                 h="100vh"

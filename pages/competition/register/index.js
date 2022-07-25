@@ -27,11 +27,37 @@ const RegisterPage = () => {
     const { isOpen: isOpenRegistration, onOpen: onOpenRegistration, onClose: onCloseRegistration } = useDisclosure()
     const [currentStep, setCurrentStep] = useState(1)
     const [savedData, setSavedData] = useState(null)
+    const [isReferralCodeValid, setIsReferralCodeValid] = useState(false)
+    const [referralCode, setReferralCode] = useState("")
     const router = useRouter()
     const query = router.query
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({
         defaultValues: savedData
     })
+
+    const referrals = [
+        "IntSummitNashatra01",
+        "IntSummitLeony01",
+        "IntSummitKeren01",
+        "IntSummitAalia01",
+        "IntSummitDanisa01",
+        "IntSummitSadam01",
+        "IntSummitAtharel01",
+        "IntSummitNabilah01",
+        "IntSummitNadhifa01",
+        "IntSummitPrabowo01",
+        "IntSummitRaja01",
+        "IntSummitGabriel01",
+        "IntSummitMarsha01",
+        "IntSummitRegita01",
+        "IntSummitPutri01",
+        "IntSummitSalsabila01",
+        "IntSummitBagus01",
+        "IntSummitSalsabilla01",
+        "IntSummitHimma01",
+        "IntSummitNadya01",
+        "IntSummitNilo01"
+    ]
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -39,6 +65,15 @@ const RegisterPage = () => {
             reset(JSON.parse(localStorage.getItem("registrationData")) || null)
         }
     }, [reset])
+
+    useEffect(() => {
+        if (referrals.includes(referralCode)) {
+            setIsReferralCodeValid(true)
+        } else {
+            setIsReferralCodeValid(false)
+        }
+    }, [referralCode])
+
 
 
     const onChangePage = data => {
@@ -948,23 +983,25 @@ const RegisterPage = () => {
                                             fontSize="32px"
                                             lineHeight={1.2}
                                             className="primaryFont">SxC Business Case Competition</Text>
-                                        {/* <FormLabel
-                                        mt="48px"
-                                        htmlFor="referralCode"
-                                        fontWeight={700}
-                                        fontSize="16px"
-                                        lineHeight={1.5}
-                                    >
-                                        Referral Code
-                                    </FormLabel>
-                                    <Input
-                                        mt="8px"
-                                        {...register("Referral Code")}
-                                        id="referralCode"
-                                        placeholder="Ex: ABC1234" />
-                                    <FormHelperText fontWeight={500}>
-                                        For referral code, be sure to check our instagram account @sxcintersummit!
-                                    </FormHelperText> */}
+                                        <FormLabel
+                                            mt="48px"
+                                            htmlFor="referralCode"
+                                            fontWeight={700}
+                                            fontSize="16px"
+                                            lineHeight={1.5}
+                                        >
+                                            Referral Code
+                                        </FormLabel>
+                                        <Input
+                                            mt="8px"
+                                            borderColor={isReferralCodeValid && "#53B656"}
+                                            color={isReferralCodeValid && "#53B656"}
+                                            onChange={(e) => { setReferralCode(e.target.value) }}
+                                            id="referralCode"
+                                            placeholder="Ex: ABC1234" />
+                                        <FormHelperText fontWeight={500}>
+                                            For referral code, be sure to check our instagram account @sxcintersummit!
+                                        </FormHelperText>
 
                                         <Flex align="center" mt="24px">
                                             <Text
@@ -997,8 +1034,19 @@ const RegisterPage = () => {
                                             lineHeight={1.2}
                                             color="#F8C800"
                                         >
-                                            Rp70.000,-
+                                            {isReferralCodeValid ? "Rp220.000,-" : "Rp250.000,-"}
                                         </Text>
+                                        {isReferralCodeValid &&
+                                            <Text
+                                                color="white"
+                                                className="primaryFont"
+                                                fontSize="16px"
+                                                lineHeight={1.2}
+                                                fontWeight={800}
+                                                textDecoration="line-through"
+                                            >
+                                                Rp250.000,-
+                                            </Text>}
                                         <Text
                                             mt="24px"
                                             className="primaryFont"
@@ -1065,8 +1113,19 @@ const RegisterPage = () => {
                                             lineHeight={1.2}
                                             color="#F8C800"
                                         >
-                                            US$18.30
+                                            {isReferralCodeValid ? "US$14.70" : "US$16.67"}
                                         </Text>
+                                        {isReferralCodeValid &&
+                                            <Text
+                                                color="white"
+                                                className="primaryFont"
+                                                fontSize="16px"
+                                                lineHeight={1.2}
+                                                fontWeight={800}
+                                                textDecoration="line-through"
+                                            >
+                                                US$16.67
+                                            </Text>}
                                         <Text
                                             mt="24px"
                                             className="primaryFont"
