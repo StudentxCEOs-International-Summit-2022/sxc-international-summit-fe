@@ -327,6 +327,8 @@ export default function Competition() {
                     className={el.isActive ? styles.activebutton : styles.inactivebutton}>
                     <Image
                       src={el.btn_icon}
+                      width={el.isActive ? 60 : 49}
+                      height={el.isActive ? 60 : 49}
                       alt=""
                       className={el.isActive ? styles.activebuttonimg : styles.inactivebuttonimg} />
                   </Circle>
