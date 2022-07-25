@@ -591,45 +591,80 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                         </Box>
                     )}
 
-                    {currentPage === "mediaPartner" && (
-                        <Box zIndex={0}>
-                            <Image
-                                h="982px"
-                                minW="978px"
-                                top={{
-                                    base: "calc(100vh + 24px)",
-                                    md: "calc(100vh + 62px)",
-                                    lg: "calc(100vh + 100px)",
-                                }}
-                                opacity={0.8}
-                                left={{ base: "-100%", md: "-30%", lg: "0" }}
-                                position="absolute"
-                                src="/bg-partnership.svg"
-                                alt="wavy bg"
-                            />
-                            <Box
-                                position="relative"
-                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-mediapartner.png);"
-                                backgroundSize="cover"
-                                backgroundPosition="center center"
-                                h="100vh"
-                            >
-                                <Box
+                    <Box zIndex={0} style={{ zIndex: 0 }}>
+                        {currentPage === "mediaPartner" && (
+                            <Box>
+                                {/* <Image
+                                    zIndex={0}
+                                    h="982px"
+                                    minW="978px"
+                                    top={{
+                                        base: "calc(100vh + 24px)",
+                                        md: "calc(100vh + 62px)",
+                                        lg: "calc(100vh + 100px)",
+                                    }}
+                                    opacity={0.8}
+                                    left={{ base: "-200%", md: "-30%", lg: "-5%" }}
                                     position="absolute"
-                                    bottom="0"
-                                    w="100vw"
-                                    h="60%"
-                                    background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
-                                ></Box>
-                                <JumbotronMedpar />
+                                    src="/bg-partnership.svg"
+                                    alt="wavy bg"
+                                /> */}
+                                <Box
+                                    position="relative"
+                                    background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-mediapartner.png);"
+                                    backgroundSize="cover"
+                                    backgroundPosition="center center"
+                                    h="100vh"
+                                >
+                                    <Box
+                                        position="absolute"
+                                        bottom="0"
+                                        w="100vw"
+                                        h="60%"
+                                        background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
+                                    ></Box>
+                                    <JumbotronMedpar />
+                                </Box>
+                                {/* <Image zIndex={0} opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.png" alt="wavy bg" /> */}
                             </Box>
-                            {/* <Image zIndex={0} opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.png" alt="wavy bg" /> */}
-                        </Box>
-                    )}
-
-                    <Box h="fit-content" px={{ base: "5%", md: "10%" }}>
-                        {children}
+                        )}
                     </Box>
+
+                    <Box zIndex={9999999}
+                        bgRepeat="no-repeat"
+                        bgPosition={() => {
+                            if (currentPage === "mediaPartner") {
+                                return "url('/bg-partners.png')"
+                            }
+                        }}
+                        bgImage={() => {
+                            if (currentPage === "mediaPartner") {
+                                return "url('/bg-partnership.svg')"
+                            }
+                        }} h="fit-content" px={{ base: "5%", md: "10%" }}>
+                        {/* <Image
+                            zIndex={0}
+                            h="982px"
+                            minW="978px"
+                            top={{
+                                base: "calc(100vh + 24px)",
+                                md: "calc(100vh + 62px)",
+                                lg: "calc(100vh + 100px)",
+                            }}
+                            opacity={0.8}
+                            left={{ base: "-200%", md: "-30%", lg: "-5%" }}
+                            position="absolute"
+                            src="/bg-partnership.svg"
+                            alt="wavy bg"
+                        /> */}
+                        <Box zIndex={1}
+                        >
+                            {children}
+                        </Box>
+
+
+                    </Box>
+
                     {hasFooter && (
                         <Box
                             zIndex={2}
@@ -698,7 +733,8 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                         </Box>
                     )}
                 </Box>
-            )}
+            )
+            }
         </>
     );
 };

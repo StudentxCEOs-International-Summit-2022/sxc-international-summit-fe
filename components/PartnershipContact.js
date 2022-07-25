@@ -46,86 +46,86 @@ const PartnershipContact = () => {
                 </Text>
             </Flex>
             <Center>
-            <VStack
-                color='#ffffff'
-                align='stretch'
-                className="primaryFont"
-                fontWeight='700'
-                fontSize='24px'
-                lineHeight='150%'>
-                <Box
-                    display='flex'
-                    alignItems='center'
-                    justifyItems='center'
-                    h={['50px', '50px', '75px', '75px']}
-                    px={['30px', '30px', '40px', '40px']}
-                    border='2px solid #5D10AA'
-                    borderRadius='10px'>
-                    <Image
-                        w={['24px', '24px', '54px', '54px']}
-                        h={['24px', '24px', '54px', '54px']}
-                        mr="20px"
-                        src={"/icon-email.svg"}
-                        alt="Whatsapp icon"/>
-                    <Link
-                        href="mailto:marketing.sxcintersummit@gmail.com"
-                        textDecoration='underline'
-                        fontWeight='700'
-                        fontSize={['12px', '12px', '24px', '24px']}
-                        lineHeight='150%'
-                        className="primaryFont">
-                        marketing.sxcintersummit@gmail.com
-                    </Link>
-                </Box>
-                <Box
-                    display='flex'
-                    alignItems='center'
-                    justifyItems='center'
-                    h={['50px', '50px', '75px', '75px']}
-                    px={['30px', '30px', '40px', '40px']}
-                    border='2px solid #5D10AA'
-                    borderRadius='10px'>
-                    <Image
-                        w={['24px', '24px', '54px', '54px']}
-                        h={['24px', '24px', '54px', '54px']}
-                        mr="20px"
-                        src={"/dashicons_whatsapp.svg"}
-                        alt="Whatsapp icon"/>
-                    <Link
-                        href="https://wa.me/6282226692222"
-                        textDecoration='underline'
-                        fontWeight='700'
-                        fontSize={['12px', '12px', '24px', '24px']}
-                        lineHeight='150%'
-                        className="primaryFont">
-                        Jovanka Cathrynn [+62 822 2669 2222]
-                    </Link>
-                </Box>
-                <Box
-                    display='flex'
-                    alignItems='center'
-                    justifyItems='center'
-                    h={['50px', '50px', '75px', '75px']}
-                    px={['30px', '30px', '40px', '40px']}
-                    border='2px solid #5D10AA'
-                    borderRadius='10px'>
-                    <Image
-                        w={['24px', '24px', '54px', '54px']}
-                        h={['24px', '24px', '54px', '54px']}
-                        mr="20px"
-                        src={"/dashicons_whatsapp.svg"}
-                        alt="Whatsapp icon"/>
-                    <Link
-                        href="https://wa.me/62878 8107 8232"
-                        textDecoration='underline'
-                        fontWeight='700'
-                        fontSize={['12px', '12px', '24px', '24px']}
-                        lineHeight='150%'
-                        className="primaryFont">
-                        Audrey Andeisa [+62 878 8107 8232]
-                    </Link>
-                </Box>
-            </VStack>
+                <VStack
+                    color='#ffffff'
+                    align='stretch'
+                    className="primaryFont"
+                    fontWeight='700'
+                    fontSize='24px'
+                    lineHeight='150%'>
+                    <Box
+                        display='flex'
+                        alignItems='center'
+                        justifyItems='center'
+                        h={['50px', '50px', '75px', '75px']}
+                        px={['30px', '30px', '40px', '40px']}
+                        border='2px solid #5D10AA'
+                        borderRadius='10px'>
+                        <Image
+                            w={['24px', '24px', '54px', '54px']}
+                            h={['24px', '24px', '54px', '54px']}
+                            mr="20px"
+                            src={"/icon-email.svg"}
+                            alt="Whatsapp icon" />
+                        <Link
+                            href="mailto:marketing.sxcintersummit@gmail.com"
+                            textDecoration='underline'
+                            fontWeight='700'
+                            fontSize={['12px', '12px', '24px', '24px']}
+                            lineHeight='150%'
+                            className="primaryFont">
+                            marketing.sxcintersummit@gmail.com
+                        </Link>
+                    </Box>
+                    <Box
+                        display='flex'
+                        alignItems='center'
+                        justifyItems='center'
+                        h={['50px', '50px', '75px', '75px']}
+                        px={['30px', '30px', '40px', '40px']}
+                        border='2px solid #5D10AA'
+                        borderRadius='10px'>
+                        <Image
+                            w={['24px', '24px', '54px', '54px']}
+                            h={['24px', '24px', '54px', '54px']}
+                            mr="20px"
+                            src={"/dashicons_whatsapp.svg"}
+                            alt="Whatsapp icon" />
+                        <Link
+                            href="https://wa.me/6282226692222"
+                            textDecoration='underline'
+                            fontWeight='700'
+                            fontSize={['12px', '12px', '24px', '24px']}
+                            lineHeight='150%'
+                            className="primaryFont">
+                            Jovanka Cathrynn [+62 822 2669 2222]
+                        </Link>
+                    </Box>
+                    <Box
+                        display='flex'
+                        alignItems='center'
+                        justifyItems='center'
+                        h={['50px', '50px', '75px', '75px']}
+                        px={['30px', '30px', '40px', '40px']}
+                        border='2px solid #5D10AA'
+                        borderRadius='10px'>
+                        <Image
+                            w={['24px', '24px', '54px', '54px']}
+                            h={['24px', '24px', '54px', '54px']}
+                            mr="20px"
+                            src={"/dashicons_whatsapp.svg"}
+                            alt="Whatsapp icon" />
+                        <Link
+                            href="https://wa.me/62878 8107 8232"
+                            textDecoration='underline'
+                            fontWeight='700'
+                            fontSize={['12px', '12px', '24px', '24px']}
+                            lineHeight='150%'
+                            className="primaryFont">
+                            Audrey Andeisa [+62 878 8107 8232]
+                        </Link>
+                    </Box>
+                </VStack>
             </Center>
         </Box>
     )
