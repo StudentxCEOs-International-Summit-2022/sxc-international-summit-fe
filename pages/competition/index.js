@@ -211,7 +211,7 @@ export default function Competition() {
                       fontWeight={500}
                       fontSize={{ base: "24px", sm: "16px", md: "24px" }}
                       lineHeight={1.5}>
-                      Rp6.500.000
+                      Rp7.000.000
                     </Text>
                   </Box>
                   <Box
@@ -248,7 +248,7 @@ export default function Competition() {
                       fontWeight={500}
                       fontSize={{ base: "24px", sm: "16px", md: "24px" }}
                       lineHeight={1.5}>
-                      Rp3.500.000
+                      Rp5.000.000
                     </Text>
                   </Box>
                   <Box
@@ -286,7 +286,7 @@ export default function Competition() {
                       fontWeight={500}
                       fontSize={{ base: "24px", sm: "16px", md: "24px" }}
                       lineHeight={1.5}>
-                      Rp2.000.000
+                      Rp3.000.000
                     </Text>
                   </Box>
                   <Box
