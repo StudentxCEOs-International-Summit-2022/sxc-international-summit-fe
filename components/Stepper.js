@@ -6,6 +6,7 @@ import uncompleted from "../public/stepper/uncompleted.png"
 const Stepper = ({ steps, currentStep }) => {
     return (
         <Stack
+            color="white"
             mt="44px"
             mx="auto"
             maxW="720px"

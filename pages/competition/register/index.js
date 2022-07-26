@@ -131,8 +131,8 @@ const RegisterPage = () => {
                     <Link display="flex"
                         align="center"
                         p={2}>
-                        <ChevronLeftIcon w="24px" h="24px" />
-                        <Text fontWeight={700} className="primaryFont" fontSize="16px" lineHeight={1.5} ml="8px">
+                        <ChevronLeftIcon color="white" w="24px" h="24px" />
+                        <Text color="white" fontWeight={700} className="primaryFont" fontSize="16px" lineHeight={1.5} ml="8px">
                             Go to main page
                         </Text>
                     </Link>
@@ -143,6 +143,7 @@ const RegisterPage = () => {
                         if (currentStep === 1) {
                             return (
                                 <Box
+                                    color="white"
                                     my="66px"
                                     position="relative"
                                     bgColor="#020234"
@@ -153,6 +154,7 @@ const RegisterPage = () => {
                                 >
                                     <Flex w="full" justify="center">
                                         <Box my="36px"
+                                            color="white"
                                             className="primaryFont"
                                             bgColor="#5D11AB"
                                             border="3px solid #A170FD"
@@ -317,7 +319,7 @@ const RegisterPage = () => {
 
                         } else if (currentStep === 2) {
                             return (
-                                <Box>
+                                <Box color="white">
                                     <FormControl className="primaryFont" key="registerForm" mx="auto" mb="50px">
                                         <Flex justify="center" flexDirection={{ base: "column", md: "row" }} gap="20px">
                                             <Box
@@ -632,7 +634,7 @@ const RegisterPage = () => {
                                 return `https://${url}`;
                             }
                             return (
-                                <Box>
+                                <Box color="white">
                                     <Box
                                         mt="24px"
                                         position="relative"
@@ -726,7 +728,7 @@ const RegisterPage = () => {
                                         </Box>
                                     </Box>
 
-                                    <Flex justify="center" flexDirection={{ base: "column", md: "row" }} gap="30px" mt="50px">
+                                    <Flex align="center" justify="center" flexDirection={{ base: "column", md: "row" }} gap="30px" mt="50px">
                                         <Box
                                             position="relative"
                                             bgColor="#020234"
@@ -948,6 +950,7 @@ const RegisterPage = () => {
                         } else if (currentStep === 4) {
                             return (
                                 <Box
+                                    color="white"
                                     mt="66px"
                                     position="relative"
                                     bgColor="#020234"
@@ -1253,6 +1256,7 @@ const RegisterPage = () => {
                                             p="12px 20px"
                                             fontWeight={600}
                                             fontSize="20px"
+                                            color="white"
                                             lineHeight={1.5}>
                                             Join as Individual
                                         </Box>
@@ -1266,10 +1270,12 @@ const RegisterPage = () => {
                                                 fontWeight={700}
                                                 fontSize="16px"
                                                 lineHeight={1.5}
+                                                color="white"
                                             >
                                                 Your Name
                                             </FormLabel>
                                             <Input
+                                                color="white"
                                                 mt="8px"
                                                 {...register("name", { required: true })}
                                                 id="name"
@@ -1278,6 +1284,7 @@ const RegisterPage = () => {
 
 
                                             <FormLabel
+                                                color="white"
                                                 mt="32px"
                                                 htmlFor="email"
                                                 fontWeight={700}
@@ -1287,6 +1294,7 @@ const RegisterPage = () => {
                                                 {`Your Email`}
                                             </FormLabel>
                                             <Input
+                                                color="white"
                                                 mt="8px"
                                                 {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                                                 id="email"
@@ -1297,6 +1305,7 @@ const RegisterPage = () => {
 
 
                                             <FormLabel
+                                                color="white"
                                                 mt="32px"
                                                 htmlFor="institution"
                                                 fontWeight={700}
@@ -1306,6 +1315,7 @@ const RegisterPage = () => {
                                                 {`Your Institution`}
                                             </FormLabel>
                                             <Input
+                                                color="white"
                                                 mt="8px"
                                                 {...register("institution", { required: true })}
                                                 id="institution"
@@ -1313,6 +1323,7 @@ const RegisterPage = () => {
 
 
                                             <FormLabel
+                                                color="white"
                                                 mt="32px"
                                                 htmlFor="major"
                                                 fontWeight={700}
@@ -1322,6 +1333,7 @@ const RegisterPage = () => {
                                                 {`Your Major`}
                                             </FormLabel>
                                             <Input
+                                                color="white"
                                                 mt="8px"
                                                 {...register("major", { required: true })}
                                                 id="major"
@@ -1329,6 +1341,7 @@ const RegisterPage = () => {
 
 
                                             <FormLabel
+                                                color="white"
                                                 mt="32px"
                                                 htmlFor="address"
                                                 fontWeight={700}
@@ -1338,6 +1351,7 @@ const RegisterPage = () => {
                                                 {`Your Address`}
                                             </FormLabel>
                                             <Input
+                                                color="white"
                                                 mt="8px"
                                                 {...register("address", { required: true })}
                                                 id="address"
@@ -1348,6 +1362,7 @@ const RegisterPage = () => {
 
 
                                             <FormLabel
+                                                color="white"
                                                 mt="32px"
                                                 htmlFor="teamLink"
                                                 fontWeight={700}
@@ -1357,6 +1372,7 @@ const RegisterPage = () => {
                                                 {`Google Drive Folder Link`}
                                             </FormLabel>
                                             <Input
+                                                color="white"
                                                 mt="8px"
                                                 {...register("team_drive", { required: true })}
                                                 id="teamLink"
@@ -1417,12 +1433,13 @@ const RegisterPage = () => {
                                                 p="12px 20px"
                                                 fontWeight={600}
                                                 fontSize="20px"
+                                                color="white"
                                                 lineHeight={1.5}>
                                                 Confirm Your Identity
                                             </Box>
                                         </Flex>
                                         <Divider orientation="horizontal" />
-                                        <Box mb="50px" mx="64px">
+                                        <Box mb="50px" mx="64px" color="white">
                                             <Text
                                                 mt="32px"
                                                 fontWeight={700}
@@ -1520,6 +1537,7 @@ const RegisterPage = () => {
                         } else if (currentStep === 3) {
                             return (
                                 <Box
+                                    color="white"
                                     mt="66px"
                                     position="relative"
                                     bgColor="#020234"

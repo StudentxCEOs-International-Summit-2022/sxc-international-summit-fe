@@ -84,7 +84,7 @@ export default function Competition() {
 
   return (
     <Layout hasNavbar hasFooter currentPage="competition">
-      <Box maxW="1144px" mx="auto" >
+      <Box  color="white" maxW="1144px" mx="auto" >
         <Text className="gradientTextRed primaryFont"
           fontSize={{ base: "32px", md: "48px", lg: "64px" }}
           lineHeight={1.2}
