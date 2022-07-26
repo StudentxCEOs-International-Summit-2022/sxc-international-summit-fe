@@ -1066,10 +1066,10 @@ const RegisterPage = () => {
                                                     lineHeight={1.2}
                                                     color="#F8C800"
                                                 >
-                                                    {'BCA Digital - 005353176792 (Andrea Fahira)'}
+                                                    {'BCA - 6281324354 (Fauzan Fikriandi)'}
                                                 </Text>
                                             </ListItem>
-                                            <ListItem>
+                                            {/* <ListItem>
                                                 <Text
                                                     className="primaryFont"
                                                     fontWeight={800}
@@ -1079,7 +1079,7 @@ const RegisterPage = () => {
                                                 >
                                                     {'Dana - 085921725311 (Andrea Fahira)'}
                                                 </Text>
-                                            </ListItem>
+                                            </ListItem> */}
                                         </UnorderedList>
 
                                         <Flex align="center" mt="24px">
@@ -1145,7 +1145,7 @@ const RegisterPage = () => {
                                                     lineHeight={1.2}
                                                     color="#F8C800"
                                                 >
-                                                    {'Paypal'}
+                                                    {'PayPal - paypal.me/bimadwyan (Bima Dwi Darmayana)'}
                                                 </Text>
                                             </ListItem>
                                         </UnorderedList>
@@ -1254,7 +1254,7 @@ const RegisterPage = () => {
                                             fontWeight={600}
                                             fontSize="20px"
                                             lineHeight={1.5}>
-                                            Join as Indicidual
+                                            Join as Individual
                                         </Box>
                                     </Flex>
                                     <Divider orientation="horizontal" />
@@ -1625,10 +1625,10 @@ const RegisterPage = () => {
                                                     lineHeight={1.2}
                                                     color="#F8C800"
                                                 >
-                                                    {'BCA Digital - 005353176792 (Andrea Fahira)'}
+                                                    {'BCA - 6281324354 (Fauzan Fikriandi)'}
                                                 </Text>
                                             </ListItem>
-                                            <ListItem>
+                                            {/* <ListItem>
                                                 <Text
                                                     className="primaryFont"
                                                     fontWeight={800}
@@ -1638,7 +1638,7 @@ const RegisterPage = () => {
                                                 >
                                                     {'Dana - 085921725311 (Andrea Fahira)'}
                                                 </Text>
-                                            </ListItem>
+                                            </ListItem> */}
                                         </UnorderedList>
 
                                         <Flex align="center" mt="24px">
@@ -1693,7 +1693,7 @@ const RegisterPage = () => {
                                                     lineHeight={1.2}
                                                     color="#F8C800"
                                                 >
-                                                    {'Paypal'}
+                                                    {'PayPal - paypal.me/bimadwyan (Bima Dwi Darmayana)'}
                                                 </Text>
                                             </ListItem>
                                         </UnorderedList>
