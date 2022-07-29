@@ -147,7 +147,7 @@ export default function PreEvent() {
                                 <Text className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2}>
                                     13<sup>th</sup> August 2022
                                 </Text>
-                                <Text lassName="primaryFont" fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} fontWeight={600}>at 13.00 - 15.40 via Zoom</Text>
+                                <Text className="primaryFont" fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} fontWeight={600}>at 13.00 - 15.40 via Zoom</Text>
                             </Box>
                         </Box>
 

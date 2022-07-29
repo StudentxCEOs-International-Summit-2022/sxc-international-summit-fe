@@ -28,6 +28,7 @@ import emailjs from '@emailjs/browser';
 const RegisterPage = () => {
     const [currentStep, setCurrentStep] = useState(1)
     const [savedData, setSavedData] = useState(null)
+    const [isSubmitting, setIsSubmitting] = useState(false)
     const router = useRouter()
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({
         defaultValues: savedData
@@ -42,17 +43,6 @@ const RegisterPage = () => {
         }
     }, [reset])
 
-    const sendEmail = (e) => {
-        e?.preventDefault();
-
-        emailjs.sendForm('service_es3cnd6', 'template_xrajoec', form.current, 'REihDPz8JEoguuDmk')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            })
-    };
-
     const onChangePage = data => {
         setCurrentStep(currentStep + 1)
         setSavedData(data)
@@ -65,16 +55,22 @@ const RegisterPage = () => {
                 data[key] = "-"
             }
         }
-        console.log(data);
+        setIsSubmitting(true)
         localStorage.setItem("registrationData", JSON?.stringify(data))
         axios.post("https://sxc-be-22.herokuapp.com/api/daftarPreEvent", data).then(res => {
             console.log(res);
-            sendEmail()
+            emailjs.sendForm('service_es3cnd6', 'template_xrajoec', form.current, 'REihDPz8JEoguuDmk')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    alert("Something went wrong. Please try again later.")
+                })
         }).catch(err => {
-            console.log(err);
+            alert("Something went wrong. Please try again later.")
         }).finally(() => {
             localStorage.removeItem("registrationData")
             reset()
+            setIsSubmitting(false)
             router.push("/pre-event")
         })
     }
@@ -441,8 +437,7 @@ const RegisterPage = () => {
                                         />
                                         <Text> Nabila - +6281216670603 (nabilapuspa18)</Text>
                                     </Center>
-                                    <form ref={form} onSubmit={
-                                        handleSubmit(onSubmit)} id="registerFormHidden">
+                                    <form ref={form} onSubmit={handleSubmit(onSubmit)} id="registerFormHidden">
                                         <FormControl display="none" className="primaryFont" key="registerForm" maxW="720px" mx="auto">
                                             <FormLabel
                                                 mt="32px"
@@ -556,6 +551,7 @@ const RegisterPage = () => {
                                             <Button
                                                 form="registerFormHidden"
                                                 mb="24px"
+                                                isLoading={isSubmitting}
                                                 mt="42px"
                                                 borderRadius="4px"
                                                 bgColor="#5D11AB"
