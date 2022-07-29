@@ -2,8 +2,8 @@ import Faq from "../../components/faq";
 import Layout from "../../components/Layout";
 import { Box, Text, Divider, Flex,  OrderedList, ListItem,  Button, useDisclosure, Link } from "@chakra-ui/react";
 import { useState } from "react";
-import speaker1 from "../../public/preevent/speaker 1.jpg"
-import speaker2 from "../../public/preevent/speaker 2.jpg"
+import speaker1 from "../../public/preevent/speaker-1.jpg"
+import speaker2 from "../../public/preevent/speaker-2.jpg"
 import moderator from "../../public/preevent/moderator.jpeg"
 import Image from "next/image";
 import { useWindowSize } from "../../hooks/useWindowSize";
