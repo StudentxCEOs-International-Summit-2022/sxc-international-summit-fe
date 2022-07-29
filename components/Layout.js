@@ -27,6 +27,7 @@ import { useWindowSize } from "../hooks/useWindowSize";
 import { useRouter } from "next/router";
 import JumbotronMedpar from "./jumbotron-medpar";
 import JumbotronSA from "./jumbotron-sa";
+import JumbotronPreEvent from "./jumbotron-preEvent";
 
 const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
     const { width } = useWindowSize();
@@ -306,6 +307,27 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                     background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
                                 ></Box>
                                 <JumbotronSA />
+                            </Box>
+                        </Box>
+                    )}
+
+                    {currentPage === "pre-event" && (
+                        <Box zIndex={0}>
+                            <Box
+                                position="relative"
+                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-sa.png);"
+                                backgroundSize="cover"
+                                backgroundPosition="center center"
+                                h="100vh"
+                            >
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    w="100vw"
+                                    h="60%"
+                                    background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
+                                ></Box>
+                                <JumbotronPreEvent />
                             </Box>
                         </Box>
                     )}
@@ -596,6 +618,27 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                 <Jumbotron />
                             </Box>
                             {/* <Image zIndex={0} opacity={0.3} transform="rotate(20deg)" left={{ base: "-100%", md: "30%", lg: "15%" }} bottom={{ base: "0", lg: "-15%" }} position="absolute" minW="1300px" minH="1400px" src="/bg-partners.png" alt="wavy bg" /> */}
+                        </Box>
+                    )}
+
+                    {currentPage === "pre-event" && (
+                        <Box zIndex={0}>
+                            <Box
+                                position="relative"
+                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-sa.png);"
+                                backgroundSize="cover"
+                                backgroundPosition="center center"
+                                h="100vh"
+                            >
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    w="100vw"
+                                    h="60%"
+                                    background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
+                                ></Box>
+                                <JumbotronPreEvent />
+                            </Box>
                         </Box>
                     )}
 
