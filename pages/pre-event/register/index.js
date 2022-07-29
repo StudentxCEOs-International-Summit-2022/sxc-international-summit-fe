@@ -18,12 +18,12 @@ import {
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import Layout from "../../../components/Layout";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import Stepper from "../../../components/Stepper";
-import CustomModal from "../../../components/CustomModal";
 import axios from "axios";
+import emailjs from '@emailjs/browser';
 
 const RegisterPage = () => {
     const [currentStep, setCurrentStep] = useState(1)
@@ -33,6 +33,8 @@ const RegisterPage = () => {
         defaultValues: savedData
     })
 
+    const form = useRef(null);
+
     useEffect(() => {
         if (typeof window !== "undefined") {
             setSavedData(JSON.parse(localStorage?.getItem("registrationData")) || null)
@@ -40,7 +42,16 @@ const RegisterPage = () => {
         }
     }, [reset])
 
+    const sendEmail = (e) => {
+        e?.preventDefault();
 
+        emailjs.sendForm('service_es3cnd6', 'template_xrajoec', form.current, 'REihDPz8JEoguuDmk')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            })
+    };
 
     const onChangePage = data => {
         setCurrentStep(currentStep + 1)
@@ -54,17 +65,18 @@ const RegisterPage = () => {
                 data[key] = "-"
             }
         }
+        console.log(data);
         localStorage.setItem("registrationData", JSON?.stringify(data))
-
-            axios.post("https://sxc-be-22.herokuapp.com/api/daftarPreEvent", data).then(res => {
-                console.log(res)
-            }).catch(err => {
-                console.log(err);
-            }).finally(() => {
-                localStorage.removeItem("registrationData")
-                reset()
-                router.push("/pre-event")
-            })
+        axios.post("https://sxc-be-22.herokuapp.com/api/daftarPreEvent", data).then(res => {
+            console.log(res);
+            sendEmail()
+        }).catch(err => {
+            console.log(err);
+        }).finally(() => {
+            localStorage.removeItem("registrationData")
+            reset()
+            router.push("/pre-event")
+        })
     }
 
     const steps = [
@@ -115,7 +127,10 @@ const RegisterPage = () => {
                                     </Box>
                                 </Flex>
                                 <Divider orientation="horizontal" />
-                                <form id="registerForm">
+                                <form ref={form} onSubmit={(e) => {
+                                    handleSubmit(onSubmit);
+                                    // sendEmail(e)
+                                }} id="registerForm">
                                     <FormControl className="primaryFont" key="registerForm" maxW="720px" mx="auto">
                                         <FormLabel
                                             mt="32px"
@@ -426,24 +441,137 @@ const RegisterPage = () => {
                                         />
                                         <Text> Nabila - +6281216670603 (nabilapuspa18)</Text>
                                     </Center>
-                                    <Center
-                                    >
-                                        <Button
-                                            onClick={handleSubmit(onSubmit)}
-                                            mb="24px"
-                                            mt="42px"
-                                            borderRadius="4px"
-                                            bgColor="#5D11AB"
-                                            p="10px 24px"
-                                            color="white"
-                                            fontWeight={700}
-                                            fontSize="16px"
-                                            lineHeight={1.5}
-                                            variant="solid"
-                                            className="primaryFont">
-                                            Back to Pre-Event Page
-                                        </Button>
-                                    </Center>
+                                    <form ref={form} onSubmit={
+                                        handleSubmit(onSubmit)} id="registerFormHidden">
+                                        <FormControl display="none" className="primaryFont" key="registerForm" maxW="720px" mx="auto">
+                                            <FormLabel
+                                                mt="32px"
+                                                htmlFor="name"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Full Name`}
+                                            </FormLabel>
+                                            <Input
+                                                mt="8px"
+                                                {...register("full_name", { required: true })}
+                                                id="name"
+                                                value={savedData?.["full_name"]}
+                                                placeholder="Ex: John Doe" />
+                                            <FormHelperText fontWeight={500}>
+                                                Make sure this is match with your student ID Card
+                                            </FormHelperText>
+
+
+                                            <FormLabel
+                                                mt="32px"
+                                                htmlFor="email"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Email`}
+                                            </FormLabel>
+                                            <Input
+                                                mt="8px"
+                                                value={savedData?.["email"]}
+                                                {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                                                id="email"
+                                                placeholder="Ex: Johndoe123@domain.com " />
+                                            <FormHelperText fontWeight={500}>
+                                                Make sure this email is active. You will receive every information of your registration through this email.
+                                            </FormHelperText>
+
+                                            <FormLabel
+                                                mt="32px"
+                                                htmlFor="phoneNumber"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Phone Number`}
+                                            </FormLabel>
+                                            <Input
+                                                value={savedData?.["phoneNumber"]}
+                                                mt="8px"
+                                                {...register("phoneNumber", { required: true })}
+                                                id="phoneNumber"
+                                                placeholder="Ex: +6281234567890" />
+
+
+                                            <FormLabel
+                                                mt="32px"
+                                                htmlFor="institution"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Institution`}
+                                            </FormLabel>
+                                            <Input
+                                                value={savedData?.["institution"]}
+                                                mt="8px"
+                                                {...register("institution", { required: true })}
+                                                id="institution"
+                                                placeholder="Ex: Universitas Indonesia" />
+
+
+                                            <FormLabel
+                                                mt="32px"
+                                                htmlFor="major"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                            >
+                                                {`Major`}
+                                            </FormLabel>
+                                            <Input
+                                                mt="8px"
+                                                value={savedData?.["major"]}
+                                                {...register("major", { required: true })}
+                                                id="major"
+                                                placeholder="Ex: Computer science" />
+
+                                            <Flex justify="end">
+                                                <Button
+                                                    onClick={handleSubmit(onChangePage)}
+                                                    mb="24px"
+                                                    mt="42px"
+                                                    borderRadius="4px"
+                                                    bgColor="#5D11AB"
+                                                    p="10px 24px"
+                                                    color="white"
+                                                    fontWeight={700}
+                                                    fontSize="16px"
+                                                    lineHeight={1.5}
+                                                    className="primaryFont"
+                                                    isDisabled={Object.keys(errors).length !== 0}>
+                                                    Next
+                                                </Button>
+                                            </Flex>
+
+                                        </FormControl>
+                                        <Center>
+                                            <Button
+                                                form="registerFormHidden"
+                                                mb="24px"
+                                                mt="42px"
+                                                borderRadius="4px"
+                                                bgColor="#5D11AB"
+                                                p="10px 24px"
+                                                color="white"
+                                                fontWeight={700}
+                                                fontSize="16px"
+                                                lineHeight={1.5}
+                                                variant="solid"
+                                                type="submit"
+                                                className="primaryFont">
+                                                Back to Pre-Event Page
+                                            </Button>
+                                        </Center>
+                                    </form>
+
                                 </Box>
                             </Box>
                         )
