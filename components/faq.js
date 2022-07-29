@@ -264,7 +264,6 @@ const Faq = ({ event }) => {
                 boxShadow="inset 0px 4px 4px #5D11AB"
                 pt={{ base: "35px", md: "62px" }}
                 px={{ base: "20px", md: "76px" }}
-                mb="200px"
               >
                 <Text
                   mb="45px"

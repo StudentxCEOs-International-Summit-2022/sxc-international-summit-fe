@@ -1,6 +1,6 @@
 import Faq from "../../components/faq";
 import Layout from "../../components/Layout";
-import { Box, Text, Divider, Flex,  OrderedList, ListItem,  Button, useDisclosure, Link } from "@chakra-ui/react";
+import { Box, Text, Divider, Flex, OrderedList, ListItem, Button, useDisclosure, Link } from "@chakra-ui/react";
 import { useState } from "react";
 import speaker1 from "../../public/preevent/speaker-1.jpg"
 import speaker2 from "../../public/preevent/speaker-2.jpg"
@@ -78,7 +78,7 @@ export default function PreEvent() {
                         >
                             Speakers
                         </Text>
-                        <Flex justify="center" gap="48px">
+                        <Flex justify="center" flexDirection={{ base: "column", md: "row" }} gap="48px">
                             <Box w="100%" display="flex" flexDirection="column" alignItems="center">
                                 <Box overflow="hidden" w="200px" borderRadius="100%" border="3px solid #A170FD">
                                     <Image src={speaker1} alt="speaker 1" />
@@ -130,7 +130,7 @@ export default function PreEvent() {
                             </Box>
                         </Flex>
 
-                        <Box border="2px solid #F8C800" m="24px 50px">
+                        <Box border="2px solid #F8C800" m={{base:"24px 0px", md:"24px 50px"}}>
                             <Text
                                 mt="48px"
                                 mb="24px"
@@ -143,12 +143,12 @@ export default function PreEvent() {
                             >
                                 Save the Date
                             </Text>
-                            <Text mb="24px" textAlign="center">
+                            <Box mb="24px" textAlign="center">
                                 <Text className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2}>
-                                    13<sup>th</sup> August 2022 <br />
-                                    <Text fontWeight={600}>at 13.00 - 15.40 via Zoom</Text>
+                                    13<sup>th</sup> August 2022
                                 </Text>
-                            </Text>
+                                <Text lassName="primaryFont" fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} fontWeight={600}>at 13.00 - 15.40 via Zoom</Text>
+                            </Box>
                         </Box>
 
                         <Box
