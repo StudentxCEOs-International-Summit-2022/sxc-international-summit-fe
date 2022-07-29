@@ -1,23 +1,16 @@
 import Faq from "../../components/faq";
 import Layout from "../../components/Layout";
-import { Box, Text, Divider, Flex, Grid, GridItem, Circle, OrderedList, ListItem, UnorderedList, Button, useDisclosure, Link } from "@chakra-ui/react";
+import { Box, Text, Divider, Flex,  OrderedList, ListItem,  Button, useDisclosure, Link } from "@chakra-ui/react";
 import { useState } from "react";
-import subtheme from "../../public/subtheme-competition.png"
 import speaker1 from "../../public/preevent/speaker 1.jpg"
 import speaker2 from "../../public/preevent/speaker 2.jpg"
 import moderator from "../../public/preevent/moderator.jpeg"
-import trophy from "../../public/trophy.png"
 import Image from "next/image";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import Exploreourevent from "../../components/Exploreourevent";
-import discount from "../../public/discount.svg";
-import notDiscount from "../../public/notDiscount.svg";
 import { useRouter } from "next/router";
 
 export default function PreEvent() {
-    const { isOpen: isOpenTeam, onOpen: onOpenTeam, onClose: onCloseTeam } = useDisclosure()
-
-    const { isOpen: isOpenIndividual, onOpen: onOpenIndividual, onClose: onCloseIndividual } = useDisclosure()
 
     const router = useRouter()
 
@@ -187,13 +180,13 @@ export default function PreEvent() {
                             </ListItem>
                         </OrderedList>
                         <Flex justify="center" w="100%">
-                            <Button w="fit-content" mx="auto" p="30px 72px" className="primaryFont" fontWeight={700} fontSize="32px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px" onClick={onOpenTeam}>Register</Button>
+                            <Button w="fit-content" mx="auto" p="30px 72px" className="primaryFont" fontWeight={700} fontSize="32px" bgColor="#5D11AB" borderRadius="4px" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)" lineHeight={1.5} mt="20px" onClick={() => router.push("/pre-event/register")}>Register</Button>
                         </Flex>
                     </Box>
                 </Box>
 
             </Box>
-            <Faq />
+            <Faq event="pre-event" />
             <Exploreourevent />
         </Layout>
     );

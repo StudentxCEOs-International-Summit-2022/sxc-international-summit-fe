@@ -495,7 +495,7 @@ export default function Competition() {
           })} />
 
       </Box>
-      <Faq />
+      <Faq event="competition" />
       <Exploreourevent />
     </Layout>
   );
