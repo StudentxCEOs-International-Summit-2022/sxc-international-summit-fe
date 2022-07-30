@@ -87,7 +87,7 @@ export default function PreEvent() {
                                     Rifqi Adhyasa
                                 </Text>
                                 <Text textAlign="center" className="primaryFont" fontWeight={700} fontSize={{ base: "12px", md: "16px", lg: "20px" }} lineHeight={1.5} color="#F8C800">
-                                    Employer Branding Manager at Traveloka
+                                    Product Marketing Manager - Employer Branding at Traveloka
                                 </Text>
                             </Box>
                             <Box w="100%" display="flex" flexDirection="column" alignItems="center">
@@ -130,7 +130,7 @@ export default function PreEvent() {
                             </Box>
                         </Flex>
 
-                        <Box border="2px solid #F8C800" m={{base:"24px 0px", md:"24px 50px"}}>
+                        <Box border="2px solid #F8C800" m={{ base: "24px 0px", md: "24px 50px" }}>
                             <Text
                                 mt="48px"
                                 mb="24px"
