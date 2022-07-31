@@ -173,9 +173,6 @@ export default function PreEvent() {
                                 Free Merchandise ( For Lucky Participants )
                             </ListItem>
                             <ListItem>
-                                Chance to win Cakap.com voucher IDR 300K
-                            </ListItem>
-                            <ListItem>
                                 Lucky participants will get a mentoring session with other interesting speakers and door prizes!
                             </ListItem>
                         </OrderedList>
