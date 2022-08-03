@@ -91,7 +91,7 @@ const RegisterPage = () => {
         localStorage.setItem("registrationData", JSON.stringify(data))
 
         if (query.type === "team") {
-            axios.post("https://sxc-be-22.herokuapp.com/api/daftarCompetitionTeam/", data).then(res => {
+            axios.post("https://sxc-be-22.herokuapp.com/api/daftarCompetitionTeam", data).then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log(err);
@@ -100,7 +100,7 @@ const RegisterPage = () => {
                 router.push("/competition")
             })
         } else {
-            axios.post("https://sxc-be-22.herokuapp.com/api/daftarCompetitionSolo/", data).then(res => {
+            axios.post("https://sxc-be-22.herokuapp.com/api/daftarCompetitionSolo", data).then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log(err);
