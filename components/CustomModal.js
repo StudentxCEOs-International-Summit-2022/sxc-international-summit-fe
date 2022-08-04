@@ -1,6 +1,7 @@
 import { Modal, Flex, Box, ModalOverlay, ModalContent, ModalCloseButton, ModalBody, Text, Button } from "@chakra-ui/react";
 
 const CustomModal = ({
+    isLoading,
     isOpen,
     onClose,
     onOpen,
@@ -63,6 +64,7 @@ const CustomModal = ({
                             fontSize="16px"
                             lineHeight={1.5}
                             className="primaryFont"
+                            isLoading={isLoading}
                             onClick={nextButtonClick}>
                             {nextButtonText}
                         </Button>}

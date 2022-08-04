@@ -27,6 +27,7 @@ const RegisterPage = () => {
     const { isOpen: isOpenRegistration, onOpen: onOpenRegistration, onClose: onCloseRegistration } = useDisclosure()
     const [currentStep, setCurrentStep] = useState(1)
     const [savedData, setSavedData] = useState(null)
+    const [isSubmitting, setIsSubmitting] = useState(false)
     const [isReferralCodeValid, setIsReferralCodeValid] = useState(false)
     const [referralCode, setReferralCode] = useState("")
     const router = useRouter()
@@ -89,13 +90,15 @@ const RegisterPage = () => {
             }
         }
         localStorage.setItem("registrationData", JSON.stringify(data))
-
+        setIsSubmitting(true)
         if (query.type === "team") {
             axios.post("https://sxc-be-22.herokuapp.com/api/daftarCompetitionTeam", data).then(res => {
                 console.log(res)
             }).catch(err => {
-                console.log(err);
+                alert("Something went wrong, please message our team if the problem persists")
             }).finally(() => {
+                localStorage.removeItem("registrationData")
+                setIsSubmitting(false)
                 reset()
                 router.push("/competition")
             })
@@ -103,8 +106,10 @@ const RegisterPage = () => {
             axios.post("https://sxc-be-22.herokuapp.com/api/daftarCompetitionSolo", data).then(res => {
                 console.log(res)
             }).catch(err => {
-                console.log(err);
+                alert("Something went wrong, please message our team if the problem persists")
             }).finally(() => {
+                localStorage.removeItem("registrationData")
+                setIsSubmitting(false)
                 reset()
                 router.push("/competition")
             })
@@ -1222,6 +1227,7 @@ const RegisterPage = () => {
                                             <CustomModal
                                                 isOpen={isOpenRegistration}
                                                 onClose={onCloseRegistration}
+                                                isLoading={isSubmitting}
                                                 title="Registration Complete!"
                                                 body={"Thank you for registering! We'll review your payment and we'll give you the event details soon! We're looking forward to your participation!"}
                                                 additionalText={["If you need help, feel free to contact us at",
@@ -1785,6 +1791,7 @@ const RegisterPage = () => {
                                             <CustomModal
                                                 isOpen={isOpenRegistration}
                                                 onClose={onCloseRegistration}
+                                                isLoading={isSubmitting}
                                                 title="Registration Complete!"
                                                 body={"Thank you for registering! We'll review your payment and we'll give you the event details soon! We're looking forward to your participation!"}
                                                 additionalText={["If you need help, feel free to contact us at",
