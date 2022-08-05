@@ -1222,19 +1222,19 @@ const RegisterPage = () => {
                                                 lineHeight={1.5}
                                                 className="primaryFont"
                                                 isDisabled={Object.keys(errors).length !== 0}>
-                                                Confirm Registration
+                                                Next
                                             </Button>
                                             <CustomModal
                                                 isOpen={isOpenRegistration}
                                                 onClose={onCloseRegistration}
                                                 isLoading={isSubmitting}
-                                                title="Registration Complete!"
+                                                title="Last Step!"
                                                 body={"Thank you for registering! We'll review your payment and we'll give you the event details soon! We're looking forward to your participation!"}
                                                 additionalText={["If you need help, feel free to contact us at",
                                                     "Bima - +62 85731710570 (bimadwidr)",
                                                     "Fauzan - +62 85735509685 (fauuzaann)"]}
                                                 hasNextButton
-                                                nextButtonText="Back to Event Page"
+                                                nextButtonText="Confirm Registration"
                                                 nextButtonClick={handleSubmit(onSubmit)} />
                                         </Flex>
                                     </FormControl>
@@ -1786,19 +1786,19 @@ const RegisterPage = () => {
                                                 lineHeight={1.5}
                                                 className="primaryFont"
                                                 isDisabled={Object.keys(errors).length !== 0}>
-                                                Confirm Registration
+                                                Next
                                             </Button>
                                             <CustomModal
                                                 isOpen={isOpenRegistration}
                                                 onClose={onCloseRegistration}
                                                 isLoading={isSubmitting}
-                                                title="Registration Complete!"
+                                                title="Last Step!"
                                                 body={"Thank you for registering! We'll review your payment and we'll give you the event details soon! We're looking forward to your participation!"}
                                                 additionalText={["If you need help, feel free to contact us at",
                                                     "Bima - +62 85731710570 (bimadwidr)",
                                                     "Fauzan - +62 85735509685 (fauuzaann)"]}
                                                 hasNextButton
-                                                nextButtonText="Back to Event Page"
+                                                nextButtonText="Confirm Registration"
                                                 nextButtonClick={handleSubmit(onSubmit)} />
                                         </Flex>
                                     </FormControl>

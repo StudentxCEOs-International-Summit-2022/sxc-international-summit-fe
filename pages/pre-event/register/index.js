@@ -563,7 +563,7 @@ const RegisterPage = () => {
                                                 variant="solid"
                                                 type="submit"
                                                 className="primaryFont">
-                                                Back to Pre-Event Page
+                                                Confirm Registration
                                             </Button>
                                         </Center>
                                     </form>
