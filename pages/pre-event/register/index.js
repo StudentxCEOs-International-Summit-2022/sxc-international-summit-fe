@@ -59,7 +59,7 @@ const RegisterPage = () => {
         localStorage.setItem("registrationData", JSON?.stringify(data))
         axios.post("https://sxc-be-22.herokuapp.com/api/daftarPreEvent", data).then(res => {
             console.log(res);
-            emailjs.sendForm('service_es3cnd6', 'template_xrajoec', form.current, 'REihDPz8JEoguuDmk')
+            emailjs.sendForm('service_tsfahql', 'service_tsfahql', form.current, 'v3UAkQDIaD4CYo73r')
                 .then((result) => {
                     console.log(result.text);
                 }, (error) => {
