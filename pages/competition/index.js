@@ -410,8 +410,8 @@ export default function Competition() {
               </UnorderedList>
               <Text  color="#FFFFFF" mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
               <Box className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} color="#F8C800">
-                <Text>US$16.67 (International)</Text>
-                <Text mt="10px">Rp250.000, (Domestic)</Text>
+                <Text>US$20.00 (International)</Text>
+                <Text mt="10px">Rp300.000, (Domestic)</Text>
               </Box>
 
             </Box>
