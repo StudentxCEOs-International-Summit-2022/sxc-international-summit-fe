@@ -36,44 +36,44 @@ export default function Competition() {
   const timelines = [
     {
       heading: "Early Bird Registration",
-      date: "11 Juli 2022 - 24 July 2022",
+      date: "11 July - 24 July",
       btn_icon: earlyBird,
       isActive: false
     },
     {
       heading: "Normal Registration",
-      date: "25 July 2022 - 7 August",
+      date: "25 July - 7 August",
+      btn_icon: pencil,
+      isActive: false
+    },
+    {
+      heading: "Late Registration",
+      date: "8 August - 27 August",
       btn_icon: pencil,
       isActive: true
     },
     {
-      heading: "IG Takeover",
-      date: "23 July 2022",
-      btn_icon: group,
-      isActive: false
-    },
-    {
       heading: "Coaching Clinic 1",
-      date: "3 September 2022",
+      date: "3 September",
       btn_icon: book,
       isActive: false
     },
     {
       heading: "Coaching Clinic 2",
-      date: "10 September 2022",
+      date: "10 September",
       btn_icon: school,
       isActive: false
     },
     {
       heading: "Coaching Clinic 3",
       additional_text: "(For Top 10 Winners)",
-      date: "11 October 2022",
+      date: "11 October",
       btn_icon: bag,
       isActive: false
     },
     {
       heading: "Presentation Day",
-      date: "29 October 2022",
+      date: "29 October",
       btn_icon: speaker,
       isActive: false
     },
@@ -84,7 +84,7 @@ export default function Competition() {
 
   return (
     <Layout hasNavbar hasFooter currentPage="competition">
-      <Box  color="white" maxW="1144px" mx="auto" >
+      <Box color="white" maxW="1144px" mx="auto" >
         <Text className="gradientTextRed primaryFont"
           fontSize={{ base: "32px", md: "48px", lg: "64px" }}
           lineHeight={1.2}
@@ -308,7 +308,7 @@ export default function Competition() {
             <Image src={trophy} alt="" />
           </Box>
         </Flex>
-        <Text  color="#FFFFFF" className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2} textAlign="center" mt="200px" mb="64px">{"Don't Miss Your Opportunity to Shine!"}</Text>
+        <Text color="#FFFFFF" className="primaryFont" fontWeight={800} fontSize="32px" lineHeight={1.2} textAlign="center" mt="200px" mb="64px">{"Don't Miss Your Opportunity to Shine!"}</Text>
         <Box overflowX="auto">
           <Grid
             position="relative"
@@ -377,7 +377,7 @@ export default function Competition() {
           </ListItem>
         </OrderedList>
 
-        <Text  color="#FFFFFF" textAlign="center" my={{ base: "28px", md: "47px", lg: "66px" }} fontWeight={800} className="primaryFont" fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2}>
+        <Text color="#FFFFFF" textAlign="center" my={{ base: "28px", md: "47px", lg: "66px" }} fontWeight={800} className="primaryFont" fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2}>
           You can join <span style={{ color: "#FF6941" }}>either</span> as a Team or an Individual
         </Text>
 
@@ -408,10 +408,41 @@ export default function Competition() {
                   Each team must have a name as the team identity during the competition.
                 </ListItem>
               </UnorderedList>
-              <Text  color="#FFFFFF" mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
-              <Box className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} color="#F8C800">
+              <Text color="#FFFFFF" mt="10px" className="primaryFont" fontWeight={700} fontSize={{ base: "16px", md: "20px", lg: "24px" }} lineHeight={1.5}>Registration Fee</Text>
+              {/* <Box className="primaryFont" fontWeight={800} fontSize={{ base: "20px", md: "26px", lg: "32px" }} lineHeight={1.2} color="#F8C800">
                 <Text>US$20.00 (International)</Text>
-                <Text mt="10px">Rp300.000, (Domestic)</Text>
+                <Text mt="10px" >Rp300.000, (Domestic)</Text>
+              </Box> */}
+              <Box
+                className="primaryFont"
+                fontWeight={800}
+                fontSize={{ base: "20px", md: "26px", lg: "32px" }}
+                lineHeight={1.2}
+                color="#F8C800">
+                <Text
+                  mt="16px"
+                  color="white"
+                  className="primaryFont"
+                  fontSize="20px"
+                  lineHeight={1.2}
+                  fontWeight={800}
+                  textDecoration="line-through"
+                >
+                  US$20.00 
+                </Text>
+                <Text>US$18.47 (International)</Text>
+                <Text
+                  color="white"
+                  className="primaryFont"
+                  fontSize="20px"
+                  lineHeight={1.2}
+                  fontWeight={800}
+                  textDecoration="line-through"
+                  mt="16px"
+                >
+                  Rp300.000,-
+                </Text>
+                <Text mt="10px" >Rp277.000 (Domestic)</Text>
               </Box>
 
             </Box>
@@ -426,7 +457,7 @@ export default function Competition() {
 
           <Box w="full" h="full" mt={isMobile && "32px"}>
             <Box
-             color="#FFFFFF"
+              color="#FFFFFF"
               border="1px solid #F8C800"
               borderRadius="10px"
               background="linear-gradient(180deg, #F8C800 0%, #66AE93 48.44%, #1FA1DB 100%)"
