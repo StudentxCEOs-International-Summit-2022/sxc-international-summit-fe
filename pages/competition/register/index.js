@@ -1042,7 +1042,7 @@ const RegisterPage = () => {
                                             lineHeight={1.2}
                                             color="#F8C800"
                                         >
-                                            {isReferralCodeValid ? "Rp252.000,-" : "Rp277.000,-"}
+                                            {isReferralCodeValid ? "Rp220.000,-" : "Rp250.000,-"}
                                         </Text>
                                         {isReferralCodeValid &&
                                             <Text
@@ -1053,7 +1053,7 @@ const RegisterPage = () => {
                                                 fontWeight={800}
                                                 textDecoration="line-through"
                                             >
-                                                Rp277.000,-
+                                                Rp250.000,-
                                             </Text>}
                                         <Text
                                             mt="24px"
@@ -1121,7 +1121,7 @@ const RegisterPage = () => {
                                             lineHeight={1.2}
                                             color="#F8C800"
                                         >
-                                            {isReferralCodeValid ? "US$16.50" : "US$18.47"}
+                                            {isReferralCodeValid ? "US$14.81" : "US$16.88"}
                                         </Text>
                                         {isReferralCodeValid &&
                                             <Text
@@ -1132,7 +1132,7 @@ const RegisterPage = () => {
                                                 fontWeight={800}
                                                 textDecoration="line-through"
                                             >
-                                                US$18.47
+                                                US$16.88
                                             </Text>}
                                         <Text
                                             mt="24px"
