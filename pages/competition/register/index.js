@@ -1628,7 +1628,7 @@ const RegisterPage = () => {
                                             lineHeight={1.2}
                                             color="#F8C800"
                                         >
-                                            Rp70.000,-
+                                            Rp80.000,-
                                         </Text>
                                         <Text
                                             mt="24px"
@@ -1696,7 +1696,7 @@ const RegisterPage = () => {
                                             lineHeight={1.2}
                                             color="#F8C800"
                                         >
-                                            US$18.30
+                                            US$5.33
                                         </Text>
                                         <Text
                                             mt="24px"
