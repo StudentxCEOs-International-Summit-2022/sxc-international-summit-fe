@@ -327,7 +327,28 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                     h="60%"
                                     background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
                                 ></Box>
-                                <JumbotronPreEvent />
+                                <JumbotronPreEvent title={"Pre Event"} description="A Talk Show session with the professional national speaker. After attending this event, participants are expected to know more about the skill requirement in the 21st century, how to improve productivity by learning basic office software and many more." linkRegis="#register" />
+                            </Box>
+                        </Box>
+                    )}
+
+                    {currentPage === "company-visit" && (
+                        <Box zIndex={0}>
+                            <Box
+                                position="relative"
+                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-sa.png);"
+                                backgroundSize="cover"
+                                backgroundPosition="center center"
+                                h="100vh"
+                            >
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    w="100vw"
+                                    h="60%"
+                                    background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
+                                ></Box>
+                                <JumbotronPreEvent title={"Company Visit"} description="Get to know and see the companies of your dreams in our Virtual Company Visit. Gain new insights by seeing companies give their point of view from our curated theme." linkRegis="https://forms.gle/N42pwiJWhQ5ghwNA6" />
                             </Box>
                         </Box>
                     )}
@@ -637,7 +658,29 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                                     h="60%"
                                     background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
                                 ></Box>
-                                <JumbotronPreEvent />
+                                <JumbotronPreEvent title={"Pre Event"} description="A Talk Show session with the professional national speaker. After attending this event, participants are expected to know more about the skill requirement in the 21st century, how to improve productivity by learning basic office software and many more." linkRegis="#register" />
+                            </Box>
+                        </Box>
+                    )}
+
+
+                    {currentPage === "company-visit" && (
+                        <Box zIndex={0}>
+                            <Box
+                                position="relative"
+                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-sa.png);"
+                                backgroundSize="cover"
+                                backgroundPosition="center center"
+                                h="100vh"
+                            >
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    w="100vw"
+                                    h="60%"
+                                    background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
+                                ></Box>
+                                <JumbotronPreEvent title={"Company Visit"} description="Get to know and see the companies of your dreams in our Virtual Company Visit. Gain new insights by seeing companies give their point of view from our curated theme." linkRegis="https://forms.gle/N42pwiJWhQ5ghwNA6" />
                             </Box>
                         </Box>
                     )}

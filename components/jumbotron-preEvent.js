@@ -11,7 +11,7 @@ import {
 import NextLink from "next/link";
 import { useWindowSize } from "../hooks/useWindowSize";
 
-const JumbotronPreEvent = () => {
+const JumbotronPreEvent = ({title, description, linkRegis}) => {
     const { width } = useWindowSize();
     const isMobile = width < 768;
     const isTablet = width < 1024;
@@ -51,7 +51,7 @@ const JumbotronPreEvent = () => {
                         pt="24px"
                         pb="24px"
                     >
-                        Pre Event
+                        {title}
                     </Text>
                 </Box>
                 <Text
@@ -64,12 +64,11 @@ const JumbotronPreEvent = () => {
                     textAlign={{ base: "center", md: "left", lg: "left" }}
                     mx={{ base: "14px", md: "0px" }}
                 >
-                    A Talk Show session with the professional national speaker. After attending this event, participants are expected to know more about the skill requirement in the 21st century, how to improve productivity by learning basic office software and many more.
-
+                    {description}
                 </Text>
             </Flex>
             <Flex flexDirection={{ base: "column", lg: "row" }}>
-                <NextLink href="#register" passHref>
+                <NextLink href={linkRegis} passHref>
                     <Link>
                         <Button
                             w={{ base: "100%", md: "auto" }}
