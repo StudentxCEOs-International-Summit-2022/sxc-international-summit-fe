@@ -332,6 +332,29 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                         </Box>
                     )}
 
+                    {currentPage === "chambers" && (
+                        <Box zIndex={0}>
+                            <Box
+                                position="relative"
+                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-sa.png);"
+                                backgroundSize="cover"
+                                backgroundPosition="center center"
+                                h="100vh"
+                            >
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    w="100vw"
+                                    h="60%"
+                                    background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
+                                ></Box>
+                                <JumbotronPreEvent title={"Chambers"}
+                                    description="Expand your knowledge and networks by joining one of our chambers (FMCG, Consultant, Start-Up, BUMN). Each chamber will discuss a topic with their speakers. After attending this event, participants are expected to know more about the industry and the career path in each industry."
+                                    linkRegis="#register" />
+                            </Box>
+                        </Box>
+                    )}
+
                     {currentPage === "company-visit" && (
                         <Box zIndex={0}>
                             <Box
@@ -663,6 +686,28 @@ const Layout = ({ hasNavbar, children, hasFooter, currentPage }) => {
                         </Box>
                     )}
 
+                    {currentPage === "chambers" && (
+                        <Box zIndex={0}>
+                            <Box
+                                position="relative"
+                                background="linear-gradient(0deg, rgba(2, 2, 52, 0.2), rgba(2, 2, 52, 0.2)), linear-gradient(180deg, rgba(105, 0, 214, 0.34) 0%, rgba(151, 223, 255, 0.17) 100%, rgba(151, 223, 255, 0.64) 100%), url(/title-sa.png);"
+                                backgroundSize="cover"
+                                backgroundPosition="center center"
+                                h="100vh"
+                            >
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    w="100vw"
+                                    h="60%"
+                                    background="linear-gradient(to top, #020234 6.44%, rgba(46, 111, 140, 0) 85.63%)"
+                                ></Box>
+                                <JumbotronPreEvent title={"Chambers"}
+                                    description="Expand your knowledge and networks by joining one of our chambers (FMCG, Consultant, Start-Up, BUMN). Each chamber will discuss a topic with their speakers. After attending this event, participants are expected to know more about the industry and the career path in each industry."
+                                    linkRegis="#register" />
+                            </Box>
+                        </Box>
+                    )}
 
                     {currentPage === "company-visit" && (
                         <Box zIndex={0}>

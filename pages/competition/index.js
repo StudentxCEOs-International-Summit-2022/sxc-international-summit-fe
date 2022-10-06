@@ -50,7 +50,7 @@ export default function Competition() {
       heading: "Late Registration",
       date: "8 August - 27 August",
       btn_icon: pencil,
-      isActive: true
+      isActive: false
     },
     {
       heading: "Coaching Clinic 1",
@@ -69,7 +69,7 @@ export default function Competition() {
       additional_text: "(For Top 10 Winners)",
       date: "11 October",
       btn_icon: bag,
-      isActive: false
+      isActive: true
     },
     {
       heading: "Presentation Day",
